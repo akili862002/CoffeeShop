@@ -11,6 +11,11 @@ namespace CoffeeShop
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        static class Global {
+            static bool isAuth = false;
+            // static User user;
+        }
+
         [STAThread]
         static void Main()
         {

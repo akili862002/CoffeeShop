@@ -49,5 +49,10 @@ namespace CoffeeShop
                 this.DialogResult = DialogResult.OK;
             }).Start();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
