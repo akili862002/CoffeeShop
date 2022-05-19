@@ -56,9 +56,10 @@ namespace CoffeeShop
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.gunaLabel4.Location = new System.Drawing.Point(383, 118);
+            this.gunaLabel4.Location = new System.Drawing.Point(255, 77);
+            this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(490, 25);
+            this.gunaLabel4.Size = new System.Drawing.Size(325, 15);
             this.gunaLabel4.TabIndex = 21;
             this.gunaLabel4.Text = "Chào mừng người mới. Đăng kí để trở thành thành viên mới";
             // 
@@ -66,9 +67,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(382, 288);
+            this.gunaLabel3.Location = new System.Drawing.Point(255, 187);
+            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(104, 28);
+            this.gunaLabel3.Size = new System.Drawing.Size(72, 19);
             this.gunaLabel3.TabIndex = 20;
             this.gunaLabel3.Text = "Mật khẩu ";
             // 
@@ -85,22 +87,24 @@ namespace CoffeeShop
             this.passwordTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.passwordTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.passwordTextBox.Location = new System.Drawing.Point(386, 320);
+            this.passwordTextBox.Location = new System.Drawing.Point(257, 208);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Padding = new System.Windows.Forms.Padding(5);
+            this.passwordTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.passwordTextBox.PasswordChar = '•';
             this.passwordTextBox.Radius = 4;
             this.passwordTextBox.SelectedText = "";
-            this.passwordTextBox.Size = new System.Drawing.Size(493, 50);
+            this.passwordTextBox.Size = new System.Drawing.Size(329, 32);
             this.passwordTextBox.TabIndex = 2;
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(382, 176);
+            this.gunaLabel2.Location = new System.Drawing.Point(255, 114);
+            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(133, 28);
+            this.gunaLabel2.Size = new System.Drawing.Size(93, 19);
             this.gunaLabel2.TabIndex = 19;
             this.gunaLabel2.Text = "Số điện thoại";
             // 
@@ -108,9 +112,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(376, 44);
+            this.gunaLabel1.Location = new System.Drawing.Point(251, 29);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(217, 70);
+            this.gunaLabel1.Size = new System.Drawing.Size(148, 47);
             this.gunaLabel1.TabIndex = 16;
             this.gunaLabel1.Text = "Đăng kí";
             // 
@@ -127,13 +132,14 @@ namespace CoffeeShop
             this.phoneTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.phoneTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.phoneTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.phoneTextBox.Location = new System.Drawing.Point(386, 212);
+            this.phoneTextBox.Location = new System.Drawing.Point(257, 138);
+            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Padding = new System.Windows.Forms.Padding(5);
+            this.phoneTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.phoneTextBox.PasswordChar = '\0';
             this.phoneTextBox.Radius = 4;
             this.phoneTextBox.SelectedText = "";
-            this.phoneTextBox.Size = new System.Drawing.Size(493, 50);
+            this.phoneTextBox.Size = new System.Drawing.Size(329, 32);
             this.phoneTextBox.TabIndex = 1;
             // 
             // registerButton
@@ -152,7 +158,8 @@ namespace CoffeeShop
             this.registerButton.ForeColor = System.Drawing.Color.White;
             this.registerButton.Image = null;
             this.registerButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.registerButton.Location = new System.Drawing.Point(387, 926);
+            this.registerButton.Location = new System.Drawing.Point(258, 602);
+            this.registerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.registerButton.Name = "registerButton";
             this.registerButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.registerButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -160,7 +167,7 @@ namespace CoffeeShop
             this.registerButton.OnHoverImage = null;
             this.registerButton.OnPressedColor = System.Drawing.Color.Black;
             this.registerButton.Radius = 4;
-            this.registerButton.Size = new System.Drawing.Size(493, 50);
+            this.registerButton.Size = new System.Drawing.Size(329, 32);
             this.registerButton.TabIndex = 8;
             this.registerButton.Text = "Đăng kí ngay";
             this.registerButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -170,9 +177,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(382, 400);
+            this.gunaLabel5.Location = new System.Drawing.Point(255, 260);
+            this.gunaLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(103, 28);
+            this.gunaLabel5.Size = new System.Drawing.Size(71, 19);
             this.gunaLabel5.TabIndex = 23;
             this.gunaLabel5.Text = "Họ và Tên";
             this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -190,22 +198,24 @@ namespace CoffeeShop
             this.fullnameTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.fullnameTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.fullnameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.fullnameTextBox.Location = new System.Drawing.Point(386, 432);
+            this.fullnameTextBox.Location = new System.Drawing.Point(257, 281);
+            this.fullnameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fullnameTextBox.Name = "fullnameTextBox";
-            this.fullnameTextBox.Padding = new System.Windows.Forms.Padding(5);
+            this.fullnameTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.fullnameTextBox.PasswordChar = '\0';
             this.fullnameTextBox.Radius = 4;
             this.fullnameTextBox.SelectedText = "";
-            this.fullnameTextBox.Size = new System.Drawing.Size(493, 50);
+            this.fullnameTextBox.Size = new System.Drawing.Size(329, 32);
             this.fullnameTextBox.TabIndex = 3;
             // 
             // gunaLabel6
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(382, 506);
+            this.gunaLabel6.Location = new System.Drawing.Point(255, 329);
+            this.gunaLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(103, 28);
+            this.gunaLabel6.Size = new System.Drawing.Size(72, 19);
             this.gunaLabel6.TabIndex = 25;
             this.gunaLabel6.Text = "Ngày sinh";
             // 
@@ -213,9 +223,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(382, 618);
+            this.gunaLabel7.Location = new System.Drawing.Point(255, 402);
+            this.gunaLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(90, 28);
+            this.gunaLabel7.Size = new System.Drawing.Size(65, 19);
             this.gunaLabel7.TabIndex = 27;
             this.gunaLabel7.Text = "Giới tính";
             this.gunaLabel7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -224,9 +235,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.Location = new System.Drawing.Point(383, 697);
+            this.gunaLabel8.Location = new System.Drawing.Point(255, 453);
+            this.gunaLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(73, 28);
+            this.gunaLabel8.Size = new System.Drawing.Size(53, 19);
             this.gunaLabel8.TabIndex = 29;
             this.gunaLabel8.Text = "Địa chỉ";
             // 
@@ -243,13 +255,14 @@ namespace CoffeeShop
             this.addressTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.addressTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.addressTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.addressTextBox.Location = new System.Drawing.Point(387, 729);
+            this.addressTextBox.Location = new System.Drawing.Point(258, 474);
+            this.addressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Padding = new System.Windows.Forms.Padding(5);
+            this.addressTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.addressTextBox.PasswordChar = '\0';
             this.addressTextBox.Radius = 4;
             this.addressTextBox.SelectedText = "";
-            this.addressTextBox.Size = new System.Drawing.Size(493, 50);
+            this.addressTextBox.Size = new System.Drawing.Size(329, 32);
             this.addressTextBox.TabIndex = 7;
             // 
             // birthdatePicker
@@ -265,7 +278,8 @@ namespace CoffeeShop
             this.birthdatePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.birthdatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.birthdatePicker.ForeColor = System.Drawing.Color.Black;
-            this.birthdatePicker.Location = new System.Drawing.Point(386, 537);
+            this.birthdatePicker.Location = new System.Drawing.Point(257, 349);
+            this.birthdatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.birthdatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.birthdatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.birthdatePicker.Name = "birthdatePicker";
@@ -274,9 +288,9 @@ namespace CoffeeShop
             this.birthdatePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.birthdatePicker.OnPressedColor = System.Drawing.Color.Black;
             this.birthdatePicker.Radius = 4;
-            this.birthdatePicker.Size = new System.Drawing.Size(493, 50);
+            this.birthdatePicker.Size = new System.Drawing.Size(329, 32);
             this.birthdatePicker.TabIndex = 4;
-            this.birthdatePicker.Text = "Tuesday, May 17, 2022";
+            this.birthdatePicker.Text = "17 Tháng Năm 2022";
             this.birthdatePicker.Value = new System.DateTime(2022, 5, 17, 14, 30, 22, 650);
             // 
             // maleRadio
@@ -287,9 +301,10 @@ namespace CoffeeShop
             this.maleRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.maleRadio.FillColor = System.Drawing.Color.White;
             this.maleRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleRadio.Location = new System.Drawing.Point(386, 649);
+            this.maleRadio.Location = new System.Drawing.Point(257, 422);
+            this.maleRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maleRadio.Name = "maleRadio";
-            this.maleRadio.Size = new System.Drawing.Size(76, 31);
+            this.maleRadio.Size = new System.Drawing.Size(60, 21);
             this.maleRadio.TabIndex = 5;
             this.maleRadio.Text = "Nam";
             // 
@@ -300,9 +315,10 @@ namespace CoffeeShop
             this.famaleRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.famaleRadio.FillColor = System.Drawing.Color.White;
             this.famaleRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.famaleRadio.Location = new System.Drawing.Point(484, 649);
+            this.famaleRadio.Location = new System.Drawing.Point(323, 422);
+            this.famaleRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.famaleRadio.Name = "famaleRadio";
-            this.famaleRadio.Size = new System.Drawing.Size(60, 31);
+            this.famaleRadio.Size = new System.Drawing.Size(49, 21);
             this.famaleRadio.TabIndex = 6;
             this.famaleRadio.Text = "Nữ";
             // 
@@ -310,9 +326,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.Location = new System.Drawing.Point(382, 802);
+            this.gunaLabel9.Location = new System.Drawing.Point(255, 521);
+            this.gunaLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(70, 28);
+            this.gunaLabel9.Size = new System.Drawing.Size(50, 19);
             this.gunaLabel9.TabIndex = 31;
             this.gunaLabel9.Text = "Lương";
             // 
@@ -329,32 +346,34 @@ namespace CoffeeShop
             this.salaryTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.salaryTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.salaryTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.salaryTextBox.Location = new System.Drawing.Point(386, 834);
+            this.salaryTextBox.Location = new System.Drawing.Point(257, 542);
+            this.salaryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.salaryTextBox.Name = "salaryTextBox";
-            this.salaryTextBox.Padding = new System.Windows.Forms.Padding(5);
+            this.salaryTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.salaryTextBox.PasswordChar = '\0';
             this.salaryTextBox.Radius = 4;
             this.salaryTextBox.SelectedText = "";
-            this.salaryTextBox.Size = new System.Drawing.Size(493, 50);
+            this.salaryTextBox.Size = new System.Drawing.Size(329, 32);
             this.salaryTextBox.TabIndex = 30;
             // 
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::CoffeeShop.Properties.Resources.cash_counter;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(12, 209);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(8, 136);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(349, 499);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(233, 324);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 15;
             this.gunaPictureBox1.TabStop = false;
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(904, 1028);
+            this.ClientSize = new System.Drawing.Size(603, 668);
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.salaryTextBox);
             this.Controls.Add(this.famaleRadio);
@@ -374,6 +393,7 @@ namespace CoffeeShop
             this.Controls.Add(this.gunaPictureBox1);
             this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.registerButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " ";

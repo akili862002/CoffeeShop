@@ -51,7 +51,7 @@
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\..\Downloads\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Zalo Received Files\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -89,6 +89,7 @@
     <Compile Include="Databases\ConnectDB.cs" />
     <Compile Include="Databases\ProductDB.cs" />
     <Compile Include="Databases\MenuDB.cs" />
+    <Compile Include="Databases\UserDB.cs" />
     <Compile Include="Databases\TableDB.cs" />
     <Compile Include="Entities\MenuEntity.cs" />
     <Compile Include="Entities\ProductEntity.cs" />
