@@ -16,15 +16,38 @@ namespace CoffeeShop
 {
     public partial class MenusForm : Form
     {
-        bool isEdit = false;
+        bool isEditProduct = false;
+        bool isEditMenu = false;
+        bool isEditTable = false;
+        MenuEntity menu = null;
+
         public MenusForm()
         {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
+            this.initCreateMenu();
         }
         private void MenusForm_Load(object sender, EventArgs e)
         {
             this.LoadTableTableData();
+        }
+
+        private void initEditMenu()
+        {
+            this.submitMenuButton.Text = "Cập nhật";
+            this.menuActionLabel.Text = $"Chỉnh sửa bàn id: {menu.id}";
+
+            this.menuNameTextBox.Text = this.menu.menu_name;
+            this.deleteMenuButton.Show();
+        }
+
+        private void initCreateMenu()
+        {
+            this.submitMenuButton.Text = "Tạo";
+            this.menuActionLabel.Text = "Thêm danh mục";
+
+            this.menuNameTextBox.Text = "";
+            this.deleteMenuButton.Hide();
         }
 
         public void LoadTableTableData()
@@ -47,24 +70,50 @@ namespace CoffeeShop
         private void submitMenuButton_Click(object sender, EventArgs e)
         {
             MenuEntity newMenu = new MenuEntity();
-            newMenu.setName(this.menuNameTextBox.Text).setCreatedBy(Program.Global.user.id);
+            newMenu.setName(this.menuNameTextBox.Text);
             MenuDB db = new MenuDB();
             new Thread(() =>
             {
-
-                if (isEdit)
+                if (isEditMenu)
                 {
+                    db.updateMenu(menu.id, newMenu);
                 }
                 else
                 {
-                    bool isOk = db.createMenu(newMenu);
-                    if (isOk)
-                    {
-                        this.LoadTableTableData();
-                    } 
+                    db.createMenu(newMenu);
                 }
+                this.LoadTableTableData();
             }).Start();
         }
 
+        private void menuTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int currentIndex = this.menuTable.CurrentCell.RowIndex;
+            if (currentIndex < 0) return;
+
+            DataGridViewRow row = this.menuTable.Rows[currentIndex];
+            this.menu = new MenuEntity();
+            this.menu.setId(Int32.Parse(row.Cells["ID"].Value.ToString())).setName(row.Cells["Tên danh mục"].Value.ToString());
+            this.isEditMenu = true;
+            initEditMenu();
+        }
+
+        private void clearMenuButton_Click(object sender, EventArgs e)
+        {
+            this.initCreateMenu();
+        }
+
+        private void deleteMenuButton_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show($"Bạn có chắc muốn xóa [{menu.menu_name}]?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.No) return;
+
+            MenuDB db = new MenuDB();
+            new Thread(() =>
+            {
+                db.deleteMenu(this.menu.id);
+                this.LoadTableTableData();
+            }).Start();
+        }
     }
 }

@@ -9,17 +9,12 @@ namespace CoffeeShop.Entities
     class MenuEntity
     {
         public int id;
-        public int created_by;
         public string menu_name;
+        public int created_by = Program.Global.user.id;
 
         public MenuEntity setId(int id)
         {
             this.id = id;
-            return this;
-        }
-        public MenuEntity setCreatedBy(int created_by)
-        {
-            this.created_by = created_by;
             return this;
         }
         public MenuEntity setName(string name)
