@@ -1,4 +1,4 @@
--- CREATE DATABASE CoffeeShop
+﻿-- CREATE DATABASE CoffeeShop
 -- GO
 
 USE CoffeeShop
@@ -23,7 +23,7 @@ CREATE TABLE [user](
 	birthdate DATE,
 	gender  BIT DEFAULT 1, -- 1 is Male, 0 is Famale
 	[address] NVARCHAR(1000),
-	salary MONEY, CHECK (salary>0 ),
+	salary BIGINT, CHECK (salary>0 ),
 	is_admin  BIT DEFAULT 0,
 	[enabled]  BIT DEFAULT 1,
 	created_at DATETIME DEFAULT SYSDATETIME(),
@@ -31,13 +31,11 @@ CREATE TABLE [user](
 )
 GO
 
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary ) VALUES ('Admin', '0123456789', '123456', '2/2/2002', 1, 'Ho Chi Minh', 12000000)
-
 CREATE TABLE [table](
 	table_id INT IDENTITY(1,1) PRIMARY KEY,
-	is_busy BIT DEFAULT 1,
-	name INT,
-	[description] CHAR(30),
+	name VARCHAR(50),
+	[description] VARCHAR(255),
+	is_busy BIT DEFAULT 0,
 )
 GO
 
@@ -47,8 +45,8 @@ CREATE TABLE [order](
 	table_id INT FOREIGN KEY REFERENCES [table](table_id),
 	buyer_id INT FOREIGN KEY REFERENCES [user](id),
 	-- DEAL ORDER --
-	customer_pay MONEY,
-	total_price MONEY,
+	customer_pay BIGINT,
+	total_price BIGINT,
 
 	created_at DATETIME DEFAULT SYSDATETIME(),
 	updated_at DATETIME DEFAULT SYSDATETIME(),
@@ -67,13 +65,14 @@ GO
 
 CREATE TABLE product(
 	id INT IDENTITY(1,1) PRIMARY KEY ,
-	drink_name NVARCHAR(30) NOT NULL,
+	[name] NVARCHAR(255) NOT NULL,
 	picture VARCHAR(MAX),
-	benefit MONEY,CHECK (benefit >=0),
-	price MONEY NOT NULL,CHECK (price >= 0),
+	profit BIGINT,CHECK (profit >=0),
+	price BIGINT NOT NULL,CHECK (price >= 0),
 	stock INT NOT NULL,CHECK (stock >= 0),
 	unit NVARCHAR(30) NOT NULL,
-	menu_id INT FOREIGN KEY REFERENCES menu(id),
+	is_in_stock BIT DEFAULT 1 NOT NULL,
+	menu_id INT FOREIGN KEY REFERENCES menu(id) NOT NULL,
 	created_by INT FOREIGN KEY REFERENCES [user](id) NOT NULL,
 	created_at DATETIME DEFAULT SYSDATETIME(),
 	updated_at DATETIME DEFAULT SYSDATETIME()
@@ -90,16 +89,67 @@ GO
 
 CREATE TABLE bill(
 	order_number INT NOT NULL FOREIGN KEY REFERENCES [order](order_number),
-	customer_pay MONEY NOT NULL,
-	total_price MONEY NOT NULL,
+	customer_pay BIGINT NOT NULL,
+	total_price BIGINT NOT NULL,
 	description VARCHAR(500),
 	created_at DATETIME DEFAULT SYSDATETIME(),
 	PRIMARY KEY (order_number)
 )
 GO
 
---------------------------- TRIGGERS ----------------------------------
+-------------------------- FAKE DATA ---------------------------------
+-- Fake data USER
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary ) VALUES ('Admin', '0123456789', '123456', '2/2/2002', 1, 'Ho Chi Minh', 12000000)
+GO
+-- Fake data MENU
+INSERT INTO [menu] (menu_name, created_by) VALUES (N'Cà phê pha phin', 1);
+INSERT INTO [menu] (menu_name, created_by) VALUES (N'Cà phê Espresso', 1);
+INSERT INTO [menu] (menu_name, created_by) VALUES (N'Bánh mì', 1);
+INSERT INTO [menu] (menu_name, created_by) VALUES (N'Trà', 1);
+INSERT INTO [menu] (menu_name, created_by) VALUES (N'Bánh', 1);
+INSERT INTO [menu] (menu_name, created_by) VALUES (N'Freeze', 1);
+GO
+-- Fake data PRODUCT
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'PHIN sữa đá', 20000, 29000, 100, 'Ly', 1, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'PHIN đen đá', 18000, 27000, 65, 'Ly', 1, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bạc xỉu đá', 15000, 28000, 110, 'Ly', 1, 1, 1);
 
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values ('Espreso / Americano', 2000, 35000, 100, 'Ly', 2, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values ('Cappuccino / Latte', 20000, 55000, 120, 'Ly', 2, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values ('Mocha/ Caramel', 23000, 59000, 34, 'Ly', 2, 1, 1);
+
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bánh mì gà xé', 10000, 19000, 33, N'Cái', 3, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bánh mì cà ri gà', 10000, 19000, 33, N'Cái', 3, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bánh mì nấm', 10000, 19000, 33, N'Cái', 3, 1, 1);
+
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà sen vàng', 14000, 39000, 33, N'Cốc', 4, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà thạch đào', 14000, 39000, 33, N'Cốc', 4, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà thanh đào', 14000, 39000, 33, N'Cốc', 4, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà thạch vải', 14000, 39000, 33, N'Cốc', 4, 1, 1);
+
+-- FAKE data TABLE
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 1', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 2', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 3', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 4', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 5', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 6', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 7', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 8', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 9', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 10', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 11', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 12', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 13', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 14', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 15', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 16', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 17', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 18', '', 0)
+INSERT INTO [table] (name, description, is_busy) values ('Bàn 19', '', 0)
+GO
+
+--------------------------- TRIGGERS ----------------------------------
 CREATE OR ALTER TRIGGER update_modified_user
 ON [user]
 FOR UPDATE

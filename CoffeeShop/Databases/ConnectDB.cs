@@ -100,5 +100,26 @@ namespace CoffeeShop.Databases
 
             return adapter;
         }
+
+        public SqlDataReader executeReaderQuery(string query)
+        {
+            SqlDataReader reader = null;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                SqlConnection connection = new SqlConnection(sqlConnectionString);
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                reader = command.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+
+            return reader;
+        }
     }
 }

@@ -26,12 +26,12 @@ namespace CoffeeShop.Databases
 
         public int countMenu()
         {
-            return this.executeCountQuery("SELECT COUNT(*) FROM {table}");
+            return this.executeCountQuery($"SELECT COUNT(*) FROM {table}");
         }
 
         public bool deleteMenu(int id)
         {
-            return this.executeQuery($"DELETE FROM {table} WHERE id = @id");
+            return this.executeQuery($"DELETE FROM {table} WHERE id = {id}");
         }
 
         public bool updateMenu(int id, MenuEntity menu)
