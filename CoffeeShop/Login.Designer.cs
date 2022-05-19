@@ -47,6 +47,7 @@ namespace CoffeeShop
             // 
             this.loginButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginButton.Animated = true;
             this.loginButton.AnimationHoverSpeed = 0.07F;
             this.loginButton.AnimationSpeed = 0.03F;
             this.loginButton.BackColor = System.Drawing.Color.Transparent;
@@ -66,7 +67,7 @@ namespace CoffeeShop
             this.loginButton.OnHoverImage = null;
             this.loginButton.OnPressedColor = System.Drawing.Color.Black;
             this.loginButton.Radius = 4;
-            this.loginButton.Size = new System.Drawing.Size(516, 59);
+            this.loginButton.Size = new System.Drawing.Size(516, 50);
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Đăng nhập";
             this.loginButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -91,7 +92,7 @@ namespace CoffeeShop
             this.phoneTextBox.PasswordChar = '\0';
             this.phoneTextBox.Radius = 4;
             this.phoneTextBox.SelectedText = "";
-            this.phoneTextBox.Size = new System.Drawing.Size(516, 60);
+            this.phoneTextBox.Size = new System.Drawing.Size(516, 50);
             this.phoneTextBox.TabIndex = 1;
             // 
             // gunaLabel1
@@ -143,7 +144,7 @@ namespace CoffeeShop
             this.passwordTextBox.PasswordChar = '•';
             this.passwordTextBox.Radius = 4;
             this.passwordTextBox.SelectedText = "";
-            this.passwordTextBox.Size = new System.Drawing.Size(516, 60);
+            this.passwordTextBox.Size = new System.Drawing.Size(516, 50);
             this.passwordTextBox.TabIndex = 2;
             // 
             // gunaLabel4
@@ -151,7 +152,7 @@ namespace CoffeeShop
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.gunaLabel4.Location = new System.Drawing.Point(478, 148);
+            this.gunaLabel4.Location = new System.Drawing.Point(478, 154);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(333, 25);
             this.gunaLabel4.TabIndex = 8;
@@ -199,7 +200,7 @@ namespace CoffeeShop
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::CoffeeShop.Properties.Resources.coffee_icon;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(12, 92);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(16, 109);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(445, 483);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

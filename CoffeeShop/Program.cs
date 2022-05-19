@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeShop.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,9 +12,10 @@ namespace CoffeeShop
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static class Global {
-            static bool isAuth = false;
-            // static User user;
+        public static class Global
+        {
+            public static bool isAuth = false;
+            public static UserEntity user = new UserEntity();
         }
 
         [STAThread]
@@ -21,13 +23,17 @@ namespace CoffeeShop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (Login login = new Login())
-            {
-                if (login.ShowDialog() == DialogResult.OK)
-                {
-                    Application.Run(new Dashboard());
-                }
-            }
+            //Application.Run(new TablesForm());
+            Application.Run(new Dashboard());
+            return;
+
+            //using (Login login = new Login())
+            //{
+            //    if (login.ShowDialog() == DialogResult.OK)
+            //    {
+            //        Application.Run(new Dashboard());
+            //    }
+            //}
         }
     }
 }

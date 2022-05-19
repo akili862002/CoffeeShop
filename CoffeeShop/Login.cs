@@ -41,13 +41,10 @@ namespace CoffeeShop
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            new Thread(() =>
-            {
-                Database.TableDB db = new Database.TableDB();
-                // db.createTable(null);
-
-                this.DialogResult = DialogResult.OK;
-            }).Start();
+            // Database.TableDB db = new Database.TableDB();
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
         }
 
         private void Login_Load(object sender, EventArgs e)

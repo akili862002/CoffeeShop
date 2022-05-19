@@ -11,7 +11,7 @@ namespace CoffeeShop
     class Database
     {
         public static string dbServerName = "DESKTOP-7TB6IV3";
-        public static string sqlConnectionString = $"Server={dbServerName};Database=coffee-shop;Trusted_Connection=True;";
+        public static string sqlConnectionString = $"Server={dbServerName};Database=CoffeeShop;Trusted_Connection=True;";
 
         public class TableDB
         {
@@ -37,5 +37,7 @@ namespace CoffeeShop
                 return false;
             }
         }
+
+        // public class 
     }
 }

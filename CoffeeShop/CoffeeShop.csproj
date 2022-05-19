@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrderItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrderItem.Designer.cs">
+      <DependentUpon>AddOrderItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,12 +84,23 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="Databases\ConnectDB.cs" />
+    <Compile Include="Databases\MenuDB.cs" />
+    <Compile Include="Entities\MenuEntity.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenusForm.Designer.cs">
+      <DependentUpon>MenusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,11 +110,35 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffsForm.Designer.cs">
+      <DependentUpon>StaffsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TablesForm.Designer.cs">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddOrderItem.resx">
+      <DependentUpon>AddOrderItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenusForm.resx">
+      <DependentUpon>MenusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -112,6 +153,15 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffsForm.resx">
+      <DependentUpon>StaffsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablesForm.resx">
+      <DependentUpon>TablesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,5 +197,21 @@
   <ItemGroup>
     <None Include="images\statistic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cleaning-staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\search.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
