@@ -10,7 +10,11 @@ namespace CoffeeShop.Databases
 {
     class ConnectDB
     {
-        public static string dbServerName = "(localdb)\\MSSQLLocalDB";
+        // Dung Databse
+        public static string dbServerName = "DESKTOP-7TB6IV3";
+        // Quang Databse
+        // public static string dbServerName = "(localdb)\\MSSQLLocalDB";
+
         public static string sqlConnectionString = $"Server={dbServerName};Database=CoffeeShop;Trusted_Connection=True;";
 
         public bool executeQuery(string query)
