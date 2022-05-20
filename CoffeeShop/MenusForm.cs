@@ -26,8 +26,8 @@ namespace CoffeeShop
         }
         private void MenusForm_Load(object sender, EventArgs e)
         {
-            this.LoadMenuTableData();
             this.LoadProductTableData();
+            this.LoadMenuTableData();
             this.LoadTableTableData();
         }
 
@@ -75,7 +75,15 @@ namespace CoffeeShop
             {
                 DataTable dt = new DataTable();
                 db.getAllAdapter(
-                        "product.id as ID, name as [Tên thực đơn], menu.menu_name as [Thuộc danh mục], menu.id as [Danh mục id], price as [Giá bán], profit as [Lợi nhuận], unit as [Đơn vị], stock as [Hàng tồn], is_in_stock as [Trạng thái]",
+                        @"product.id as ID, 
+                        name as [Tên thực đơn],
+                        menu.menu_name as [Thuộc danh mục],
+                        menu.id as [Danh mục id],
+                        price as [Giá bán],
+                        profit as [Lợi nhuận],
+                        unit as [Đơn vị],
+                        stock as [Hàng tồn],
+                        CASE WHEN product.stock > 0 THEN N'Còn hàng' ELSE N'Hết hàng' END as [Trạng thái]",
                         this.searchProductTextBox.Text
                     )
                 .Fill(dt);

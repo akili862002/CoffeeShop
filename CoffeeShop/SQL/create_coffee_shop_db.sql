@@ -71,7 +71,6 @@ CREATE TABLE product(
 	price BIGINT NOT NULL,CHECK (price >= 0),
 	stock INT NOT NULL,CHECK (stock >= 0),
 	unit NVARCHAR(30) NOT NULL,
-	is_in_stock BIT DEFAULT 1 NOT NULL,
 	menu_id INT FOREIGN KEY REFERENCES menu(id) NOT NULL,
 	created_by INT FOREIGN KEY REFERENCES [user](id) NOT NULL,
 	created_at DATETIME DEFAULT SYSDATETIME(),
@@ -110,22 +109,22 @@ INSERT INTO [menu] (menu_name, created_by) VALUES (N'Bánh', 1);
 INSERT INTO [menu] (menu_name, created_by) VALUES (N'Freeze', 1);
 GO
 -- Fake data PRODUCT
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'PHIN sữa đá', 20000, 29000, 100, 'Ly', 1, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'PHIN đen đá', 18000, 27000, 65, 'Ly', 1, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bạc xỉu đá', 15000, 28000, 110, 'Ly', 1, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'PHIN sữa đá', 20000, 29000, 100, 'Ly', 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'PHIN đen đá', 18000, 27000, 65, 'Ly', 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Bạc xỉu đá', 15000, 28000, 110, 'Ly', 1, 1);
 
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values ('Espreso / Americano', 2000, 35000, 100, 'Ly', 2, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values ('Cappuccino / Latte', 20000, 55000, 120, 'Ly', 2, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values ('Mocha/ Caramel', 23000, 59000, 34, 'Ly', 2, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values ('Espreso / Americano', 2000, 35000, 100, 'Ly', 2, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values ('Cappuccino / Latte', 20000, 55000, 120, 'Ly', 2, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values ('Mocha/ Caramel', 23000, 59000, 0, 'Ly', 2, 1);
 
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bánh mì gà xé', 10000, 19000, 33, N'Cái', 3, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bánh mì cà ri gà', 10000, 19000, 33, N'Cái', 3, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Bánh mì nấm', 10000, 19000, 33, N'Cái', 3, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Bánh mì gà xé', 10000, 19000, 33, N'Cái', 3, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Bánh mì cà ri gà', 10000, 19000, 33, N'Cái', 3, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Bánh mì nấm', 10000, 19000, 0, N'Cái', 3, 1);
 
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà sen vàng', 14000, 39000, 33, N'Cốc', 4, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà thạch đào', 14000, 39000, 33, N'Cốc', 4, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà thanh đào', 14000, 39000, 33, N'Cốc', 4, 1, 1);
-INSERT INTO product (name, profit, price, stock, unit, menu_id, is_in_stock, created_by) values (N'Trà thạch vải', 14000, 39000, 33, N'Cốc', 4, 1, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Trà sen vàng', 14000, 39000, 32, N'Cốc', 4, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Trà thạch đào', 14000, 39000, 0, N'Cốc', 4, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Trà thanh đào', 14000, 39000, 0, N'Cốc', 4, 1);
+INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Trà thạch vải', 14000, 39000, 68, N'Cốc', 4, 1);
 
 -- FAKE data TABLE
 INSERT INTO [table] (name, description, is_busy) values ('Bàn 1', '', 0)

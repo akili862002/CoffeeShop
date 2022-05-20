@@ -94,6 +94,7 @@ namespace CoffeeShop
             this.phoneTextBox.SelectedText = "";
             this.phoneTextBox.Size = new System.Drawing.Size(516, 50);
             this.phoneTextBox.TabIndex = 1;
+            this.phoneTextBox.Text = "0123456789";
             // 
             // gunaLabel1
             // 
@@ -146,6 +147,8 @@ namespace CoffeeShop
             this.passwordTextBox.SelectedText = "";
             this.passwordTextBox.Size = new System.Drawing.Size(516, 50);
             this.passwordTextBox.TabIndex = 2;
+            this.passwordTextBox.Tag = "";
+            this.passwordTextBox.Text = "123456";
             // 
             // gunaLabel4
             // 
