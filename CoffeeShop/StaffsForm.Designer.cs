@@ -39,7 +39,7 @@ namespace CoffeeShop
             this.searchTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.deleteButton = new Guna.UI.WinForms.GunaButton();
-            this.submitButton = new Guna.UI.WinForms.GunaButton();
+            this.editButton = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.salaryTextBox = new Guna.UI.WinForms.GunaTextBox();
@@ -246,32 +246,32 @@ namespace CoffeeShop
             this.deleteButton.Text = "Xóa";
             this.deleteButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // submitButton
+            // editButton
             // 
-            this.submitButton.Animated = true;
-            this.submitButton.AnimationHoverSpeed = 0.07F;
-            this.submitButton.AnimationSpeed = 0.03F;
-            this.submitButton.BackColor = System.Drawing.Color.Transparent;
-            this.submitButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.submitButton.BorderColor = System.Drawing.Color.Black;
-            this.submitButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.submitButton.FocusedColor = System.Drawing.Color.Empty;
-            this.submitButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.ForeColor = System.Drawing.Color.White;
-            this.submitButton.Image = null;
-            this.submitButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitButton.Location = new System.Drawing.Point(353, 964);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.submitButton.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.submitButton.OnHoverForeColor = System.Drawing.Color.White;
-            this.submitButton.OnHoverImage = null;
-            this.submitButton.OnPressedColor = System.Drawing.Color.Black;
-            this.submitButton.Radius = 4;
-            this.submitButton.Size = new System.Drawing.Size(134, 52);
-            this.submitButton.TabIndex = 97;
-            this.submitButton.Text = "Thêm";
-            this.submitButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editButton.Animated = true;
+            this.editButton.AnimationHoverSpeed = 0.07F;
+            this.editButton.AnimationSpeed = 0.03F;
+            this.editButton.BackColor = System.Drawing.Color.Transparent;
+            this.editButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.editButton.BorderColor = System.Drawing.Color.Black;
+            this.editButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.editButton.FocusedColor = System.Drawing.Color.Empty;
+            this.editButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Image = null;
+            this.editButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.editButton.Location = new System.Drawing.Point(353, 964);
+            this.editButton.Name = "editButton";
+            this.editButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.editButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.editButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.editButton.OnHoverImage = null;
+            this.editButton.OnPressedColor = System.Drawing.Color.Black;
+            this.editButton.Radius = 4;
+            this.editButton.Size = new System.Drawing.Size(134, 52);
+            this.editButton.TabIndex = 97;
+            this.editButton.Text = "Sửa";
+            this.editButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gunaLabel3
             // 
@@ -307,7 +307,7 @@ namespace CoffeeShop
             this.salaryTextBox.Location = new System.Drawing.Point(28, 890);
             this.salaryTextBox.Name = "salaryTextBox";
             this.salaryTextBox.Padding = new System.Windows.Forms.Padding(5);
-            this.salaryTextBox.PasswordChar = '•';
+            this.salaryTextBox.PasswordChar = '\0';
             this.salaryTextBox.Radius = 4;
             this.salaryTextBox.SelectedText = "";
             this.salaryTextBox.Size = new System.Drawing.Size(459, 50);
@@ -389,7 +389,7 @@ namespace CoffeeShop
             this.addressTextBox.Location = new System.Drawing.Point(27, 800);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Padding = new System.Windows.Forms.Padding(5);
-            this.addressTextBox.PasswordChar = '•';
+            this.addressTextBox.PasswordChar = '\0';
             this.addressTextBox.Radius = 4;
             this.addressTextBox.SelectedText = "";
             this.addressTextBox.Size = new System.Drawing.Size(459, 50);
@@ -441,7 +441,7 @@ namespace CoffeeShop
             this.fullnameTextBox.Location = new System.Drawing.Point(23, 524);
             this.fullnameTextBox.Name = "fullnameTextBox";
             this.fullnameTextBox.Padding = new System.Windows.Forms.Padding(5);
-            this.fullnameTextBox.PasswordChar = '•';
+            this.fullnameTextBox.PasswordChar = '\0';
             this.fullnameTextBox.Radius = 4;
             this.fullnameTextBox.SelectedText = "";
             this.fullnameTextBox.Size = new System.Drawing.Size(459, 50);
@@ -556,7 +556,7 @@ namespace CoffeeShop
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.gunaLabel3);
             this.Name = "StaffsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -578,7 +578,7 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaTextBox searchTextBox;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaButton deleteButton;
-        private Guna.UI.WinForms.GunaButton submitButton;
+        private Guna.UI.WinForms.GunaButton editButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
         private Guna.UI.WinForms.GunaTextBox salaryTextBox;
