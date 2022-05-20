@@ -12,7 +12,7 @@ namespace CoffeeShop.Databases
     class ConnectDB
     {
         // Dung Databse
-        public static string dbServerName = "DESKTOP-7TB6IV3";
+        public static string dbServerName = Program.Global.serverName;
         // Quang Databse
         // public static string dbServerName = "(localdb)\\MSSQLLocalDB";
 

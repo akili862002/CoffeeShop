@@ -17,55 +17,69 @@ namespace CoffeeShop
     {
         int order_number;
         string table_name;
+        // Edit
+        bool isEdit = false;
+        OrderItemEntity orderItem;
 
-        public AddOrderItem(int order_number, string table_name)
+        public AddOrderItem(int order_number, string table_name, bool isEdit = false, int orderItemId = -1)
         {
             InitializeComponent();
             this.order_number = order_number;
             this.table_name = table_name;
+            this.isEdit = isEdit;
 
             this.LoadMenuTableData();
 
-            this.titleLabel.Text = $"Thêm món {table_name}";
+            if (isEdit)
+            {
+                this.titleLabel.Text = $"Chỉnh sửa món {table_name}";
+                OrderItemDB db = new OrderItemDB();
+                this.orderItem = db.getById(orderItemId);
+                // MessageBox.Show(orderItem.id.);
+            }
+            else
+            {
+                this.titleLabel.Text = $"Thêm món {table_name}";
+            }
         }
 
         public void LoadMenuTableData()
         {
             MenuDB db = new MenuDB();
-            new Thread(() =>
+            DataTable dt = new DataTable();
+            db.getAllMenuAdapter(
+                    "menu.id as [ID], menu_name"
+                )
+            .Fill(dt);
+
+            this.menuComboBox.DataSource = dt;
+            this.menuComboBox.DisplayMember = "menu_name";
+
+            if (this.isEdit)
             {
-                DataTable dt = new DataTable();
-                db.getAllMenuAdapter(
-                        "menu.id as [ID], menu_name"
-                    )
-                .Fill(dt);
+                DataRow[] rows = dt.Select($"id = {this.orderItem.menu_id}");
+                this.productComboBox.SelectedIndex = dt.Rows.IndexOf(rows[0]);
+            }
 
-                this.Invoke(new MethodInvoker(delegate
-                {
-                    this.menuComboBox.DataSource = dt;
-                    this.menuComboBox.DisplayMember = "menu_name";
-                }));
-
-            }).Start();
+            this.LoadProductTableData();
         }
 
         public void LoadProductTableData()
         {
             DataRowView row = (DataRowView)this.menuComboBox.SelectedItem;
             ProductDB db = new ProductDB();
-            new Thread(() =>
+            DataTable dt = new DataTable();
+            db.getAllAdapter("product.id as id, name, price", "", $" AND menu_id = {row["ID"].ToString()}")
+            .Fill(dt);
+
+            this.productComboBox.DataSource = dt;
+            this.productComboBox.DisplayMember = "name";
+
+            if (this.isEdit)
             {
-                DataTable dt = new DataTable();
-                db.getAllAdapter("product.id as id, name, price", "", $" AND menu_id = {row["ID"]}")
-                .Fill(dt);
-
-                this.Invoke(new MethodInvoker(delegate
-                {
-                    this.productComboBox.DataSource = dt;
-                    this.productComboBox.DisplayMember = "name";
-                }));
-
-            }).Start();
+                DataRow[] rows = dt.Select($"id = {this.orderItem.product_id}");
+                this.productComboBox.SelectedIndex = dt.Rows.IndexOf(rows[0]);
+            }
         }
 
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,7 +98,7 @@ namespace CoffeeShop
                 .setQuantity((int)this.quantityNumberic.Value);
             OrderItemDB db = new OrderItemDB();
             if (db.create(orderItem))
-                this.Close();
+                DialogResult = DialogResult.OK;
         }
 
         private void AddOrderItem_Load(object sender, EventArgs e)
@@ -100,7 +114,6 @@ namespace CoffeeShop
         {
             this.calcTotalPrice();
         }
-
 
         public void calcTotalPrice()
         {

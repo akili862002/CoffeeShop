@@ -1,6 +1,7 @@
 ﻿using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -60,5 +61,19 @@ namespace CoffeeShop.Databases
             return this.executeCommand(command);
         }
 
+        public OrderItemEntity getById(int orderItemId)
+        {
+            DataTable dt = new DataTable();
+            this.executeAdapterQuery($"SELECT id, order_number, product_id, quantity FROM order_item WHERE id = {orderItemId}").Fill(dt);
+            DataRow row = dt.Rows[0];
+            if (row == null) return null;
+
+            OrderItemEntity orderItem = new OrderItemEntity();
+            orderItem
+                .setOrderNumber(row.Field<int>(1))
+                .setProductId(row.Field<int>(2))
+                .setQuantity(row.Field<int>(3));
+            return orderItem;
+        }
     }
 }

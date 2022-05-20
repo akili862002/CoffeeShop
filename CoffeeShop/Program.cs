@@ -1,6 +1,7 @@
 ﻿using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace CoffeeShop
         {
             public static bool isAuth = false;
             public static UserEntity user = new UserEntity();
+            public static string serverName = "";
         }
 
         [STAThread]
@@ -24,7 +26,9 @@ namespace CoffeeShop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new TablesForm());
-            
+
+            string text = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/INFO.txt");
+            Global.serverName = text;
 
             using (Login login = new Login())
             {

@@ -91,12 +91,13 @@ namespace CoffeeShop
 
             using (AddOrderItem addOrderItem = new AddOrderItem(order_number, this.tableSelected.name))
             {
-                addOrderItem.ShowDialog();
-
-                this.loadTableDataOfCurrentTable();
-                this.initTableListView();
-                this.tableListView_SelectedIndexChanged(null, null);
-                this.updatePrice();
+                if (addOrderItem.ShowDialog() == DialogResult.OK)
+                {
+                    this.loadTableDataOfCurrentTable();
+                    this.initTableListView();
+                    this.tableListView_SelectedIndexChanged(null, null);
+                    this.updatePrice();
+                };
             }
         }
 
@@ -192,6 +193,27 @@ namespace CoffeeShop
             }
 
             this.totalPriceLabel.Text = Currency.formatPrice(db.getTotalPriceOfOrder(this.tableSelected.order_number));
+        }
+
+        private void editOrderItemButton_Click(object sender, EventArgs e)
+        {
+            int order_number = this.tableSelected.order_number;
+
+            if (this.orderItemsTable.CurrentCell == null) return;
+            int currentIndex = this.orderItemsTable.CurrentCell.RowIndex;
+            if (currentIndex < 0) return;
+
+            DataGridViewRow row = this.orderItemsTable.Rows[currentIndex];
+
+            using (AddOrderItem addOrderItem = new AddOrderItem(order_number, this.tableSelected.name, true, Int32.Parse(row.Cells["Id đơn"].Value.ToString())))
+            {
+                addOrderItem.ShowDialog();
+
+                this.loadTableDataOfCurrentTable();
+                this.initTableListView();
+                this.tableListView_SelectedIndexChanged(null, null);
+                this.updatePrice();
+            }
         }
     }
 }
