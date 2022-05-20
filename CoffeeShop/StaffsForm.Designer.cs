@@ -33,7 +33,6 @@ namespace CoffeeShop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchButton = new Guna.UI.WinForms.GunaButton();
-            this.clearProductButton = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.staffsTable = new Guna.UI.WinForms.GunaDataGridView();
             this.searchTextBox = new Guna.UI.WinForms.GunaTextBox();
@@ -77,7 +76,7 @@ namespace CoffeeShop
             this.searchButton.Image = null;
             this.searchButton.ImageSize = new System.Drawing.Size(20, 20);
             this.searchButton.Location = new System.Drawing.Point(1131, 93);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.searchButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -89,6 +88,7 @@ namespace CoffeeShop
             this.searchButton.TabIndex = 111;
             this.searchButton.Text = "Search";
             this.searchButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // clearProductButton
             // 
@@ -104,8 +104,7 @@ namespace CoffeeShop
             this.clearProductButton.ForeColor = System.Drawing.Color.White;
             this.clearProductButton.Image = null;
             this.clearProductButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.clearProductButton.Location = new System.Drawing.Point(19, 627);
-            this.clearProductButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clearProductButton.Location = new System.Drawing.Point(28, 964);
             this.clearProductButton.Name = "clearProductButton";
             this.clearProductButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.clearProductButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -113,7 +112,7 @@ namespace CoffeeShop
             this.clearProductButton.OnHoverImage = null;
             this.clearProductButton.OnPressedColor = System.Drawing.Color.Black;
             this.clearProductButton.Radius = 4;
-            this.clearProductButton.Size = new System.Drawing.Size(92, 34);
+            this.clearProductButton.Size = new System.Drawing.Size(138, 52);
             this.clearProductButton.TabIndex = 110;
             this.clearProductButton.Text = "Clear";
             this.clearProductButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -149,7 +148,7 @@ namespace CoffeeShop
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.staffsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.staffsTable.ColumnHeadersHeight = 4;
+            this.staffsTable.ColumnHeadersHeight = 50;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,8 +159,7 @@ namespace CoffeeShop
             this.staffsTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.staffsTable.EnableHeadersVisualStyles = false;
             this.staffsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.staffsTable.Location = new System.Drawing.Point(339, 134);
-            this.staffsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.staffsTable.Location = new System.Drawing.Point(509, 206);
             this.staffsTable.Name = "staffsTable";
             this.staffsTable.RowHeadersVisible = false;
             this.staffsTable.RowHeadersWidth = 62;
@@ -182,7 +180,7 @@ namespace CoffeeShop
             this.staffsTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffsTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.staffsTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.staffsTable.ThemeStyle.HeaderStyle.Height = 4;
+            this.staffsTable.ThemeStyle.HeaderStyle.Height = 50;
             this.staffsTable.ThemeStyle.ReadOnly = false;
             this.staffsTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.staffsTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -191,6 +189,7 @@ namespace CoffeeShop
             this.staffsTable.ThemeStyle.RowsStyle.Height = 28;
             this.staffsTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.staffsTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.staffsTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.staffsTable_CellDoubleClick);
             // 
             // searchTextBox
             // 
@@ -204,10 +203,9 @@ namespace CoffeeShop
             this.searchTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchTextBox.Location = new System.Drawing.Point(943, 93);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchTextBox.Location = new System.Drawing.Point(1415, 143);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.searchTextBox.Padding = new System.Windows.Forms.Padding(5);
             this.searchTextBox.PasswordChar = '\0';
             this.searchTextBox.Radius = 4;
             this.searchTextBox.SelectedText = "";
@@ -239,8 +237,7 @@ namespace CoffeeShop
             this.deleteButton.ForeColor = System.Drawing.Color.White;
             this.deleteButton.Image = null;
             this.deleteButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteButton.Location = new System.Drawing.Point(133, 627);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteButton.Location = new System.Drawing.Point(200, 964);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.deleteButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -252,6 +249,7 @@ namespace CoffeeShop
             this.deleteButton.TabIndex = 98;
             this.deleteButton.Text = "Xóa";
             this.deleteButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // editButton
             // 
@@ -267,8 +265,7 @@ namespace CoffeeShop
             this.editButton.ForeColor = System.Drawing.Color.White;
             this.editButton.Image = null;
             this.editButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.editButton.Location = new System.Drawing.Point(235, 627);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editButton.Location = new System.Drawing.Point(353, 964);
             this.editButton.Name = "editButton";
             this.editButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.editButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -280,6 +277,7 @@ namespace CoffeeShop
             this.editButton.TabIndex = 97;
             this.editButton.Text = "Sửa";
             this.editButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // gunaLabel3
             // 
@@ -314,10 +312,9 @@ namespace CoffeeShop
             this.salaryTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.salaryTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.salaryTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.salaryTextBox.Location = new System.Drawing.Point(19, 578);
-            this.salaryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.salaryTextBox.Location = new System.Drawing.Point(28, 890);
             this.salaryTextBox.Name = "salaryTextBox";
-            this.salaryTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.salaryTextBox.Padding = new System.Windows.Forms.Padding(5);
             this.salaryTextBox.PasswordChar = '\0';
             this.salaryTextBox.Radius = 4;
             this.salaryTextBox.SelectedText = "";
@@ -331,8 +328,7 @@ namespace CoffeeShop
             this.famaleRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.famaleRadio.FillColor = System.Drawing.Color.White;
             this.famaleRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.famaleRadio.Location = new System.Drawing.Point(87, 465);
-            this.famaleRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.famaleRadio.Location = new System.Drawing.Point(130, 716);
             this.famaleRadio.Name = "famaleRadio";
             this.famaleRadio.Size = new System.Drawing.Size(49, 21);
             this.famaleRadio.TabIndex = 117;
@@ -346,8 +342,7 @@ namespace CoffeeShop
             this.maleRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.maleRadio.FillColor = System.Drawing.Color.White;
             this.maleRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleRadio.Location = new System.Drawing.Point(21, 465);
-            this.maleRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maleRadio.Location = new System.Drawing.Point(32, 716);
             this.maleRadio.Name = "maleRadio";
             this.maleRadio.Size = new System.Drawing.Size(60, 21);
             this.maleRadio.TabIndex = 116;
@@ -364,8 +359,7 @@ namespace CoffeeShop
             this.birthdatePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.birthdatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.birthdatePicker.ForeColor = System.Drawing.Color.Black;
-            this.birthdatePicker.Location = new System.Drawing.Point(17, 402);
-            this.birthdatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.birthdatePicker.Location = new System.Drawing.Point(26, 619);
             this.birthdatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.birthdatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.birthdatePicker.Name = "birthdatePicker";
@@ -376,7 +370,7 @@ namespace CoffeeShop
             this.birthdatePicker.Radius = 4;
             this.birthdatePicker.Size = new System.Drawing.Size(306, 32);
             this.birthdatePicker.TabIndex = 115;
-            this.birthdatePicker.Text = "Tuesday, May 17, 2022";
+            this.birthdatePicker.Text = "17 Tháng Năm 2022";
             this.birthdatePicker.Value = new System.DateTime(2022, 5, 17, 14, 30, 22, 650);
             // 
             // gunaLabel8
@@ -401,10 +395,9 @@ namespace CoffeeShop
             this.addressTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.addressTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.addressTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.addressTextBox.Location = new System.Drawing.Point(18, 520);
-            this.addressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressTextBox.Location = new System.Drawing.Point(27, 800);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.addressTextBox.Padding = new System.Windows.Forms.Padding(5);
             this.addressTextBox.PasswordChar = '\0';
             this.addressTextBox.Radius = 4;
             this.addressTextBox.SelectedText = "";
@@ -457,10 +450,9 @@ namespace CoffeeShop
             this.fullnameTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.fullnameTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.fullnameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.fullnameTextBox.Location = new System.Drawing.Point(15, 341);
-            this.fullnameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fullnameTextBox.Location = new System.Drawing.Point(23, 524);
             this.fullnameTextBox.Name = "fullnameTextBox";
-            this.fullnameTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.fullnameTextBox.Padding = new System.Windows.Forms.Padding(5);
             this.fullnameTextBox.PasswordChar = '\0';
             this.fullnameTextBox.Radius = 4;
             this.fullnameTextBox.SelectedText = "";
@@ -489,10 +481,9 @@ namespace CoffeeShop
             this.phoneTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.phoneTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.phoneTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.phoneTextBox.Location = new System.Drawing.Point(16, 285);
-            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneTextBox.Location = new System.Drawing.Point(24, 439);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.phoneTextBox.Padding = new System.Windows.Forms.Padding(5);
             this.phoneTextBox.PasswordChar = '\0';
             this.phoneTextBox.Radius = 4;
             this.phoneTextBox.SelectedText = "";
@@ -503,8 +494,7 @@ namespace CoffeeShop
             // 
             this.avatarPicture.BaseColor = System.Drawing.Color.White;
             this.avatarPicture.Image = global::CoffeeShop.Properties.Resources.cleaning_staff;
-            this.avatarPicture.Location = new System.Drawing.Point(16, 153);
-            this.avatarPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.avatarPicture.Location = new System.Drawing.Point(24, 236);
             this.avatarPicture.Name = "avatarPicture";
             this.avatarPicture.Size = new System.Drawing.Size(100, 97);
             this.avatarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -526,8 +516,7 @@ namespace CoffeeShop
             this.uploadButton.ForeColor = System.Drawing.Color.White;
             this.uploadButton.Image = null;
             this.uploadButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.uploadButton.Location = new System.Drawing.Point(147, 185);
-            this.uploadButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uploadButton.Location = new System.Drawing.Point(221, 284);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.uploadButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -575,7 +564,6 @@ namespace CoffeeShop
             this.Controls.Add(this.gunaLabel10);
             this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.clearProductButton);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.staffsTable);
             this.Controls.Add(this.searchTextBox);
@@ -583,7 +571,6 @@ namespace CoffeeShop
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.gunaLabel3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StaffsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "StaffsForm";
@@ -598,7 +585,6 @@ namespace CoffeeShop
         #endregion
 
         private Guna.UI.WinForms.GunaButton searchButton;
-        private Guna.UI.WinForms.GunaButton clearProductButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaDataGridView staffsTable;
         private Guna.UI.WinForms.GunaTextBox searchTextBox;

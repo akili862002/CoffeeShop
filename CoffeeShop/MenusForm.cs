@@ -404,5 +404,10 @@ namespace CoffeeShop
             this.LoadTableTableData();
         }
         #endregion
+
+        private void searchMenuButton_Click_1(object sender, EventArgs e)
+        {
+            this.LoadMenuTableData();
+        }
     }
 }

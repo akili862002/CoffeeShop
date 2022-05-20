@@ -14,7 +14,7 @@ namespace CoffeeShop.Databases
         // Dung Databse
         public static string dbServerName = Program.Global.serverName;
         // Quang Databse
-        // public static string dbServerName = "(localdb)\\MSSQLLocalDB";
+         public static string dbServerName = "(localdb)\\MSSQLLocalDB";
 
         public static string sqlConnectionString = $"Server={dbServerName};Database=CoffeeShop;Trusted_Connection=True;";
 
