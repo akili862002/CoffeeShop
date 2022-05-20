@@ -29,7 +29,7 @@ namespace CoffeeShop
 
             if (DB.checkPhone(phoneTextBox.Text))
             {
-                MessageBox.Show("ERROR", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phone number already exits", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -51,7 +51,9 @@ namespace CoffeeShop
                     if (DB.create(user))
                     {
                         Cursor.Current = Cursors.Default;
-                        MessageBox.Show("Add user successfully!", "Success");
+                        MessageBox.Show("Add user successfully!", "Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        this.Close();
+
                     }
                 }).Start();
             }

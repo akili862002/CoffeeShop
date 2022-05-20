@@ -29,15 +29,15 @@ namespace CoffeeShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.productTableLabel = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -62,7 +62,6 @@ namespace CoffeeShop
             this.profitProductTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.productTable = new Guna.UI.WinForms.GunaDataGridView();
             this.searchProductButton = new Guna.UI.WinForms.GunaButton();
-            this.clearProductButton = new Guna.UI.WinForms.GunaButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchMenuButton = new Guna.UI.WinForms.GunaButton();
             this.clearMenuButton = new Guna.UI.WinForms.GunaButton();
@@ -92,6 +91,7 @@ namespace CoffeeShop
             this.submitTableButton = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.actionTableLabel = new Guna.UI.WinForms.GunaLabel();
+            this.clearProductButton = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -106,9 +106,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(3, 40);
+            this.gunaLabel1.Location = new System.Drawing.Point(2, 26);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(452, 70);
+            this.gunaLabel1.Size = new System.Drawing.Size(307, 47);
             this.gunaLabel1.TabIndex = 17;
             this.gunaLabel1.Text = "Quản lý thực đơn";
             // 
@@ -116,9 +117,10 @@ namespace CoffeeShop
             // 
             this.productTableLabel.AutoSize = true;
             this.productTableLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productTableLabel.Location = new System.Drawing.Point(494, 176);
+            this.productTableLabel.Location = new System.Drawing.Point(329, 114);
+            this.productTableLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.productTableLabel.Name = "productTableLabel";
-            this.productTableLabel.Size = new System.Drawing.Size(242, 32);
+            this.productTableLabel.Size = new System.Drawing.Size(162, 21);
             this.productTableLabel.TabIndex = 46;
             this.productTableLabel.Text = "Danh sách thực đơn";
             // 
@@ -126,9 +128,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(14, 225);
+            this.gunaLabel2.Location = new System.Drawing.Point(9, 146);
+            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(132, 28);
+            this.gunaLabel2.Size = new System.Drawing.Size(94, 19);
             this.gunaLabel2.TabIndex = 48;
             this.gunaLabel2.Text = "Tên thực đơn";
             // 
@@ -143,23 +146,24 @@ namespace CoffeeShop
             this.nameProductTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.nameProductTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.nameProductTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nameProductTextBox.Location = new System.Drawing.Point(17, 261);
-            this.nameProductTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nameProductTextBox.Location = new System.Drawing.Point(11, 170);
+            this.nameProductTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.nameProductTextBox.Name = "nameProductTextBox";
-            this.nameProductTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nameProductTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.nameProductTextBox.PasswordChar = '\0';
             this.nameProductTextBox.Radius = 4;
             this.nameProductTextBox.SelectedText = "";
-            this.nameProductTextBox.Size = new System.Drawing.Size(446, 48);
+            this.nameProductTextBox.Size = new System.Drawing.Size(297, 31);
             this.nameProductTextBox.TabIndex = 1;
             // 
             // productActionLabel
             // 
             this.productActionLabel.AutoSize = true;
             this.productActionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productActionLabel.Location = new System.Drawing.Point(10, 176);
+            this.productActionLabel.Location = new System.Drawing.Point(7, 114);
+            this.productActionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.productActionLabel.Name = "productActionLabel";
-            this.productActionLabel.Size = new System.Drawing.Size(213, 32);
+            this.productActionLabel.Size = new System.Drawing.Size(142, 21);
             this.productActionLabel.TabIndex = 49;
             this.productActionLabel.Text = "Quản lý thực đơn";
             // 
@@ -167,9 +171,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(14, 428);
+            this.gunaLabel4.Location = new System.Drawing.Point(9, 278);
+            this.gunaLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(113, 28);
+            this.gunaLabel4.Size = new System.Drawing.Size(80, 19);
             this.gunaLabel4.TabIndex = 51;
             this.gunaLabel4.Text = "Đơn vị tính";
             // 
@@ -184,23 +189,24 @@ namespace CoffeeShop
             this.unitProductTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.unitProductTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.unitProductTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.unitProductTextBox.Location = new System.Drawing.Point(17, 464);
-            this.unitProductTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unitProductTextBox.Location = new System.Drawing.Point(11, 302);
+            this.unitProductTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.unitProductTextBox.Name = "unitProductTextBox";
-            this.unitProductTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.unitProductTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.unitProductTextBox.PasswordChar = '\0';
             this.unitProductTextBox.Radius = 4;
             this.unitProductTextBox.SelectedText = "";
-            this.unitProductTextBox.Size = new System.Drawing.Size(446, 48);
+            this.unitProductTextBox.Size = new System.Drawing.Size(297, 31);
             this.unitProductTextBox.TabIndex = 3;
             // 
             // gunaLabel5
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(14, 529);
+            this.gunaLabel5.Location = new System.Drawing.Point(9, 344);
+            this.gunaLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(191, 28);
+            this.gunaLabel5.Size = new System.Drawing.Size(132, 19);
             this.gunaLabel5.TabIndex = 53;
             this.gunaLabel5.Text = "Số lượng trong kho";
             // 
@@ -215,23 +221,24 @@ namespace CoffeeShop
             this.stockProductTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.stockProductTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.stockProductTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stockProductTextBox.Location = new System.Drawing.Point(18, 565);
-            this.stockProductTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stockProductTextBox.Location = new System.Drawing.Point(12, 367);
+            this.stockProductTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.stockProductTextBox.Name = "stockProductTextBox";
-            this.stockProductTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.stockProductTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.stockProductTextBox.PasswordChar = '\0';
             this.stockProductTextBox.Radius = 4;
             this.stockProductTextBox.SelectedText = "";
-            this.stockProductTextBox.Size = new System.Drawing.Size(446, 48);
+            this.stockProductTextBox.Size = new System.Drawing.Size(297, 31);
             this.stockProductTextBox.TabIndex = 4;
             // 
             // gunaLabel7
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(14, 635);
+            this.gunaLabel7.Location = new System.Drawing.Point(9, 413);
+            this.gunaLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(145, 28);
+            this.gunaLabel7.Size = new System.Drawing.Size(103, 19);
             this.gunaLabel7.TabIndex = 55;
             this.gunaLabel7.Text = "Đơn giá (VND)";
             // 
@@ -246,14 +253,14 @@ namespace CoffeeShop
             this.priceProductTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.priceProductTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.priceProductTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.priceProductTextBox.Location = new System.Drawing.Point(17, 671);
-            this.priceProductTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.priceProductTextBox.Location = new System.Drawing.Point(11, 436);
+            this.priceProductTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.priceProductTextBox.Name = "priceProductTextBox";
-            this.priceProductTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.priceProductTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.priceProductTextBox.PasswordChar = '\0';
             this.priceProductTextBox.Radius = 4;
             this.priceProductTextBox.SelectedText = "";
-            this.priceProductTextBox.Size = new System.Drawing.Size(446, 48);
+            this.priceProductTextBox.Size = new System.Drawing.Size(297, 31);
             this.priceProductTextBox.TabIndex = 5;
             // 
             // deleteProductButton
@@ -270,8 +277,8 @@ namespace CoffeeShop
             this.deleteProductButton.ForeColor = System.Drawing.Color.White;
             this.deleteProductButton.Image = null;
             this.deleteProductButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteProductButton.Location = new System.Drawing.Point(177, 868);
-            this.deleteProductButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteProductButton.Location = new System.Drawing.Point(118, 564);
+            this.deleteProductButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.deleteProductButton.Name = "deleteProductButton";
             this.deleteProductButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.deleteProductButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -279,7 +286,7 @@ namespace CoffeeShop
             this.deleteProductButton.OnHoverImage = null;
             this.deleteProductButton.OnPressedColor = System.Drawing.Color.Black;
             this.deleteProductButton.Radius = 4;
-            this.deleteProductButton.Size = new System.Drawing.Size(138, 52);
+            this.deleteProductButton.Size = new System.Drawing.Size(92, 34);
             this.deleteProductButton.TabIndex = 10;
             this.deleteProductButton.Text = "Xóa";
             this.deleteProductButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -299,8 +306,8 @@ namespace CoffeeShop
             this.submitProductButton.ForeColor = System.Drawing.Color.White;
             this.submitProductButton.Image = null;
             this.submitProductButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitProductButton.Location = new System.Drawing.Point(330, 868);
-            this.submitProductButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.submitProductButton.Location = new System.Drawing.Point(220, 564);
+            this.submitProductButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.submitProductButton.Name = "submitProductButton";
             this.submitProductButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.submitProductButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -308,7 +315,7 @@ namespace CoffeeShop
             this.submitProductButton.OnHoverImage = null;
             this.submitProductButton.OnPressedColor = System.Drawing.Color.Black;
             this.submitProductButton.Radius = 4;
-            this.submitProductButton.Size = new System.Drawing.Size(134, 52);
+            this.submitProductButton.Size = new System.Drawing.Size(89, 34);
             this.submitProductButton.TabIndex = 11;
             this.submitProductButton.Text = "Thêm";
             this.submitProductButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -326,14 +333,14 @@ namespace CoffeeShop
             this.searchProductTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchProductTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.searchProductTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchProductTextBox.Location = new System.Drawing.Point(1437, 168);
-            this.searchProductTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchProductTextBox.Location = new System.Drawing.Point(958, 109);
+            this.searchProductTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchProductTextBox.Name = "searchProductTextBox";
-            this.searchProductTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchProductTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.searchProductTextBox.PasswordChar = '\0';
             this.searchProductTextBox.Radius = 4;
             this.searchProductTextBox.SelectedText = "";
-            this.searchProductTextBox.Size = new System.Drawing.Size(269, 48);
+            this.searchProductTextBox.Size = new System.Drawing.Size(179, 31);
             this.searchProductTextBox.TabIndex = 62;
             // 
             // gunaPictureBox1
@@ -341,10 +348,10 @@ namespace CoffeeShop
             this.gunaPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::CoffeeShop.Properties.Resources.search;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(1516, 158);
-            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(1011, 103);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(27, 29);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(18, 19);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 63;
             this.gunaPictureBox1.TabStop = false;
@@ -362,22 +369,23 @@ namespace CoffeeShop
             this.menuComboBox.ForeColor = System.Drawing.Color.Black;
             this.menuComboBox.FormattingEnabled = true;
             this.menuComboBox.ItemHeight = 25;
-            this.menuComboBox.Location = new System.Drawing.Point(15, 362);
-            this.menuComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menuComboBox.Location = new System.Drawing.Point(10, 235);
+            this.menuComboBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.menuComboBox.Name = "menuComboBox";
             this.menuComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.menuComboBox.OnHoverItemForeColor = System.Drawing.Color.White;
             this.menuComboBox.Radius = 4;
-            this.menuComboBox.Size = new System.Drawing.Size(450, 31);
+            this.menuComboBox.Size = new System.Drawing.Size(301, 31);
             this.menuComboBox.TabIndex = 2;
             // 
             // gunaLabel9
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.Location = new System.Drawing.Point(10, 331);
+            this.gunaLabel9.Location = new System.Drawing.Point(7, 215);
+            this.gunaLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(105, 28);
+            this.gunaLabel9.Size = new System.Drawing.Size(73, 19);
             this.gunaLabel9.TabIndex = 64;
             this.gunaLabel9.Text = "Danh mục";
             // 
@@ -388,11 +396,11 @@ namespace CoffeeShop
             this.tabControl1.Controls.Add(this.tab3);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(200, 50);
-            this.tabControl1.Location = new System.Drawing.Point(12, 20);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(8, 13);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1833, 1058);
+            this.tabControl1.Size = new System.Drawing.Size(1222, 688);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 66;
             // 
@@ -420,10 +428,10 @@ namespace CoffeeShop
             this.tabPage1.Controls.Add(this.priceProductTextBox);
             this.tabPage1.Controls.Add(this.gunaLabel5);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1825, 1000);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPage1.Size = new System.Drawing.Size(1214, 630);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thực đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -432,9 +440,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(14, 744);
+            this.gunaLabel3.Location = new System.Drawing.Point(9, 484);
+            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(165, 28);
+            this.gunaLabel3.Size = new System.Drawing.Size(116, 19);
             this.gunaLabel3.TabIndex = 92;
             this.gunaLabel3.Text = "Lợi nhuận (VND)";
             // 
@@ -449,14 +458,14 @@ namespace CoffeeShop
             this.profitProductTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.profitProductTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.profitProductTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.profitProductTextBox.Location = new System.Drawing.Point(17, 780);
-            this.profitProductTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profitProductTextBox.Location = new System.Drawing.Point(11, 507);
+            this.profitProductTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.profitProductTextBox.Name = "profitProductTextBox";
-            this.profitProductTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.profitProductTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.profitProductTextBox.PasswordChar = '\0';
             this.profitProductTextBox.Radius = 4;
             this.profitProductTextBox.SelectedText = "";
-            this.profitProductTextBox.Size = new System.Drawing.Size(446, 48);
+            this.profitProductTextBox.Size = new System.Drawing.Size(297, 31);
             this.profitProductTextBox.TabIndex = 6;
             // 
             // productTable
@@ -464,8 +473,8 @@ namespace CoffeeShop
             this.productTable.AllowUserToAddRows = false;
             this.productTable.AllowUserToDeleteRows = false;
             this.productTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.productTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.productTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.productTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -474,34 +483,34 @@ namespace CoffeeShop
             this.productTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.productTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.productTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.productTable.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productTable.DefaultCellStyle = dataGridViewCellStyle12;
             this.productTable.EnableHeadersVisualStyles = false;
             this.productTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.productTable.Location = new System.Drawing.Point(504, 229);
-            this.productTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.productTable.Location = new System.Drawing.Point(336, 149);
+            this.productTable.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.productTable.Name = "productTable";
             this.productTable.ReadOnly = true;
             this.productTable.RowHeadersVisible = false;
             this.productTable.RowHeadersWidth = 62;
             this.productTable.RowTemplate.Height = 28;
             this.productTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productTable.Size = new System.Drawing.Size(1318, 769);
+            this.productTable.Size = new System.Drawing.Size(879, 500);
             this.productTable.TabIndex = 90;
             this.productTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.productTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -541,8 +550,8 @@ namespace CoffeeShop
             this.searchProductButton.ForeColor = System.Drawing.Color.White;
             this.searchProductButton.Image = null;
             this.searchProductButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.searchProductButton.Location = new System.Drawing.Point(1714, 168);
-            this.searchProductButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchProductButton.Location = new System.Drawing.Point(1143, 109);
+            this.searchProductButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchProductButton.Name = "searchProductButton";
             this.searchProductButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.searchProductButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -550,40 +559,11 @@ namespace CoffeeShop
             this.searchProductButton.OnHoverImage = null;
             this.searchProductButton.OnPressedColor = System.Drawing.Color.Black;
             this.searchProductButton.Radius = 4;
-            this.searchProductButton.Size = new System.Drawing.Size(100, 48);
+            this.searchProductButton.Size = new System.Drawing.Size(67, 31);
             this.searchProductButton.TabIndex = 89;
             this.searchProductButton.Text = "Search";
             this.searchProductButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.searchProductButton.Click += new System.EventHandler(this.searchProductButton_Click);
-            // 
-            // clearProductButton
-            // 
-            this.clearProductButton.Animated = true;
-            this.clearProductButton.AnimationHoverSpeed = 0.07F;
-            this.clearProductButton.AnimationSpeed = 0.03F;
-            this.clearProductButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearProductButton.BaseColor = System.Drawing.Color.SandyBrown;
-            this.clearProductButton.BorderColor = System.Drawing.Color.Black;
-            this.clearProductButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.clearProductButton.FocusedColor = System.Drawing.Color.Empty;
-            this.clearProductButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearProductButton.ForeColor = System.Drawing.Color.White;
-            this.clearProductButton.Image = null;
-            this.clearProductButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.clearProductButton.Location = new System.Drawing.Point(17, 868);
-            this.clearProductButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clearProductButton.Name = "clearProductButton";
-            this.clearProductButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.clearProductButton.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.clearProductButton.OnHoverForeColor = System.Drawing.Color.White;
-            this.clearProductButton.OnHoverImage = null;
-            this.clearProductButton.OnPressedColor = System.Drawing.Color.Black;
-            this.clearProductButton.Radius = 4;
-            this.clearProductButton.Size = new System.Drawing.Size(138, 52);
-            this.clearProductButton.TabIndex = 9;
-            this.clearProductButton.Text = "Clear";
-            this.clearProductButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clearProductButton.Click += new System.EventHandler(this.clearProductButton_Click);
             // 
             // tabPage2
             // 
@@ -599,10 +579,10 @@ namespace CoffeeShop
             this.tabPage2.Controls.Add(this.gunaLabel15);
             this.tabPage2.Controls.Add(this.menuActionLabel);
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1825, 1000);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPage2.Size = new System.Drawing.Size(1214, 630);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Danh Mục";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -621,8 +601,8 @@ namespace CoffeeShop
             this.searchMenuButton.ForeColor = System.Drawing.Color.White;
             this.searchMenuButton.Image = null;
             this.searchMenuButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.searchMenuButton.Location = new System.Drawing.Point(1717, 172);
-            this.searchMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchMenuButton.Location = new System.Drawing.Point(1145, 112);
+            this.searchMenuButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchMenuButton.Name = "searchMenuButton";
             this.searchMenuButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.searchMenuButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -630,10 +610,11 @@ namespace CoffeeShop
             this.searchMenuButton.OnHoverImage = null;
             this.searchMenuButton.OnPressedColor = System.Drawing.Color.Black;
             this.searchMenuButton.Radius = 4;
-            this.searchMenuButton.Size = new System.Drawing.Size(99, 48);
+            this.searchMenuButton.Size = new System.Drawing.Size(66, 31);
             this.searchMenuButton.TabIndex = 88;
             this.searchMenuButton.Text = "Search";
             this.searchMenuButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchMenuButton.Click += new System.EventHandler(this.searchMenuButton_Click_1);
             // 
             // clearMenuButton
             // 
@@ -649,8 +630,8 @@ namespace CoffeeShop
             this.clearMenuButton.ForeColor = System.Drawing.Color.White;
             this.clearMenuButton.Image = null;
             this.clearMenuButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.clearMenuButton.Location = new System.Drawing.Point(18, 334);
-            this.clearMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearMenuButton.Location = new System.Drawing.Point(12, 217);
+            this.clearMenuButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.clearMenuButton.Name = "clearMenuButton";
             this.clearMenuButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.clearMenuButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -658,7 +639,7 @@ namespace CoffeeShop
             this.clearMenuButton.OnHoverImage = null;
             this.clearMenuButton.OnPressedColor = System.Drawing.Color.Black;
             this.clearMenuButton.Radius = 4;
-            this.clearMenuButton.Size = new System.Drawing.Size(138, 52);
+            this.clearMenuButton.Size = new System.Drawing.Size(92, 34);
             this.clearMenuButton.TabIndex = 87;
             this.clearMenuButton.Text = "Clear";
             this.clearMenuButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -668,9 +649,10 @@ namespace CoffeeShop
             // 
             this.menuTableLabel.AutoSize = true;
             this.menuTableLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuTableLabel.Location = new System.Drawing.Point(494, 179);
+            this.menuTableLabel.Location = new System.Drawing.Point(329, 116);
+            this.menuTableLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.menuTableLabel.Name = "menuTableLabel";
-            this.menuTableLabel.Size = new System.Drawing.Size(242, 32);
+            this.menuTableLabel.Size = new System.Drawing.Size(162, 21);
             this.menuTableLabel.TabIndex = 77;
             this.menuTableLabel.Text = "Danh sách thực đơn";
             // 
@@ -679,8 +661,8 @@ namespace CoffeeShop
             this.menuTable.AllowUserToAddRows = false;
             this.menuTable.AllowUserToDeleteRows = false;
             this.menuTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.menuTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.menuTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.menuTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -689,34 +671,34 @@ namespace CoffeeShop
             this.menuTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.menuTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.menuTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.menuTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.menuTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.menuTable.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.menuTable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.menuTable.DefaultCellStyle = dataGridViewCellStyle15;
             this.menuTable.EnableHeadersVisualStyles = false;
             this.menuTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.menuTable.Location = new System.Drawing.Point(504, 229);
-            this.menuTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menuTable.Location = new System.Drawing.Point(336, 149);
+            this.menuTable.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.menuTable.Name = "menuTable";
             this.menuTable.ReadOnly = true;
             this.menuTable.RowHeadersVisible = false;
             this.menuTable.RowHeadersWidth = 62;
             this.menuTable.RowTemplate.Height = 28;
             this.menuTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.menuTable.Size = new System.Drawing.Size(1318, 870);
+            this.menuTable.Size = new System.Drawing.Size(879, 565);
             this.menuTable.TabIndex = 76;
             this.menuTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.menuTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -754,23 +736,24 @@ namespace CoffeeShop
             this.searchMenuTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchMenuTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.searchMenuTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchMenuTextBox.Location = new System.Drawing.Point(1438, 172);
-            this.searchMenuTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchMenuTextBox.Location = new System.Drawing.Point(959, 112);
+            this.searchMenuTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchMenuTextBox.Name = "searchMenuTextBox";
-            this.searchMenuTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchMenuTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.searchMenuTextBox.PasswordChar = '\0';
             this.searchMenuTextBox.Radius = 4;
             this.searchMenuTextBox.SelectedText = "";
-            this.searchMenuTextBox.Size = new System.Drawing.Size(269, 48);
+            this.searchMenuTextBox.Size = new System.Drawing.Size(179, 31);
             this.searchMenuTextBox.TabIndex = 84;
             // 
             // gunaLabel14
             // 
             this.gunaLabel14.AutoSize = true;
             this.gunaLabel14.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel14.Location = new System.Drawing.Point(3, 42);
+            this.gunaLabel14.Location = new System.Drawing.Point(2, 27);
+            this.gunaLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel14.Name = "gunaLabel14";
-            this.gunaLabel14.Size = new System.Drawing.Size(470, 70);
+            this.gunaLabel14.Size = new System.Drawing.Size(320, 47);
             this.gunaLabel14.TabIndex = 75;
             this.gunaLabel14.Text = "Quản lý danh mục";
             // 
@@ -788,8 +771,8 @@ namespace CoffeeShop
             this.deleteMenuButton.ForeColor = System.Drawing.Color.White;
             this.deleteMenuButton.Image = null;
             this.deleteMenuButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteMenuButton.Location = new System.Drawing.Point(176, 334);
-            this.deleteMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteMenuButton.Location = new System.Drawing.Point(117, 217);
+            this.deleteMenuButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.deleteMenuButton.Name = "deleteMenuButton";
             this.deleteMenuButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.deleteMenuButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -797,7 +780,7 @@ namespace CoffeeShop
             this.deleteMenuButton.OnHoverImage = null;
             this.deleteMenuButton.OnPressedColor = System.Drawing.Color.Black;
             this.deleteMenuButton.Radius = 4;
-            this.deleteMenuButton.Size = new System.Drawing.Size(138, 52);
+            this.deleteMenuButton.Size = new System.Drawing.Size(92, 34);
             this.deleteMenuButton.TabIndex = 74;
             this.deleteMenuButton.Text = "Xóa";
             this.deleteMenuButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -814,14 +797,14 @@ namespace CoffeeShop
             this.menuNameTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.menuNameTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.menuNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.menuNameTextBox.Location = new System.Drawing.Point(17, 264);
-            this.menuNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menuNameTextBox.Location = new System.Drawing.Point(11, 172);
+            this.menuNameTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.menuNameTextBox.Name = "menuNameTextBox";
-            this.menuNameTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.menuNameTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.menuNameTextBox.PasswordChar = '\0';
             this.menuNameTextBox.Radius = 4;
             this.menuNameTextBox.SelectedText = "";
-            this.menuNameTextBox.Size = new System.Drawing.Size(446, 48);
+            this.menuNameTextBox.Size = new System.Drawing.Size(297, 31);
             this.menuNameTextBox.TabIndex = 66;
             // 
             // submitMenuButton
@@ -838,8 +821,8 @@ namespace CoffeeShop
             this.submitMenuButton.ForeColor = System.Drawing.Color.White;
             this.submitMenuButton.Image = null;
             this.submitMenuButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitMenuButton.Location = new System.Drawing.Point(328, 334);
-            this.submitMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.submitMenuButton.Location = new System.Drawing.Point(219, 217);
+            this.submitMenuButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.submitMenuButton.Name = "submitMenuButton";
             this.submitMenuButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.submitMenuButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -847,7 +830,7 @@ namespace CoffeeShop
             this.submitMenuButton.OnHoverImage = null;
             this.submitMenuButton.OnPressedColor = System.Drawing.Color.Black;
             this.submitMenuButton.Radius = 4;
-            this.submitMenuButton.Size = new System.Drawing.Size(134, 52);
+            this.submitMenuButton.Size = new System.Drawing.Size(89, 34);
             this.submitMenuButton.TabIndex = 73;
             this.submitMenuButton.Text = "Thêm";
             this.submitMenuButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -857,9 +840,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel15.AutoSize = true;
             this.gunaLabel15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel15.Location = new System.Drawing.Point(14, 228);
+            this.gunaLabel15.Location = new System.Drawing.Point(9, 148);
+            this.gunaLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel15.Name = "gunaLabel15";
-            this.gunaLabel15.Size = new System.Drawing.Size(141, 28);
+            this.gunaLabel15.Size = new System.Drawing.Size(97, 19);
             this.gunaLabel15.TabIndex = 78;
             this.gunaLabel15.Text = "Tên danh mục";
             // 
@@ -867,9 +851,10 @@ namespace CoffeeShop
             // 
             this.menuActionLabel.AutoSize = true;
             this.menuActionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuActionLabel.Location = new System.Drawing.Point(10, 179);
+            this.menuActionLabel.Location = new System.Drawing.Point(7, 116);
+            this.menuActionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.menuActionLabel.Name = "menuActionLabel";
-            this.menuActionLabel.Size = new System.Drawing.Size(198, 32);
+            this.menuActionLabel.Size = new System.Drawing.Size(133, 21);
             this.menuActionLabel.TabIndex = 79;
             this.menuActionLabel.Text = "Thêm danh mục";
             // 
@@ -892,9 +877,9 @@ namespace CoffeeShop
             this.tab3.Controls.Add(this.gunaLabel13);
             this.tab3.Controls.Add(this.actionTableLabel);
             this.tab3.Location = new System.Drawing.Point(4, 54);
-            this.tab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tab3.Name = "tab3";
-            this.tab3.Size = new System.Drawing.Size(1825, 1000);
+            this.tab3.Size = new System.Drawing.Size(1214, 630);
             this.tab3.TabIndex = 2;
             this.tab3.Text = "Bàn coffee";
             this.tab3.UseVisualStyleBackColor = true;
@@ -904,8 +889,8 @@ namespace CoffeeShop
             this.tableTable.AllowUserToAddRows = false;
             this.tableTable.AllowUserToDeleteRows = false;
             this.tableTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.tableTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.tableTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.tableTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -914,34 +899,34 @@ namespace CoffeeShop
             this.tableTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.tableTable.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableTable.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableTable.DefaultCellStyle = dataGridViewCellStyle18;
             this.tableTable.EnableHeadersVisualStyles = false;
             this.tableTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tableTable.Location = new System.Drawing.Point(505, 230);
-            this.tableTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableTable.Location = new System.Drawing.Point(337, 149);
+            this.tableTable.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableTable.Name = "tableTable";
             this.tableTable.ReadOnly = true;
             this.tableTable.RowHeadersVisible = false;
             this.tableTable.RowHeadersWidth = 62;
             this.tableTable.RowTemplate.Height = 28;
             this.tableTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableTable.Size = new System.Drawing.Size(1318, 744);
+            this.tableTable.Size = new System.Drawing.Size(879, 484);
             this.tableTable.TabIndex = 120;
             this.tableTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.tableTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -974,10 +959,10 @@ namespace CoffeeShop
             this.tableBusyRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tableBusyRadio.FillColor = System.Drawing.Color.White;
             this.tableBusyRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableBusyRadio.Location = new System.Drawing.Point(138, 625);
-            this.tableBusyRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableBusyRadio.Location = new System.Drawing.Point(92, 406);
+            this.tableBusyRadio.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableBusyRadio.Name = "tableBusyRadio";
-            this.tableBusyRadio.Size = new System.Drawing.Size(117, 31);
+            this.tableBusyRadio.Size = new System.Drawing.Size(86, 21);
             this.tableBusyRadio.TabIndex = 119;
             this.tableBusyRadio.Text = "Có khách";
             // 
@@ -989,10 +974,10 @@ namespace CoffeeShop
             this.tableEmptyRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tableEmptyRadio.FillColor = System.Drawing.Color.White;
             this.tableEmptyRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableEmptyRadio.Location = new System.Drawing.Point(27, 625);
-            this.tableEmptyRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableEmptyRadio.Location = new System.Drawing.Point(18, 406);
+            this.tableEmptyRadio.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableEmptyRadio.Name = "tableEmptyRadio";
-            this.tableEmptyRadio.Size = new System.Drawing.Size(86, 31);
+            this.tableEmptyRadio.Size = new System.Drawing.Size(66, 21);
             this.tableEmptyRadio.TabIndex = 118;
             this.tableEmptyRadio.Text = "Trống";
             // 
@@ -1000,9 +985,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel19.AutoSize = true;
             this.gunaLabel19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel19.Location = new System.Drawing.Point(19, 588);
+            this.gunaLabel19.Location = new System.Drawing.Point(13, 382);
+            this.gunaLabel19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel19.Name = "gunaLabel19";
-            this.gunaLabel19.Size = new System.Drawing.Size(102, 28);
+            this.gunaLabel19.Size = new System.Drawing.Size(72, 19);
             this.gunaLabel19.TabIndex = 102;
             this.gunaLabel19.Text = "Trạng thái";
             // 
@@ -1017,24 +1003,25 @@ namespace CoffeeShop
             this.tableDescTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tableDescTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tableDescTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tableDescTextBox.Location = new System.Drawing.Point(21, 372);
-            this.tableDescTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableDescTextBox.Location = new System.Drawing.Point(14, 242);
+            this.tableDescTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableDescTextBox.Multiline = true;
             this.tableDescTextBox.Name = "tableDescTextBox";
-            this.tableDescTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableDescTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.tableDescTextBox.PasswordChar = '\0';
             this.tableDescTextBox.Radius = 4;
             this.tableDescTextBox.SelectedText = "";
-            this.tableDescTextBox.Size = new System.Drawing.Size(446, 120);
+            this.tableDescTextBox.Size = new System.Drawing.Size(297, 118);
             this.tableDescTextBox.TabIndex = 100;
             // 
             // gunaLabel18
             // 
             this.gunaLabel18.AutoSize = true;
             this.gunaLabel18.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel18.Location = new System.Drawing.Point(17, 338);
+            this.gunaLabel18.Location = new System.Drawing.Point(11, 220);
+            this.gunaLabel18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel18.Name = "gunaLabel18";
-            this.gunaLabel18.Size = new System.Drawing.Size(141, 28);
+            this.gunaLabel18.Size = new System.Drawing.Size(97, 19);
             this.gunaLabel18.TabIndex = 101;
             this.gunaLabel18.Text = "Thông tin bàn";
             // 
@@ -1052,8 +1039,8 @@ namespace CoffeeShop
             this.tableSearchButton.ForeColor = System.Drawing.Color.White;
             this.tableSearchButton.Image = null;
             this.tableSearchButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.tableSearchButton.Location = new System.Drawing.Point(1718, 174);
-            this.tableSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableSearchButton.Location = new System.Drawing.Point(1145, 113);
+            this.tableSearchButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableSearchButton.Name = "tableSearchButton";
             this.tableSearchButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.tableSearchButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -1061,7 +1048,7 @@ namespace CoffeeShop
             this.tableSearchButton.OnHoverImage = null;
             this.tableSearchButton.OnPressedColor = System.Drawing.Color.Black;
             this.tableSearchButton.Radius = 4;
-            this.tableSearchButton.Size = new System.Drawing.Size(99, 48);
+            this.tableSearchButton.Size = new System.Drawing.Size(66, 31);
             this.tableSearchButton.TabIndex = 99;
             this.tableSearchButton.Text = "Search";
             this.tableSearchButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1081,8 +1068,8 @@ namespace CoffeeShop
             this.clearTableButton.ForeColor = System.Drawing.Color.White;
             this.clearTableButton.Image = null;
             this.clearTableButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.clearTableButton.Location = new System.Drawing.Point(22, 688);
-            this.clearTableButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearTableButton.Location = new System.Drawing.Point(15, 447);
+            this.clearTableButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.clearTableButton.Name = "clearTableButton";
             this.clearTableButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.clearTableButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -1090,7 +1077,7 @@ namespace CoffeeShop
             this.clearTableButton.OnHoverImage = null;
             this.clearTableButton.OnPressedColor = System.Drawing.Color.Black;
             this.clearTableButton.Radius = 4;
-            this.clearTableButton.Size = new System.Drawing.Size(138, 52);
+            this.clearTableButton.Size = new System.Drawing.Size(92, 34);
             this.clearTableButton.TabIndex = 98;
             this.clearTableButton.Text = "Clear";
             this.clearTableButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1100,9 +1087,10 @@ namespace CoffeeShop
             // 
             this.tableTableLabel.AutoSize = true;
             this.tableTableLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableTableLabel.Location = new System.Drawing.Point(497, 184);
+            this.tableTableLabel.Location = new System.Drawing.Point(331, 120);
+            this.tableTableLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tableTableLabel.Name = "tableTableLabel";
-            this.tableTableLabel.Size = new System.Drawing.Size(182, 32);
+            this.tableTableLabel.Size = new System.Drawing.Size(122, 21);
             this.tableTableLabel.TabIndex = 94;
             this.tableTableLabel.Text = "Danh sách bàn";
             // 
@@ -1118,23 +1106,24 @@ namespace CoffeeShop
             this.searchTableTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchTableTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.searchTableTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchTableTextBox.Location = new System.Drawing.Point(1439, 174);
-            this.searchTableTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchTableTextBox.Location = new System.Drawing.Point(959, 113);
+            this.searchTableTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchTableTextBox.Name = "searchTableTextBox";
-            this.searchTableTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchTableTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.searchTableTextBox.PasswordChar = '\0';
             this.searchTableTextBox.Radius = 4;
             this.searchTableTextBox.SelectedText = "";
-            this.searchTableTextBox.Size = new System.Drawing.Size(269, 48);
+            this.searchTableTextBox.Size = new System.Drawing.Size(179, 31);
             this.searchTableTextBox.TabIndex = 97;
             // 
             // gunaLabel11
             // 
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.Location = new System.Drawing.Point(6, 48);
+            this.gunaLabel11.Location = new System.Drawing.Point(4, 31);
+            this.gunaLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel11.Name = "gunaLabel11";
-            this.gunaLabel11.Size = new System.Drawing.Size(320, 70);
+            this.gunaLabel11.Size = new System.Drawing.Size(219, 47);
             this.gunaLabel11.TabIndex = 92;
             this.gunaLabel11.Text = "Quản lý bàn";
             // 
@@ -1152,8 +1141,8 @@ namespace CoffeeShop
             this.deleteTableButton.ForeColor = System.Drawing.Color.White;
             this.deleteTableButton.Image = null;
             this.deleteTableButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteTableButton.Location = new System.Drawing.Point(180, 688);
-            this.deleteTableButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteTableButton.Location = new System.Drawing.Point(120, 447);
+            this.deleteTableButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.deleteTableButton.Name = "deleteTableButton";
             this.deleteTableButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.deleteTableButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -1161,7 +1150,7 @@ namespace CoffeeShop
             this.deleteTableButton.OnHoverImage = null;
             this.deleteTableButton.OnPressedColor = System.Drawing.Color.Black;
             this.deleteTableButton.Radius = 4;
-            this.deleteTableButton.Size = new System.Drawing.Size(138, 52);
+            this.deleteTableButton.Size = new System.Drawing.Size(92, 34);
             this.deleteTableButton.TabIndex = 91;
             this.deleteTableButton.Text = "Xóa";
             this.deleteTableButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1178,14 +1167,14 @@ namespace CoffeeShop
             this.tableNameTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tableNameTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.tableNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tableNameTextBox.Location = new System.Drawing.Point(20, 269);
-            this.tableNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableNameTextBox.Location = new System.Drawing.Point(13, 175);
+            this.tableNameTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tableNameTextBox.Name = "tableNameTextBox";
-            this.tableNameTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableNameTextBox.Padding = new System.Windows.Forms.Padding(3);
             this.tableNameTextBox.PasswordChar = '\0';
             this.tableNameTextBox.Radius = 4;
             this.tableNameTextBox.SelectedText = "";
-            this.tableNameTextBox.Size = new System.Drawing.Size(446, 48);
+            this.tableNameTextBox.Size = new System.Drawing.Size(297, 31);
             this.tableNameTextBox.TabIndex = 89;
             // 
             // submitTableButton
@@ -1202,8 +1191,8 @@ namespace CoffeeShop
             this.submitTableButton.ForeColor = System.Drawing.Color.White;
             this.submitTableButton.Image = null;
             this.submitTableButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitTableButton.Location = new System.Drawing.Point(333, 688);
-            this.submitTableButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.submitTableButton.Location = new System.Drawing.Point(222, 447);
+            this.submitTableButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.submitTableButton.Name = "submitTableButton";
             this.submitTableButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.submitTableButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -1211,7 +1200,7 @@ namespace CoffeeShop
             this.submitTableButton.OnHoverImage = null;
             this.submitTableButton.OnPressedColor = System.Drawing.Color.Black;
             this.submitTableButton.Radius = 4;
-            this.submitTableButton.Size = new System.Drawing.Size(134, 52);
+            this.submitTableButton.Size = new System.Drawing.Size(89, 34);
             this.submitTableButton.TabIndex = 90;
             this.submitTableButton.Text = "Thêm";
             this.submitTableButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1221,9 +1210,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel13.AutoSize = true;
             this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel13.Location = new System.Drawing.Point(16, 232);
+            this.gunaLabel13.Location = new System.Drawing.Point(11, 151);
+            this.gunaLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel13.Name = "gunaLabel13";
-            this.gunaLabel13.Size = new System.Drawing.Size(84, 28);
+            this.gunaLabel13.Size = new System.Drawing.Size(58, 19);
             this.gunaLabel13.TabIndex = 95;
             this.gunaLabel13.Text = "Tên bàn";
             // 
@@ -1231,21 +1221,51 @@ namespace CoffeeShop
             // 
             this.actionTableLabel.AutoSize = true;
             this.actionTableLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionTableLabel.Location = new System.Drawing.Point(14, 184);
+            this.actionTableLabel.Location = new System.Drawing.Point(9, 120);
+            this.actionTableLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.actionTableLabel.Name = "actionTableLabel";
-            this.actionTableLabel.Size = new System.Drawing.Size(165, 32);
+            this.actionTableLabel.Size = new System.Drawing.Size(111, 21);
             this.actionTableLabel.TabIndex = 96;
             this.actionTableLabel.Text = "Cấu hình bàn";
             // 
+            // clearProductButton
+            // 
+            this.clearProductButton.Animated = true;
+            this.clearProductButton.AnimationHoverSpeed = 0.07F;
+            this.clearProductButton.AnimationSpeed = 0.03F;
+            this.clearProductButton.BackColor = System.Drawing.Color.Transparent;
+            this.clearProductButton.BaseColor = System.Drawing.Color.SandyBrown;
+            this.clearProductButton.BorderColor = System.Drawing.Color.Black;
+            this.clearProductButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.clearProductButton.FocusedColor = System.Drawing.Color.Empty;
+            this.clearProductButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearProductButton.ForeColor = System.Drawing.Color.White;
+            this.clearProductButton.Image = null;
+            this.clearProductButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.clearProductButton.Location = new System.Drawing.Point(11, 564);
+            this.clearProductButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.clearProductButton.Name = "clearProductButton";
+            this.clearProductButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.clearProductButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.clearProductButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.clearProductButton.OnHoverImage = null;
+            this.clearProductButton.OnPressedColor = System.Drawing.Color.Black;
+            this.clearProductButton.Radius = 4;
+            this.clearProductButton.Size = new System.Drawing.Size(92, 34);
+            this.clearProductButton.TabIndex = 9;
+            this.clearProductButton.Text = "Clear";
+            this.clearProductButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clearProductButton.Click += new System.EventHandler(this.clearProductButton_Click);
+            // 
             // MenusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1857, 1099);
+            this.ClientSize = new System.Drawing.Size(1238, 690);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.gunaPictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "MenusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MenusForm";
@@ -1298,7 +1318,6 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaLabel gunaLabel15;
         private Guna.UI.WinForms.GunaLabel menuActionLabel;
         private Guna.UI.WinForms.GunaButton clearMenuButton;
-        private Guna.UI.WinForms.GunaButton clearProductButton;
         private Guna.UI.WinForms.GunaButton searchProductButton;
         private Guna.UI.WinForms.GunaButton searchMenuButton;
         private System.Windows.Forms.TabPage tab3;
@@ -1321,5 +1340,6 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaDataGridView tableTable;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaTextBox profitProductTextBox;
+        private Guna.UI.WinForms.GunaButton clearProductButton;
     }
 }

@@ -327,7 +327,7 @@ namespace CoffeeShop
                 DataTable dt = new DataTable();
                 db.getAllAdapter(
                         "table_id as [ID], [name] as [Tên bàn], description as [Nội dung], CASE WHEN is_busy = 1 THEN N'Có khách' ELSE N'Trống' END as [Tình trạng]",
-                        this.searchMenuTextBox.Text
+                        this.searchTableTextBox.Text
                     )
                 .Fill(dt);
 
@@ -407,5 +407,10 @@ namespace CoffeeShop
             this.LoadTableTableData();
         }
         #endregion
+
+        private void searchMenuButton_Click_1(object sender, EventArgs e)
+        {
+            this.LoadMenuTableData();
+        }
     }
 }

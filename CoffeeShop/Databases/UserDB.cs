@@ -15,7 +15,6 @@ namespace CoffeeShop.Databases
 
         public bool create(UserEntity user)
         {
-
             SqlCommand command = new SqlCommand();
             command.CommandText = $"insert into {table} (fullname, phone, password, birthdate, gender, address, salary) " +
                         "values (@fullname, @phone, @password, @birthdate, @gender, @address, @salary)";
@@ -60,14 +59,14 @@ namespace CoffeeShop.Databases
 
         public bool checkPhone(string phone)
         {
-            string query = $"SELECT * FROM {table} WHERE phone = {phone}";
-            return executeCountQuery(query)>0;
+            string query = $"SELECT COUNT(*) FROM {table} WHERE phone = {phone}";
+            return executeCountQuery(query) > 0;
 
 
         }
         public SqlDataAdapter getAllAdapter(string select = "*", string search = "")
         {
-            string query = $"SELECT {select} FROM {table} JOIN [user] ON menu.created_by = [user].id WHERE 1 = 1 AND menu_name LIKE '%{search}%'";
+            string query = $"SELECT {select} FROM {table} WHERE 1 = 1 AND fullname LIKE '%{search}%'";
             return this.executeAdapterQuery(query);
         }
 
@@ -78,17 +77,25 @@ namespace CoffeeShop.Databases
 
         public bool delete(int id)
         {
-            return this.executeQuery($"DELETE FROM {table} WHERE id = @id");
+            return this.executeQuery($"DELETE FROM {table} WHERE id = {id}");
+        }
+        public int count()
+        {
+            return this.executeCountQuery($"SELECT COUNT(*) FROM {table}");
         }
 
-        public bool update(int id, MenuEntity menu)
+        public bool update(UserEntity user)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = $"UPDATE {table} SET menu_name = @menu_name WHERE id = {id}";
-            command.Parameters.AddWithValue("@menu_name", menu.menu_name);
+            command.CommandText = $"UPDATE {table} SET fullname = @fullname, phone = @phone, birthdate = @birthdate, gender = @gender, address = @address, salary = @salary WHERE id = {user.id}";
+            command.Parameters.AddWithValue("@fullname", user.fullname);
+            command.Parameters.AddWithValue("@phone", user.phone);
+            command.Parameters.AddWithValue("@birthdate", user.birthdate);
+            command.Parameters.AddWithValue("@gender", user.gender);
+            command.Parameters.AddWithValue("@address", user.address);
+            command.Parameters.AddWithValue("@salary", user.salary);
 
             return this.executeCommand(command);
         }
-
     }
 }

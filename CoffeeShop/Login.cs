@@ -52,7 +52,7 @@ namespace CoffeeShop
             }
             else
             {
-                MessageBox.Show("Username or password is not correct!", "Login error");
+                MessageBox.Show("Username or password is not correct!", "Login error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             return;
         }

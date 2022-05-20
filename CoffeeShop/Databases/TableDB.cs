@@ -27,7 +27,7 @@ namespace CoffeeShop.Databases
             string query = $"SELECT {select} FROM {tableName} WHERE 1 = 1 ";
             if (!string.IsNullOrEmpty(search))
             {
-                query += " AND name LIKE '%{search}%'";
+                query += $" AND name LIKE '%{search}%'";
             }
             return this.executeAdapterQuery(query);
         }
@@ -36,7 +36,7 @@ namespace CoffeeShop.Databases
             string query = $"SELECT {select} FROM {tableName} WHERE 1 = 1 ";
             if (!string.IsNullOrEmpty(search))
             {
-                query += " AND name LIKE '%{search}%'";
+                query += $" AND name LIKE '%{search}%'";
             }
             return this.executeReaderQuery(query);
         }
