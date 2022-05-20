@@ -105,12 +105,13 @@ namespace CoffeeShop
             this.addressTextBox.Text = this.user.address.ToString();
             this.salaryTextBox.Text = this.user.salary.ToString();
         }
+        string phone = "";
         private void staffsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int currentIndex = this.staffsTable.CurrentCell.RowIndex;
             if (currentIndex < 0) return;
-
             DataGridViewRow row = this.staffsTable.Rows[currentIndex];
+            phone = row.Cells["Điện Thoại"].Value.ToString();
             this.user = new UserEntity();
             this.user
                 .setId(Int32.Parse(row.Cells["ID"].Value.ToString()))
@@ -143,12 +144,16 @@ namespace CoffeeShop
             UserDB DB = new UserDB();
 
 
-            if (DB.checkPhone(phoneTextBox.Text))
+
+
+
+            if (DB.checkPhone(phoneTextBox.Text) && phone!= phoneTextBox.Text)
             {
                 MessageBox.Show("Phone number already exits", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                phone = phoneTextBox.Text;
                 user
                 .setFullName(this.fullnameTextBox.Text)
                 .setPhone(this.phoneTextBox.Text)
