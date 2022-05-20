@@ -77,9 +77,6 @@ namespace CoffeeShop
             this.menuActionLabel = new Guna.UI.WinForms.GunaLabel();
             this.tab3 = new System.Windows.Forms.TabPage();
             this.tableTable = new Guna.UI.WinForms.GunaDataGridView();
-            this.tableBusyRadio = new Guna.UI.WinForms.GunaRadioButton();
-            this.tableEmptyRadio = new Guna.UI.WinForms.GunaRadioButton();
-            this.gunaLabel19 = new Guna.UI.WinForms.GunaLabel();
             this.tableDescTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel18 = new Guna.UI.WinForms.GunaLabel();
             this.tableSearchButton = new Guna.UI.WinForms.GunaButton();
@@ -876,9 +873,6 @@ namespace CoffeeShop
             // tab3
             // 
             this.tab3.Controls.Add(this.tableTable);
-            this.tab3.Controls.Add(this.tableBusyRadio);
-            this.tab3.Controls.Add(this.tableEmptyRadio);
-            this.tab3.Controls.Add(this.gunaLabel19);
             this.tab3.Controls.Add(this.tableDescTextBox);
             this.tab3.Controls.Add(this.gunaLabel18);
             this.tab3.Controls.Add(this.tableSearchButton);
@@ -966,45 +960,6 @@ namespace CoffeeShop
             this.tableTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tableTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.tableTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableTable_CellDoubleClick);
-            // 
-            // tableBusyRadio
-            // 
-            this.tableBusyRadio.BaseColor = System.Drawing.SystemColors.Control;
-            this.tableBusyRadio.CheckedOffColor = System.Drawing.Color.Gray;
-            this.tableBusyRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.tableBusyRadio.FillColor = System.Drawing.Color.White;
-            this.tableBusyRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableBusyRadio.Location = new System.Drawing.Point(138, 625);
-            this.tableBusyRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableBusyRadio.Name = "tableBusyRadio";
-            this.tableBusyRadio.Size = new System.Drawing.Size(117, 31);
-            this.tableBusyRadio.TabIndex = 119;
-            this.tableBusyRadio.Text = "Có khách";
-            // 
-            // tableEmptyRadio
-            // 
-            this.tableEmptyRadio.BaseColor = System.Drawing.SystemColors.Control;
-            this.tableEmptyRadio.Checked = true;
-            this.tableEmptyRadio.CheckedOffColor = System.Drawing.Color.Gray;
-            this.tableEmptyRadio.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.tableEmptyRadio.FillColor = System.Drawing.Color.White;
-            this.tableEmptyRadio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableEmptyRadio.Location = new System.Drawing.Point(27, 625);
-            this.tableEmptyRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableEmptyRadio.Name = "tableEmptyRadio";
-            this.tableEmptyRadio.Size = new System.Drawing.Size(86, 31);
-            this.tableEmptyRadio.TabIndex = 118;
-            this.tableEmptyRadio.Text = "Trống";
-            // 
-            // gunaLabel19
-            // 
-            this.gunaLabel19.AutoSize = true;
-            this.gunaLabel19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel19.Location = new System.Drawing.Point(19, 588);
-            this.gunaLabel19.Name = "gunaLabel19";
-            this.gunaLabel19.Size = new System.Drawing.Size(102, 28);
-            this.gunaLabel19.TabIndex = 102;
-            this.gunaLabel19.Text = "Trạng thái";
             // 
             // tableDescTextBox
             // 
@@ -1302,7 +1257,6 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaButton searchProductButton;
         private Guna.UI.WinForms.GunaButton searchMenuButton;
         private System.Windows.Forms.TabPage tab3;
-        private Guna.UI.WinForms.GunaLabel gunaLabel19;
         private Guna.UI.WinForms.GunaTextBox tableDescTextBox;
         private Guna.UI.WinForms.GunaLabel gunaLabel18;
         private Guna.UI.WinForms.GunaButton tableSearchButton;
@@ -1315,8 +1269,6 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaButton submitTableButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel13;
         private Guna.UI.WinForms.GunaLabel actionTableLabel;
-        private Guna.UI.WinForms.GunaRadioButton tableBusyRadio;
-        private Guna.UI.WinForms.GunaRadioButton tableEmptyRadio;
         private Guna.UI.WinForms.GunaDataGridView productTable;
         private Guna.UI.WinForms.GunaDataGridView tableTable;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;

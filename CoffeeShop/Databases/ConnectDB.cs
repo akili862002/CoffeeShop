@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace CoffeeShop.Databases
 
         public static string sqlConnectionString = $"Server={dbServerName};Database=CoffeeShop;Trusted_Connection=True;";
 
-        public bool executeQuery(string query)
+        protected bool executeQuery(string query)
         {
             bool isOk = false;
             Cursor.Current = Cursors.WaitCursor;
@@ -39,7 +40,7 @@ namespace CoffeeShop.Databases
             return isOk;
         }
 
-        public bool executeCommand(SqlCommand command)
+        protected bool executeCommand(SqlCommand command)
         {
             bool isOk = false;
             Cursor.Current = Cursors.WaitCursor;
@@ -60,7 +61,27 @@ namespace CoffeeShop.Databases
             return isOk;
         }
 
-        public int executeCountQuery(string query)
+        protected int executeCommandAndTakeReturn(SqlCommand command)
+        {
+            int id = -1;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                SqlConnection connection = new SqlConnection(sqlConnectionString);
+                connection.Open();
+                command.Connection = connection;
+                 id = (int)command.ExecuteScalar();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+            return id;
+        }
+
+        protected int executeCountQuery(string query)
         {
             int totalCount = 0;
             Cursor.Current = Cursors.WaitCursor;
@@ -85,7 +106,8 @@ namespace CoffeeShop.Databases
             return totalCount;
         }
 
-        public SqlDataAdapter executeAdapterQuery(string query)
+
+        protected SqlDataAdapter executeAdapterQuery(string query)
         {
             SqlDataAdapter adapter = null;
             Cursor.Current = Cursors.WaitCursor;
@@ -105,7 +127,7 @@ namespace CoffeeShop.Databases
             return adapter;
         }
 
-        public SqlDataReader executeReaderQuery(string query)
+        protected SqlDataReader executeReaderQuery(string query)
         {
             SqlDataReader reader = null;
             Cursor.Current = Cursors.WaitCursor;

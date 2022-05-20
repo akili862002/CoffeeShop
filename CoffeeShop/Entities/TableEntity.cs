@@ -11,7 +11,10 @@ namespace CoffeeShop.Entities
         public int table_id;
         public string name;
         public string description;
+
+        // Abstract properties
         public bool is_busy;
+        public int order_number;
 
         public TableEntity setId(int id)
         {
@@ -28,9 +31,16 @@ namespace CoffeeShop.Entities
             this.description = desc;
             return this;
         }
+
         public TableEntity setIsBusy(bool is_busy)
         {
             this.is_busy = is_busy;
+            return this;
+        }
+
+        public TableEntity setOrderNumber(int order_number)
+        {
+            this.order_number = order_number;
             return this;
         }
     }

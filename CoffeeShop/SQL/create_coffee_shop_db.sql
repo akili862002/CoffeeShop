@@ -20,7 +20,7 @@ CREATE TABLE [user](
 	phone VARCHAR(12) NOT NULL  CHECK( LEN(phone) >= 10 ),
 	avatar VARCHAR(MAX),
 	[password] VARCHAR(10) NOT NULL, CHECK( LEN(password) >= 6 ),
-	birthdate DATE,
+	birthdate DATETIME NOT NULL,
 	gender  BIT DEFAULT 1, -- 1 is Male, 0 is Famale
 	[address] NVARCHAR(1000),
 	salary BIGINT, CHECK (salary>0 ),
@@ -33,9 +33,9 @@ GO
 
 CREATE TABLE [table](
 	table_id INT IDENTITY(1,1) PRIMARY KEY,
-	name VARCHAR(50),
+	[name] VARCHAR(50) NOT NULL, CHECK (LEN([name]) > 1),
 	[description] VARCHAR(255),
-	is_busy BIT DEFAULT 0,
+	--is_busy BIT DEFAULT 0,
 )
 GO
 
@@ -44,19 +44,14 @@ CREATE TABLE [order](
 	[description] VARCHAR(500),
 	table_id INT FOREIGN KEY REFERENCES [table](table_id),
 	buyer_id INT FOREIGN KEY REFERENCES [user](id),
-	-- DEAL ORDER --
-	customer_pay BIGINT,
-	total_price BIGINT,
-
-	created_at DATETIME DEFAULT SYSDATETIME(),
-	updated_at DATETIME DEFAULT SYSDATETIME(),
+	created_at DATETIME DEFAULT SYSDATETIME()
 )
 GO
 
 
 CREATE TABLE menu(
 	id INT IDENTITY(1,1) PRIMARY KEY,
-	menu_name NVARCHAR(30),
+	menu_name NVARCHAR(30) NOT NULL, CHECK (LEN(menu_name) > 1),
 	created_by INT FOREIGN KEY REFERENCES [user](id) NOT NULL,
 	created_at DATETIME DEFAULT SYSDATETIME(),
 	updated_at DATETIME DEFAULT SYSDATETIME(),
@@ -64,7 +59,7 @@ CREATE TABLE menu(
 GO
 
 CREATE TABLE product(
-	id INT IDENTITY(1,1) PRIMARY KEY ,
+	id INT IDENTITY(1,1) PRIMARY KEY,
 	[name] NVARCHAR(255) NOT NULL,
 	picture VARCHAR(MAX),
 	profit BIGINT,CHECK (profit >=0),
@@ -80,14 +75,16 @@ GO
 
 CREATE TABLE order_item(
 	id INT IDENTITY(1,1) PRIMARY KEY ,
-	order_number INT FOREIGN KEY REFERENCES [order](order_number),
-	product_id INT FOREIGN KEY REFERENCES product(id),
-	quantity VARCHAR(10)
+	order_number INT FOREIGN KEY REFERENCES [order](order_number) NOT NULL,
+	product_id INT FOREIGN KEY REFERENCES product(id) NOT NULL,
+	quantity VARCHAR(10) NOT NULL, CHECK (quantity > 0),
+	created_at DATETIME DEFAULT SYSDATETIME(),
+	updated_at DATETIME DEFAULT SYSDATETIME(),
 )
 GO
 
 CREATE TABLE bill(
-	order_number INT NOT NULL FOREIGN KEY REFERENCES [order](order_number),
+	order_number INT FOREIGN KEY REFERENCES [order](order_number) NOT NULL,
 	customer_pay BIGINT NOT NULL,
 	total_price BIGINT NOT NULL,
 	description VARCHAR(500),
@@ -127,27 +124,36 @@ INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) valu
 INSERT INTO product (name, profit, price, stock, unit, menu_id, created_by) values (N'Trà thạch vải', 14000, 39000, 68, N'Cốc', 4, 1);
 
 -- FAKE data TABLE
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 1', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 2', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 3', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 4', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 5', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 6', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 7', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 8', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 9', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 10', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 11', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 12', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 13', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 14', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 15', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 16', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 17', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 18', '', 0)
-INSERT INTO [table] (name, description, is_busy) values ('Bàn 19', '', 0)
-GO
+INSERT INTO [table] (name, description) values ('Bàn 1', '')
+INSERT INTO [table] (name, description) values ('Bàn 2', '')
+INSERT INTO [table] (name, description) values ('Bàn 3', '')
+INSERT INTO [table] (name, description) values ('Bàn 4', '')
+INSERT INTO [table] (name, description) values ('Bàn 5', '')
+INSERT INTO [table] (name, description) values ('Bàn 6', '')
+INSERT INTO [table] (name, description) values ('Bàn 7', '')
+INSERT INTO [table] (name, description) values ('Bàn 8', '')
+INSERT INTO [table] (name, description) values ('Bàn 9', '')
+INSERT INTO [table] (name, description) values ('Bàn 10', '')
+INSERT INTO [table] (name, description) values ('Bàn 11', '')
+INSERT INTO [table] (name, description) values ('Bàn 12', '')
+INSERT INTO [table] (name, description) values ('Bàn 13', '')
+INSERT INTO [table] (name, description) values ('Bàn 14', '')
+INSERT INTO [table] (name, description) values ('Bàn 15', '')
+INSERT INTO [table] (name, description) values ('Bàn 16', '')
+INSERT INTO [table] (name, description) values ('Bàn 17', '')
+INSERT INTO [table] (name, description) values ('Bàn 18', '')
+INSERT INTO [table] (name, description) values ('Bàn 19', '')
 
+-- FAKE data ORDER
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 1, 1)
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 4, 1)
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 2, 1)
+
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 1, 1)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 4, 2)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 9, 2)
+
+GO
 --------------------------- TRIGGERS ----------------------------------
 CREATE OR ALTER TRIGGER update_modified_user
 ON [user]
@@ -158,18 +164,6 @@ BEGIN
 	 SET updated_at = SYSDATETIME()
 	 FROM Inserted as ins
 	 WHERE [user].id = ins.id
-END
-GO
-
-CREATE OR ALTER TRIGGER update_modified_order
-ON [order]
-FOR UPDATE
-AS
-BEGIN
-     UPDATE [order] 
-	 SET updated_at = SYSDATETIME()
-	 FROM Inserted as ins
-	 WHERE [order].order_number = ins.order_number
 END
 GO
 
@@ -194,6 +188,54 @@ BEGIN
 	 SET updated_at = SYSDATETIME()
 	 FROM Inserted as ins
 	 WHERE [product].id = ins.id
+END
+GO
+
+CREATE OR ALTER TRIGGER update_modified_order_item
+ON [order_item]
+FOR UPDATE
+AS
+BEGIN
+     UPDATE [order_item] 
+	 SET updated_at = SYSDATETIME()
+	 FROM Inserted as ins
+	 WHERE order_item.id = ins.id
+END
+GO
+
+-- Select toàn bộ table
+-- 
+CREATE OR ALTER PROCEDURE get_all_table 
+AS
+	SELECT 
+		[table].table_id,
+		[name], 
+		CASE WHEN [order].order_number IS NULL THEN 0 ELSE 1 END AS is_busy, 
+		[table].description,
+		[order].order_number
+		-- 3. JOIN với bảng table để cuối cùng GROUP BY theo table_id
+	FROM [table] LEFT JOIN 
+		(
+			-- 1. LEFT JOIN bảng order với bill trước --> để lấy những order nào chưa hoàn thành
+			[order] LEFT JOIN bill ON [order].order_number = bill.order_number
+			-- 2. Sau đó JOIN với bảng Order_item để chắc rằng có ít nhất 1 item trong order
+			JOIN order_item ON [order].order_number = [order_item].order_number
+		)
+		ON [table].table_id = [order].table_id AND bill.order_number IS NULL
+	WHERE 1 = 1
+	GROUP BY [table].table_id, [name], [order].order_number, [table].description
+GO
+
+CREATE OR ALTER FUNCTION get_total_price_of_order(@order_number INT)
+RETURNS INT
+AS
+BEGIN
+	DECLARE @total INT;
+	
+		SELECT @total = SUM(price * quantity)
+		FROM order_item JOIN product ON order_item.product_id = product.id
+		WHERE order_item.order_number = @order_number
+	RETURN @total
 END
 GO
 

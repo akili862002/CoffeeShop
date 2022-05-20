@@ -87,11 +87,15 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Databases\ConnectDB.cs" />
+    <Compile Include="Databases\OrderDB.cs" />
     <Compile Include="Databases\ProductDB.cs" />
     <Compile Include="Databases\MenuDB.cs" />
+    <Compile Include="Databases\OrderItem.cs" />
     <Compile Include="Databases\UserDB.cs" />
     <Compile Include="Databases\TableDB.cs" />
     <Compile Include="Entities\MenuEntity.cs" />
+    <Compile Include="Entities\OrderEntity.cs" />
+    <Compile Include="Entities\OrderItemEntity.cs" />
     <Compile Include="Entities\ProductEntity.cs" />
     <Compile Include="Entities\TableEntity.cs" />
     <Compile Include="Entities\UserEntity.cs" />

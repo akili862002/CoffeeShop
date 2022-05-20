@@ -64,7 +64,6 @@ namespace CoffeeShop
             this.stockProductTextBox.Text = "0";
             this.priceProductTextBox.Text = "0";
             this.profitProductTextBox.Text = "0";
-            this.tableEmptyRadio.Checked = false;
             this.deleteProductButton.Show();
         }
 
@@ -298,8 +297,6 @@ namespace CoffeeShop
 
             this.tableNameTextBox.Text = this.table.name;
             this.tableDescTextBox.Text = this.table.description;
-            this.tableEmptyRadio.Checked = this.table.is_busy;
-            this.tableBusyRadio.Checked = !this.table.is_busy;
 
             this.deleteTableButton.Show();
         }
@@ -312,9 +309,7 @@ namespace CoffeeShop
 
             this.tableNameTextBox.Text = "";
             this.tableDescTextBox.Text = "";
-            this.tableEmptyRadio.Checked = true;
-            this.tableBusyRadio.Checked = false;
-
+           
             this.tableNameTextBox.Text = "";
             this.deleteMenuButton.Hide();
         }
@@ -326,7 +321,11 @@ namespace CoffeeShop
             {
                 DataTable dt = new DataTable();
                 db.getAllAdapter(
-                        "table_id as [ID], [name] as [Tên bàn], description as [Nội dung], CASE WHEN is_busy = 1 THEN N'Có khách' ELSE N'Trống' END as [Tình trạng]",
+                        @"
+                            [table].table_id as [ID],
+                            [table].name as [Tên bàn],
+                            [table].description as [Nội dung],
+                            CASE WHEN [order].order_number IS NULL THEN N'Trống' ELSE N'Có người' END as [Tình trạng]",
                         this.searchMenuTextBox.Text
                     )
                 .Fill(dt);
@@ -349,8 +348,7 @@ namespace CoffeeShop
             TableEntity newTable = new TableEntity();
             newTable
                 .setName(this.tableNameTextBox.Text)
-                .setDescription(this.tableDescTextBox.Text)
-                .setIsBusy(this.tableBusyRadio.Checked);
+                .setDescription(this.tableDescTextBox.Text);
             TableDB db = new TableDB();
             new Thread(() =>
             {
@@ -378,8 +376,7 @@ namespace CoffeeShop
             this.table
                 .setId(Int32.Parse(row.Cells["ID"].Value.ToString()))
                 .setName(row.Cells["Tên bàn"].Value.ToString())
-                .setDescription(row.Cells["Nội dung"].Value.ToString())
-                .setIsBusy(row.Cells["Tình trạng"].Value.ToString() == "Trống");
+                .setDescription(row.Cells["Nội dung"].Value.ToString());
             initEditTable();
         }
 
