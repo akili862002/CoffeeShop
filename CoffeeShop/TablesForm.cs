@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.Databases;
+using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +15,23 @@ namespace CoffeeShop
 {
     public partial class TablesForm : Form
     {
+        TableEntity tableSelected = new TableEntity();
         public TablesForm()
         {
             InitializeComponent();
             this.initTableListView();
         }
 
+        private void TablesForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void loadTableData()
         {
 
         }
+
 
         public void initTableListView()
         {
@@ -46,7 +54,7 @@ namespace CoffeeShop
             }
         }
 
-        private void gunaButton2_Click(object sender, EventArgs e)
+        private void addOrderItemButton_Click(object sender, EventArgs e)
         {
             using (AddOrderItem addOrderItem = new AddOrderItem())
             {
@@ -54,7 +62,7 @@ namespace CoffeeShop
             }
         }
 
-        private void gunaButton4_Click(object sender, EventArgs e)
+        private void deleteOrderItemButton_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show("Bạn có chắc muốn xóa món này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
@@ -63,9 +71,20 @@ namespace CoffeeShop
             }
         }
 
-        private void TablesForm_Load(object sender, EventArgs e)
+        private void tableListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tableListView.SelectedIndices.Count <= 0)
+            {
+                return;
+            }
 
+            int intselectedindex = this.tableListView.SelectedIndices[0];
+            if (intselectedindex >= 0)
+            {
+                String text = tableListView.Items[intselectedindex].Text;
+
+                MessageBox.Show(text);
+            }
         }
     }
 }
