@@ -17,7 +17,10 @@ namespace CoffeeShop
         {
             public static bool isAuth = false;
             public static UserEntity user = new UserEntity();
-            public static string serverName = "(localdb)\\MSSQLLocalDB";
+            // Quang 
+            // public static string serverName = "(localdb)\\MSSQLLocalDB";
+            // Dung
+            public static string serverName = "DESKTOP-7TB6IV3";
         }
 
         [STAThread]
