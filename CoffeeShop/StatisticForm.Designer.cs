@@ -50,34 +50,35 @@ namespace CoffeeShop
             this.staffChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.tab3 = new System.Windows.Forms.TabPage();
+            this.orderFilterPanel = new Guna.UI.WinForms.GunaPanel();
+            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.orderFromDatePicker = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.filterOrderButton = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.orderToDatePicker = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.orderFilterCheckbox = new Guna.UI.WinForms.GunaCheckBox();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
             this.orderTable = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.searchButton = new Guna.UI.WinForms.GunaButton();
-            this.orderFilterCheckbox = new Guna.UI.WinForms.GunaCheckBox();
-            this.orderToDatePicker = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
-            this.filterOrderButton = new Guna.UI.WinForms.GunaButton();
-            this.orderFromDatePicker = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
-            this.orderFilterPanel = new Guna.UI.WinForms.GunaPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productChart)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffChart)).BeginInit();
             this.tab3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderTable)).BeginInit();
             this.orderFilterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderTable)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(11, 23);
+            this.gunaLabel1.Location = new System.Drawing.Point(7, 15);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(256, 70);
+            this.gunaLabel1.Size = new System.Drawing.Size(175, 47);
             this.gunaLabel1.TabIndex = 17;
             this.gunaLabel1.Text = "Thống kê";
             // 
@@ -88,10 +89,11 @@ namespace CoffeeShop
             this.tabControl1.Controls.Add(this.tab3);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(200, 50);
-            this.tabControl1.Location = new System.Drawing.Point(12, 111);
+            this.tabControl1.Location = new System.Drawing.Point(8, 72);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1716, 924);
+            this.tabControl1.Size = new System.Drawing.Size(1144, 601);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 67;
             // 
@@ -100,9 +102,10 @@ namespace CoffeeShop
             this.tabPage1.Controls.Add(this.gunaLabel2);
             this.tabPage1.Controls.Add(this.productChart);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1708, 866);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1136, 543);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Theo sản phẩm";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -111,9 +114,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(24, 24);
+            this.gunaLabel2.Location = new System.Drawing.Point(16, 16);
+            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(437, 48);
+            this.gunaLabel2.Size = new System.Drawing.Size(296, 32);
             this.gunaLabel2.TabIndex = 68;
             this.gunaLabel2.Text = "Thống kê theo sản phẩm";
             // 
@@ -125,7 +129,8 @@ namespace CoffeeShop
             legend1.ForeColor = System.Drawing.Color.WhiteSmoke;
             legend1.Name = "Legend1";
             this.productChart.Legends.Add(legend1);
-            this.productChart.Location = new System.Drawing.Point(7, 65);
+            this.productChart.Location = new System.Drawing.Point(5, 42);
+            this.productChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.productChart.Name = "productChart";
             this.productChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -135,7 +140,7 @@ namespace CoffeeShop
             series1.Name = "Benefit";
             series1.ShadowColor = System.Drawing.Color.Gray;
             this.productChart.Series.Add(series1);
-            this.productChart.Size = new System.Drawing.Size(1677, 785);
+            this.productChart.Size = new System.Drawing.Size(1118, 510);
             this.productChart.TabIndex = 0;
             this.productChart.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,9 +155,10 @@ namespace CoffeeShop
             this.tabPage2.Controls.Add(this.staffChart);
             this.tabPage2.Controls.Add(this.gunaButton1);
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1708, 866);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1136, 543);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nhân viên";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -161,9 +167,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(24, 24);
+            this.gunaLabel7.Location = new System.Drawing.Point(16, 16);
+            this.gunaLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(440, 48);
+            this.gunaLabel7.Size = new System.Drawing.Size(298, 32);
             this.gunaLabel7.TabIndex = 90;
             this.gunaLabel7.Text = "Thống kê theo nhân viên";
             // 
@@ -173,7 +180,8 @@ namespace CoffeeShop
             this.staffChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.staffChart.Legends.Add(legend2);
-            this.staffChart.Location = new System.Drawing.Point(7, 67);
+            this.staffChart.Location = new System.Drawing.Point(5, 44);
+            this.staffChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.staffChart.Name = "staffChart";
             this.staffChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series2.ChartArea = "ChartArea1";
@@ -182,7 +190,7 @@ namespace CoffeeShop
             series2.Legend = "Legend1";
             series2.Name = "Order";
             this.staffChart.Series.Add(series2);
-            this.staffChart.Size = new System.Drawing.Size(1677, 785);
+            this.staffChart.Size = new System.Drawing.Size(1118, 510);
             this.staffChart.TabIndex = 89;
             this.staffChart.Text = "chart2";
             title2.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,7 +213,8 @@ namespace CoffeeShop
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(1717, 172);
+            this.gunaButton1.Location = new System.Drawing.Point(1145, 112);
+            this.gunaButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -213,7 +222,7 @@ namespace CoffeeShop
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton1.Radius = 4;
-            this.gunaButton1.Size = new System.Drawing.Size(99, 48);
+            this.gunaButton1.Size = new System.Drawing.Size(66, 31);
             this.gunaButton1.TabIndex = 88;
             this.gunaButton1.Text = "Search";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -227,19 +236,151 @@ namespace CoffeeShop
             this.tab3.Controls.Add(this.gunaLabel10);
             this.tab3.Controls.Add(this.searchButton);
             this.tab3.Location = new System.Drawing.Point(4, 54);
+            this.tab3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tab3.Name = "tab3";
-            this.tab3.Size = new System.Drawing.Size(1708, 866);
+            this.tab3.Size = new System.Drawing.Size(1136, 543);
             this.tab3.TabIndex = 2;
             this.tab3.Text = "Đơn hàng";
             this.tab3.UseVisualStyleBackColor = true;
+            // 
+            // orderFilterPanel
+            // 
+            this.orderFilterPanel.Controls.Add(this.gunaLabel8);
+            this.orderFilterPanel.Controls.Add(this.orderFromDatePicker);
+            this.orderFilterPanel.Controls.Add(this.filterOrderButton);
+            this.orderFilterPanel.Controls.Add(this.gunaLabel9);
+            this.orderFilterPanel.Controls.Add(this.orderToDatePicker);
+            this.orderFilterPanel.Enabled = false;
+            this.orderFilterPanel.Location = new System.Drawing.Point(33, 80);
+            this.orderFilterPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderFilterPanel.Name = "orderFilterPanel";
+            this.orderFilterPanel.Size = new System.Drawing.Size(1095, 65);
+            this.orderFilterPanel.TabIndex = 110;
+            // 
+            // gunaLabel8
+            // 
+            this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel8.Location = new System.Drawing.Point(2, 0);
+            this.gunaLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel8.Name = "gunaLabel8";
+            this.gunaLabel8.Size = new System.Drawing.Size(60, 19);
+            this.gunaLabel8.TabIndex = 70;
+            this.gunaLabel8.Text = "Từ ngày";
+            // 
+            // orderFromDatePicker
+            // 
+            this.orderFromDatePicker.BackColor = System.Drawing.Color.Transparent;
+            this.orderFromDatePicker.BaseColor = System.Drawing.Color.White;
+            this.orderFromDatePicker.BorderColor = System.Drawing.Color.Silver;
+            this.orderFromDatePicker.BorderSize = 1;
+            this.orderFromDatePicker.CustomFormat = null;
+            this.orderFromDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.orderFromDatePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderFromDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.orderFromDatePicker.ForeColor = System.Drawing.Color.Black;
+            this.orderFromDatePicker.Location = new System.Drawing.Point(5, 20);
+            this.orderFromDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderFromDatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.orderFromDatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.orderFromDatePicker.Name = "orderFromDatePicker";
+            this.orderFromDatePicker.OnHoverBaseColor = System.Drawing.Color.White;
+            this.orderFromDatePicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderFromDatePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderFromDatePicker.OnPressedColor = System.Drawing.Color.Black;
+            this.orderFromDatePicker.Radius = 4;
+            this.orderFromDatePicker.Size = new System.Drawing.Size(214, 32);
+            this.orderFromDatePicker.TabIndex = 69;
+            this.orderFromDatePicker.Text = "17 Tháng Mười Hai 1999";
+            this.orderFromDatePicker.Value = new System.DateTime(1999, 12, 17, 0, 0, 0, 0);
+            // 
+            // filterOrderButton
+            // 
+            this.filterOrderButton.Animated = true;
+            this.filterOrderButton.AnimationHoverSpeed = 0.07F;
+            this.filterOrderButton.AnimationSpeed = 0.03F;
+            this.filterOrderButton.BackColor = System.Drawing.Color.Transparent;
+            this.filterOrderButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.filterOrderButton.BorderColor = System.Drawing.Color.Black;
+            this.filterOrderButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.filterOrderButton.FocusedColor = System.Drawing.Color.Empty;
+            this.filterOrderButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterOrderButton.ForeColor = System.Drawing.Color.White;
+            this.filterOrderButton.Image = null;
+            this.filterOrderButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.filterOrderButton.Location = new System.Drawing.Point(466, 20);
+            this.filterOrderButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filterOrderButton.Name = "filterOrderButton";
+            this.filterOrderButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.filterOrderButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.filterOrderButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.filterOrderButton.OnHoverImage = null;
+            this.filterOrderButton.OnPressedColor = System.Drawing.Color.Black;
+            this.filterOrderButton.Radius = 4;
+            this.filterOrderButton.Size = new System.Drawing.Size(103, 32);
+            this.filterOrderButton.TabIndex = 73;
+            this.filterOrderButton.Text = "Lọc";
+            this.filterOrderButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel9.Location = new System.Drawing.Point(233, 0);
+            this.gunaLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(68, 19);
+            this.gunaLabel9.TabIndex = 72;
+            this.gunaLabel9.Text = "Đến ngày";
+            // 
+            // orderToDatePicker
+            // 
+            this.orderToDatePicker.BackColor = System.Drawing.Color.Transparent;
+            this.orderToDatePicker.BaseColor = System.Drawing.Color.White;
+            this.orderToDatePicker.BorderColor = System.Drawing.Color.Silver;
+            this.orderToDatePicker.BorderSize = 1;
+            this.orderToDatePicker.CustomFormat = null;
+            this.orderToDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.orderToDatePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderToDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.orderToDatePicker.ForeColor = System.Drawing.Color.Black;
+            this.orderToDatePicker.Location = new System.Drawing.Point(235, 20);
+            this.orderToDatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderToDatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.orderToDatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.orderToDatePicker.Name = "orderToDatePicker";
+            this.orderToDatePicker.OnHoverBaseColor = System.Drawing.Color.White;
+            this.orderToDatePicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderToDatePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderToDatePicker.OnPressedColor = System.Drawing.Color.Black;
+            this.orderToDatePicker.Radius = 4;
+            this.orderToDatePicker.Size = new System.Drawing.Size(214, 32);
+            this.orderToDatePicker.TabIndex = 71;
+            this.orderToDatePicker.Text = "17 Tháng Năm 2022";
+            this.orderToDatePicker.Value = new System.DateTime(2022, 5, 17, 14, 30, 22, 650);
+            // 
+            // orderFilterCheckbox
+            // 
+            this.orderFilterCheckbox.BaseColor = System.Drawing.Color.White;
+            this.orderFilterCheckbox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.orderFilterCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.orderFilterCheckbox.FillColor = System.Drawing.Color.White;
+            this.orderFilterCheckbox.Location = new System.Drawing.Point(21, 55);
+            this.orderFilterCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderFilterCheckbox.Name = "orderFilterCheckbox";
+            this.orderFilterCheckbox.Size = new System.Drawing.Size(87, 21);
+            this.orderFilterCheckbox.TabIndex = 109;
+            this.orderFilterCheckbox.Text = "Dùng lọc";
+            this.orderFilterCheckbox.CheckedChanged += new System.EventHandler(this.orderFilterCheckbox_CheckedChanged);
             // 
             // gunaLabel11
             // 
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.Location = new System.Drawing.Point(26, 239);
+            this.gunaLabel11.Location = new System.Drawing.Point(17, 155);
+            this.gunaLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel11.Name = "gunaLabel11";
-            this.gunaLabel11.Size = new System.Drawing.Size(171, 32);
+            this.gunaLabel11.Size = new System.Drawing.Size(114, 21);
             this.gunaLabel11.TabIndex = 108;
             this.gunaLabel11.Text = "Các đơn hàng";
             // 
@@ -274,14 +415,15 @@ namespace CoffeeShop
             this.orderTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.orderTable.EnableHeadersVisualStyles = false;
             this.orderTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.orderTable.Location = new System.Drawing.Point(31, 281);
+            this.orderTable.Location = new System.Drawing.Point(21, 183);
+            this.orderTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.orderTable.Name = "orderTable";
             this.orderTable.ReadOnly = true;
             this.orderTable.RowHeadersVisible = false;
             this.orderTable.RowHeadersWidth = 62;
             this.orderTable.RowTemplate.Height = 28;
             this.orderTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderTable.Size = new System.Drawing.Size(1669, 570);
+            this.orderTable.Size = new System.Drawing.Size(1113, 370);
             this.orderTable.TabIndex = 107;
             this.orderTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.orderTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -310,9 +452,10 @@ namespace CoffeeShop
             // 
             this.gunaLabel10.AutoSize = true;
             this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.Location = new System.Drawing.Point(24, 24);
+            this.gunaLabel10.Location = new System.Drawing.Point(16, 16);
+            this.gunaLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(437, 48);
+            this.gunaLabel10.Size = new System.Drawing.Size(295, 32);
             this.gunaLabel10.TabIndex = 100;
             this.gunaLabel10.Text = "Thống kê theo đơn hàng";
             // 
@@ -330,7 +473,8 @@ namespace CoffeeShop
             this.searchButton.ForeColor = System.Drawing.Color.White;
             this.searchButton.Image = null;
             this.searchButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.searchButton.Location = new System.Drawing.Point(1720, 177);
+            this.searchButton.Location = new System.Drawing.Point(1147, 115);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchButton.Name = "searchButton";
             this.searchButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.searchButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -338,142 +482,20 @@ namespace CoffeeShop
             this.searchButton.OnHoverImage = null;
             this.searchButton.OnPressedColor = System.Drawing.Color.Black;
             this.searchButton.Radius = 4;
-            this.searchButton.Size = new System.Drawing.Size(99, 48);
+            this.searchButton.Size = new System.Drawing.Size(66, 31);
             this.searchButton.TabIndex = 99;
             this.searchButton.Text = "Search";
             this.searchButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // orderFilterCheckbox
-            // 
-            this.orderFilterCheckbox.BaseColor = System.Drawing.Color.White;
-            this.orderFilterCheckbox.CheckedOffColor = System.Drawing.Color.Gray;
-            this.orderFilterCheckbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderFilterCheckbox.FillColor = System.Drawing.Color.White;
-            this.orderFilterCheckbox.Location = new System.Drawing.Point(31, 85);
-            this.orderFilterCheckbox.Name = "orderFilterCheckbox";
-            this.orderFilterCheckbox.Size = new System.Drawing.Size(96, 22);
-            this.orderFilterCheckbox.TabIndex = 109;
-            this.orderFilterCheckbox.Text = "Dùng lọc";
-            this.orderFilterCheckbox.CheckedChanged += new System.EventHandler(this.orderFilterCheckbox_CheckedChanged);
-            // 
-            // orderToDatePicker
-            // 
-            this.orderToDatePicker.BackColor = System.Drawing.Color.Transparent;
-            this.orderToDatePicker.BaseColor = System.Drawing.Color.White;
-            this.orderToDatePicker.BorderColor = System.Drawing.Color.Silver;
-            this.orderToDatePicker.BorderSize = 1;
-            this.orderToDatePicker.CustomFormat = null;
-            this.orderToDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.orderToDatePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderToDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.orderToDatePicker.ForeColor = System.Drawing.Color.Black;
-            this.orderToDatePicker.Location = new System.Drawing.Point(353, 31);
-            this.orderToDatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.orderToDatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.orderToDatePicker.Name = "orderToDatePicker";
-            this.orderToDatePicker.OnHoverBaseColor = System.Drawing.Color.White;
-            this.orderToDatePicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderToDatePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderToDatePicker.OnPressedColor = System.Drawing.Color.Black;
-            this.orderToDatePicker.Radius = 4;
-            this.orderToDatePicker.Size = new System.Drawing.Size(321, 50);
-            this.orderToDatePicker.TabIndex = 71;
-            this.orderToDatePicker.Text = "Tuesday, May 17, 2022";
-            this.orderToDatePicker.Value = new System.DateTime(2022, 5, 17, 14, 30, 22, 650);
-            // 
-            // gunaLabel9
-            // 
-            this.gunaLabel9.AutoSize = true;
-            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.Location = new System.Drawing.Point(349, 0);
-            this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(99, 28);
-            this.gunaLabel9.TabIndex = 72;
-            this.gunaLabel9.Text = "Đến ngày";
-            // 
-            // filterOrderButton
-            // 
-            this.filterOrderButton.Animated = true;
-            this.filterOrderButton.AnimationHoverSpeed = 0.07F;
-            this.filterOrderButton.AnimationSpeed = 0.03F;
-            this.filterOrderButton.BackColor = System.Drawing.Color.Transparent;
-            this.filterOrderButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.filterOrderButton.BorderColor = System.Drawing.Color.Black;
-            this.filterOrderButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.filterOrderButton.FocusedColor = System.Drawing.Color.Empty;
-            this.filterOrderButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterOrderButton.ForeColor = System.Drawing.Color.White;
-            this.filterOrderButton.Image = null;
-            this.filterOrderButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.filterOrderButton.Location = new System.Drawing.Point(699, 31);
-            this.filterOrderButton.Name = "filterOrderButton";
-            this.filterOrderButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.filterOrderButton.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.filterOrderButton.OnHoverForeColor = System.Drawing.Color.White;
-            this.filterOrderButton.OnHoverImage = null;
-            this.filterOrderButton.OnPressedColor = System.Drawing.Color.Black;
-            this.filterOrderButton.Radius = 4;
-            this.filterOrderButton.Size = new System.Drawing.Size(154, 50);
-            this.filterOrderButton.TabIndex = 73;
-            this.filterOrderButton.Text = "Lọc";
-            this.filterOrderButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // orderFromDatePicker
-            // 
-            this.orderFromDatePicker.BackColor = System.Drawing.Color.Transparent;
-            this.orderFromDatePicker.BaseColor = System.Drawing.Color.White;
-            this.orderFromDatePicker.BorderColor = System.Drawing.Color.Silver;
-            this.orderFromDatePicker.BorderSize = 1;
-            this.orderFromDatePicker.CustomFormat = null;
-            this.orderFromDatePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.orderFromDatePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderFromDatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.orderFromDatePicker.ForeColor = System.Drawing.Color.Black;
-            this.orderFromDatePicker.Location = new System.Drawing.Point(7, 31);
-            this.orderFromDatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.orderFromDatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.orderFromDatePicker.Name = "orderFromDatePicker";
-            this.orderFromDatePicker.OnHoverBaseColor = System.Drawing.Color.White;
-            this.orderFromDatePicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderFromDatePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.orderFromDatePicker.OnPressedColor = System.Drawing.Color.Black;
-            this.orderFromDatePicker.Radius = 4;
-            this.orderFromDatePicker.Size = new System.Drawing.Size(321, 50);
-            this.orderFromDatePicker.TabIndex = 69;
-            this.orderFromDatePicker.Text = "Friday, December 17, 1999";
-            this.orderFromDatePicker.Value = new System.DateTime(1999, 12, 17, 0, 0, 0, 0);
-            // 
-            // gunaLabel8
-            // 
-            this.gunaLabel8.AutoSize = true;
-            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.Location = new System.Drawing.Point(3, 0);
-            this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(85, 28);
-            this.gunaLabel8.TabIndex = 70;
-            this.gunaLabel8.Text = "Từ ngày";
-            // 
-            // orderFilterPanel
-            // 
-            this.orderFilterPanel.Controls.Add(this.gunaLabel8);
-            this.orderFilterPanel.Controls.Add(this.orderFromDatePicker);
-            this.orderFilterPanel.Controls.Add(this.filterOrderButton);
-            this.orderFilterPanel.Controls.Add(this.gunaLabel9);
-            this.orderFilterPanel.Controls.Add(this.orderToDatePicker);
-            this.orderFilterPanel.Enabled = false;
-            this.orderFilterPanel.Location = new System.Drawing.Point(50, 123);
-            this.orderFilterPanel.Name = "orderFilterPanel";
-            this.orderFilterPanel.Size = new System.Drawing.Size(1642, 100);
-            this.orderFilterPanel.TabIndex = 110;
-            // 
             // StatisticForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1740, 1047);
+            this.ClientSize = new System.Drawing.Size(1160, 681);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.gunaLabel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StatisticForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "StatisticForm";
@@ -487,9 +509,9 @@ namespace CoffeeShop
             ((System.ComponentModel.ISupportInitialize)(this.staffChart)).EndInit();
             this.tab3.ResumeLayout(false);
             this.tab3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderTable)).EndInit();
             this.orderFilterPanel.ResumeLayout(false);
             this.orderFilterPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
