@@ -1,6 +1,7 @@
 ﻿using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,13 @@ namespace CoffeeShop.Databases
             if (!string.IsNullOrEmpty(filterString))
                 query += filterString;
             return this.executeAdapterQuery(query);
+        }
+
+        public SqlDataAdapter getStatisticsAdapter()
+        {
+            SqlCommand command = new SqlCommand("statistic_by_product");
+            command.CommandType = CommandType.StoredProcedure;
+            return this.executeAdapterCommand(command);
         }
 
         public int count()

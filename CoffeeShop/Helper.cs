@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoffeeShop
 {
@@ -107,6 +109,15 @@ namespace CoffeeShop
         {
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             return price.ToString("#,###", cul.NumberFormat) + "₫";
+        }
+    }
+
+    internal class FormatDatePicker
+    {
+        public static void format(GunaDateTimePicker datePicker)
+        {
+            datePicker.Format = DateTimePickerFormat.Custom;
+            datePicker.CustomFormat = "MM/dd/yyyy";
         }
     }
 }

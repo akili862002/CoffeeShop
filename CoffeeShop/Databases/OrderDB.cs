@@ -39,5 +39,17 @@ namespace CoffeeShop.Databases
         {
             return this.executeCountQuery($"SELECT dbo.get_total_price_of_order({order_number})");
         }
+
+        public SqlDataAdapter getAllOrdersAdapter(string selectString = "*")
+        {
+            SqlCommand command = new SqlCommand($@"
+                SELECT	
+                    {selectString}
+                FROM [order]
+                LEFT JOIN bill ON [order].order_number = bill.order_number
+                JOIN [user] ON [user].id = [order].buyer_id
+            ");
+            return this.executeAdapterCommand(command);
+        }
     }
 }

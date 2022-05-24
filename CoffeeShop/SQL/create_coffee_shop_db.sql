@@ -85,13 +85,13 @@ GO
 
 CREATE TABLE bill(
 	order_number INT FOREIGN KEY REFERENCES [order](order_number) NOT NULL,
-	customer_pay BIGINT NOT NULL,
-	total_price BIGINT NOT NULL,
+	total_price BIGINT NOT NULL, CHECK(total_price > 0),
 	description VARCHAR(500),
-	created_at DATETIME DEFAULT SYSDATETIME(),
+	created_at DATETIME DEFAULT GETDATE(),
 	PRIMARY KEY (order_number)
 )
 GO
+
 
 -------------------------- FAKE DATA ---------------------------------
 -- Fake data USER
@@ -154,16 +154,44 @@ INSERT INTO [table] (name, description) values ('Bàn 18', '')
 INSERT INTO [table] (name, description) values ('Bàn 19', '')
 
 -- FAKE data ORDER
-INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 1, 1)
 INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 4, 1)
-INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 2, 1)
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 8, 2 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 4, 4 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 7, 2 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 12, 3 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 14, 2 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 15,1 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 18,6 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 18,5 )
 
-INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 1, 1)
-INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 4, 2)
-INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 9, 2)
+-- FAKE data ORDER ITEM
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (1, 1,6)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 1, 4)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 3, 4)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 4, 4)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (2, 13, 5)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (4, 1, 1)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (4, 8, 4)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (5, 1, 4)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (6, 4, 20)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (7, 2, 5)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (7, 3, 4)
+INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (9, 4, 4)
 
+INSERT INTO [bill] (order_number, total_price) VALUES (1, 174000)
+INSERT INTO [bill] (order_number, total_price) VALUES (2, 563000)
+INSERT INTO [bill] (order_number, total_price) VALUES (4, 105000)
+INSERT INTO [bill] (order_number, total_price) VALUES (5, 116000)
+INSERT INTO [bill] (order_number, total_price) VALUES (6, 700000)
+INSERT INTO [bill] (order_number, total_price) VALUES (7, 135000)
+INSERT INTO [bill] (order_number, total_price) VALUES (8, 112000)
+INSERT INTO [bill] (order_number, total_price) VALUES (9, 315000)
 GO
+
 --------------------------- TRIGGERS ----------------------------------
+            --------------------------------------
+
+------------ USER TRIGGERS
 CREATE OR ALTER TRIGGER update_modified_user
 ON [user]
 FOR UPDATE
@@ -231,17 +259,8 @@ BEGIN
 END
 GO
 
-CREATE OR ALTER TRIGGER create_order_item
-ON [order_item]
-FOR INSERT, UPDATE
-AS
-BEGIN
-	DECLARE @quantity INT;
-	SELECT * FROM inserted JOIN product ON inserted.product_id = product.id AND quantity;
-
-	RAISERROR('Error!!!', 10, 1)
-END
-GO
+--------------------------- FUNCTION & PROCEDUCE ----------------------------------
+            --------------------------------------
 
 -- Select toàn bộ table
 -- 
@@ -277,3 +296,26 @@ BEGIN
 	RETURN @total
 END
 GO
+
+CREATE OR ALTER PROCEDURE statistic_by_product
+AS
+	SELECT TOP 10 product.id, product.name, SUM(total_price) as [Total price]
+	FROM 
+		order_item
+		JOIN [order] ON order_item.order_number = [order].order_number
+		JOIN [bill] ON bill.order_number = [order].order_number
+		JOIN [product] ON order_item.product_id = product.id
+	GROUP BY product.id, product.name
+	ORDER BY [Total price] DESC
+GO
+
+CREATE OR ALTER PROCEDURE statistic_by_staff
+AS
+	SELECT [user].id, [user].fullname, COUNT([user].id) as [Amount]
+	FROM [order]
+		JOIN [bill] ON bill.order_number = [order].order_number
+		JOIN [user] ON [user].id = [order].buyer_id
+	GROUP BY [user].id, [user].fullname
+	ORDER BY Amount
+GO
+

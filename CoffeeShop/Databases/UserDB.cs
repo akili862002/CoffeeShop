@@ -1,6 +1,7 @@
 ﻿using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -97,6 +98,51 @@ namespace CoffeeShop.Databases
             command.Parameters.AddWithValue("@avatar", user.avatar);
 
             return this.executeCommand(command);
+        }
+
+        public UserEntity getById(int userid)
+        {
+            DataTable dt = new DataTable();
+            this.executeAdapterQuery($"SELECT id, fullname, phone, avatar, is_admin FROM [user]").Fill(dt);
+            DataRow row = dt.Rows[0];
+            if (row == null) return null;
+
+            UserEntity user = new UserEntity();
+
+            user
+                .setId(row.Field<int>(0))
+                .setFullName(row.Field<string>(1))
+                .setPhone(row.Field<string>(2))
+                .setAvatar(row.Field<string>(3))
+                .setIs_admin(row.Field<bool>(4));
+
+            return user;
+        }
+
+        public UserEntity loginUser(string phone, string password)
+        {
+            DataTable dt = new DataTable();
+            this.executeAdapterQuery($"SELECT id, fullname, phone, avatar, is_admin FROM [user] WHERE phone = '{phone}' AND password = '{password}'").Fill(dt);
+            DataRow row = dt.Rows[0];
+            if (row == null) return null;
+
+            UserEntity user = new UserEntity();
+
+            user
+                .setId(row.Field<int>(0))
+                .setFullName(row.Field<string>(1))
+                .setPhone(row.Field<string>(2))
+                .setAvatar(row.Field<string>(3))
+                .setIs_admin(row.Field<bool>(4));
+
+            return user;
+        }
+
+        public SqlDataAdapter getStatisticsAdapter()
+        {
+            SqlCommand command = new SqlCommand("statistic_by_staff");
+            command.CommandType = CommandType.StoredProcedure;
+            return this.executeAdapterCommand(command);
         }
     }
 }

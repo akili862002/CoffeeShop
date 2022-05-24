@@ -15,9 +15,8 @@ namespace CoffeeShop.Databases
         public bool create(BillEntity bill)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = $"INSERT INTO {this.tableName} (order_number, customer_pay, total_price, description) values (@order_number, @customer_pay, @total_price, @description)";
+            cmd.CommandText = $"INSERT INTO {this.tableName} (order_number, total_price, description) values (@order_number, @total_price, @description)";
             cmd.Parameters.AddWithValue("@order_number", bill.order_number);
-            cmd.Parameters.AddWithValue("@customer_pay", bill.customer_pay);
             cmd.Parameters.AddWithValue("@total_price", bill.total_price);
             cmd.Parameters.AddWithValue("@description", bill.description);
             return this.executeCommand(cmd);

@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.Databases;
+using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,20 +43,21 @@ namespace CoffeeShop
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            UserDB DB = new UserDB();
+            UserDB db = new UserDB();
             string phone = this.phoneTextBox.Text;
             string password = this.passwordTextBox.Text;
 
+            UserEntity user = db.loginUser(phone, password);
 
-            if (!DB.login(phone, password))
+            if (user == null)
             {
                 MessageBox.Show("Username or password is not correct!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
 
             this.Hide();
             Program.Global.isAuth = true;
+            Program.Global.user = user;
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
         }

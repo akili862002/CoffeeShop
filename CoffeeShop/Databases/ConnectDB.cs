@@ -127,6 +127,27 @@ namespace CoffeeShop.Databases
             return adapter;
         }
 
+        protected SqlDataAdapter executeAdapterCommand(SqlCommand command)
+        {
+            SqlDataAdapter adapter = null;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                SqlConnection connection = new SqlConnection(sqlConnectionString);
+                connection.Open();
+                command.Connection = connection;
+                adapter = new SqlDataAdapter(command);
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+
+            return adapter;
+        }
+
         protected SqlDataReader executeReaderQuery(string query)
         {
             SqlDataReader reader = null;
