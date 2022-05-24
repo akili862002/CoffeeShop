@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeShop.Databases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,10 +56,16 @@ namespace CoffeeShop
                 statisticForm.ShowDialog();
             }
         }
+        OrderDB order = new OrderDB();
+        UserDB user = new UserDB();
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            
+            orderTodayLabel.Text = order.getCountOder().ToString();
+            revenueTodayLabel.Text = order.getCountRevenue().ToString();
+            costTodayLabel.Text = order.getCountCost().ToString();
+            totalStaffLabel.Text = user.countUser().ToString();
         }
+        
     }
 }

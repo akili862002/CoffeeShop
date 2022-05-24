@@ -101,10 +101,10 @@ INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salar
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Ha Van Nhan', '0285683286', '123123', '1/12/2002', 1, 'Dong Thap', 15000000,0);
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Nguyen Tuan Kiet', '0973944762', '987654', '1/2/2001', 1, 'Ca Mau', 17000000,0);
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Ho Kim Tien', '0987462814', '230403', '3/4/2003', 1, 'Dong Nai', 18500000,0);
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Truong Pham Ly Huong', '0391742917', '130702', '1/7/2002', 1, 'Dong Thap', 15000000,0);
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Dang Mai Huong', '0973644853', '040501', '4/5/2001', 1, 'Cao Bang', 13000000,0);
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Truong Pham Ly Huong', '0391742917', '130702', '1/7/2002', 0, 'Dong Thap', 15000000,0);
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Dang Mai Huong', '0973644853', '040501', '4/5/2001', 0, 'Cao Bang', 13000000,0);
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Ha Nhat Venh', '0321456346', '111204', '1/12/2004', 1, 'Dong Thap', 13500000,0);
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Do Thi Bich Ngoc', '0965755843', '250302', '2/3/2002', 1, 'Thai Nguyen', 18000000,0);
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Do Thi Bich Ngoc', '0965755843', '250302', '2/3/2002', 0, 'Thai Nguyen', 18000000,0);
 GO
 -- Fake data MENU
 INSERT INTO [menu] (menu_name, created_by) VALUES (N'Cà phê pha phin', 1);

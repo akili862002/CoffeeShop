@@ -70,9 +70,9 @@ namespace CoffeeShop.Databases
             return this.executeAdapterQuery(query);
         }
 
-        public int countMenu()
+        public int countUser()
         {
-            return this.executeCountQuery("SELECT COUNT(*) FROM {table}");
+            return this.executeCountQuery($"SELECT COUNT(*) FROM {table}");
         }
 
         public bool delete(int id)
@@ -98,5 +98,7 @@ namespace CoffeeShop.Databases
 
             return this.executeCommand(command);
         }
+
+       
     }
 }
