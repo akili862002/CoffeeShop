@@ -67,11 +67,26 @@ namespace CoffeeShop
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            loadOrderTable();
             orderTodayLabel.Text = order.getCountOder().ToString();
             revenueTodayLabel.Text = order.getCountRevenue().ToString();
             costTodayLabel.Text = order.getCountCost().ToString();
             totalStaffLabel.Text = user.countUser().ToString();
         }
-        
+        private void loadOrderTable()
+        {
+            OrderDB db = new OrderDB();
+            DataTable dt = new DataTable();
+            db.getAllOrdersAdapter(
+                @"
+                    [order].order_number as [Mã đơn],
+                    FORMAT(bill.total_price, 'c', 'vi-VN') as [Tổng tiền],
+                    [user].fullname as [Người bán],
+                    CASE WHEN bill.order_number IS NULL THEN N'Chưa tính tiền' ELSE N'Đã thanh toán' END AS [Tình trạng],
+                    [order].created_at as [Tạo lúc]
+                "
+                ).Fill(dt);
+            this.recentOrdersDataGridView.DataSource = dt;
+        }
     }
 }

@@ -80,5 +80,7 @@ namespace CoffeeShop
         {
             this.loadProductChart();
         }
+
+        
     }
 }
