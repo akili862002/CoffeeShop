@@ -41,25 +41,30 @@ namespace CoffeeShop
             }
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private async void loginButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserEntity user = await Task.Run(() => this.loginAsync());
+                this.Hide();
+                Program.Global.isAuth = true;
+                Program.Global.user = user;
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+            }
+            catch {
+                MessageBox.Show("Username or password is not correct!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task<UserEntity> loginAsync()
         {
             UserDB db = new UserDB();
             string phone = this.phoneTextBox.Text;
             string password = this.passwordTextBox.Text;
 
             UserEntity user = db.loginUser(phone, password);
-
-            if (user == null)
-            {
-                MessageBox.Show("Username or password is not correct!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            this.Hide();
-            Program.Global.isAuth = true;
-            Program.Global.user = user;
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
+            return user;
         }
 
         private void Login_Load(object sender, EventArgs e)

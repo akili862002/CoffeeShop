@@ -16,6 +16,12 @@ namespace CoffeeShop
         public Dashboard()
         {
             InitializeComponent();
+            this.welcomeUserLabel.Text = $"Xin chào, {Program.Global.user.fullname}";
+            string avatarBase64 = Program.Global.user.avatar;
+            if (!string.IsNullOrEmpty(avatarBase64))
+            {
+                this.avatarPicture.Image = Helper.ConvertBase64ToImage(avatarBase64);
+            }
         }
 
         private void tablesButton_Click(object sender, EventArgs e)
