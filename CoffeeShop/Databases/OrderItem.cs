@@ -73,7 +73,7 @@ namespace CoffeeShop.Databases
                 JOIN [menu] ON menu.id = product.menu_id
                 JOIN [order] ON [order].order_number = [order_item].order_number
                 LEFT JOIN [bill] ON [bill].order_number = [order_item].order_number
-                WHERE [order].table_id = {table_id}";
+                WHERE bill.order_number IS NULL AND [order].table_id = {table_id}";
             return this.executeAdapterQuery(query);
         }
 
@@ -154,8 +154,6 @@ namespace CoffeeShop.Databases
                 .setProductId(row.Field<int>(2))
                 .setQuantity(Int32.Parse(row.Field<object>(3).ToString()))
                 .setMenuId(row.Field<int>(4));
-
-            // MessageBox.Show($"Found orderItem: id = {orderItem.id}, orderNumber={orderItem.order_number}, productId={orderItem.product_id}, quantity={orderItem.quantity}");
 
             return orderItem;
         }
