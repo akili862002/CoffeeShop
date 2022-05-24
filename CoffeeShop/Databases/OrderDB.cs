@@ -39,6 +39,25 @@ namespace CoffeeShop.Databases
         {
             return this.executeCountQuery($"SELECT dbo.get_total_price_of_order({order_number})");
         }
+        public int getCountOder()
+        {
+            string query = $"SELECT COUNT(*) FROM {table} WHERE created_at >= CONVERT(varchar(10),GETDATE(),101)";
+            return executeCountQuery(query);
+        }
+        public int getCountRevenue()
+        {
+            string query = $"SELECT SUM([order_item].quantity*product.price) FROM [product] " +
+                $"INNER JOIN [order_item] ON [product].id = [order_item].product_id INNER JOIN [order] ON [order_item].order_number=[order].order_number " +
+                $"WHERE [order].created_at >= CONVERT(varchar(10),GETDATE(),101)";
+            return executeCountQuery(query);
+        }
+        public int getCountCost()
+        {
+            string query = $"SELECT SUM([order_item].quantity*(product.price - product.profit)) FROM [product] " +
+                $"INNER JOIN [order_item] ON [product].id = [order_item].product_id INNER JOIN [order] ON [order_item].order_number=[order].order_number " +
+                $"WHERE [order].created_at >= CONVERT(varchar(10),GETDATE(),101)";
+            return executeCountQuery(query);
+        }
 
         public SqlDataAdapter getAllOrdersAdapter(string selectString = "*")
         {

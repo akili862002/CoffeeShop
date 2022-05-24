@@ -17,7 +17,7 @@ namespace CoffeeShop
         {
             public static bool isAuth = false;
             public static UserEntity user = new UserEntity();
-            public static string serverName = "";
+            public static string serverName = "(localdb)\\MSSQLLocalDB";
         }
 
         [STAThread]
@@ -27,8 +27,7 @@ namespace CoffeeShop
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new TablesForm());
 
-            string text = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/INFO.txt");
-            Global.serverName = text;
+            
 
             Application.Run(new Login());
         }
