@@ -28,13 +28,13 @@ namespace CoffeeShop.Databases
             return this.executeCommand(cmd);
         }
 
-        public SqlDataAdapter getAllAdapter(string select = "*", string search = "")
+        public SqlDataAdapter getAllAdapter(string select = "*", string search = "", string filterString = "")
         {
             string query = $"SELECT {select} FROM {table} JOIN [menu] ON product.menu_id = menu.id WHERE 1 = 1 ";
             if (!string.IsNullOrEmpty(search))
-            {
-                query += $"AND name LIKE '%{search}%'";
-            }
+                query += $"AND name LIKE '%{search}%' ";
+            if (!string.IsNullOrEmpty(filterString))
+                query += filterString;
             return this.executeAdapterQuery(query);
         }
 
@@ -42,7 +42,6 @@ namespace CoffeeShop.Databases
         {
             return this.executeCountQuery($"SELECT COUNT(*) FROM {table}");
         }
-
         public bool delete(int id)
         {
             return this.executeQuery($"DELETE FROM {table} WHERE id = {id}");

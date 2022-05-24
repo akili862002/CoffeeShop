@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoffeeShop.Databases
 {
@@ -15,16 +16,25 @@ namespace CoffeeShop.Databases
         public bool create(TableEntity table)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = $"INSERT INTO {this.tableName} (name, description, is_busy) values (@name, @description, @is_busy)";
+            cmd.CommandText = $"INSERT INTO {this.tableName} (name, description) values (@name, @description)";
             cmd.Parameters.AddWithValue("@name", table.name);
             cmd.Parameters.AddWithValue("@description", table.description);
-            cmd.Parameters.AddWithValue("@is_busy", table.is_busy);
             return this.executeCommand(cmd);
         }
 
         public SqlDataAdapter getAllAdapter(string select = "*", string search = "")
         {
-            string query = $"SELECT {select} FROM {tableName} WHERE 1 = 1 ";
+            string query = $@"
+                    SELECT {select}
+                    FROM {tableName} LEFT JOIN 
+                    (
+                        [order] LEFT JOIN bill ON [order].order_number = bill.order_number
+                        JOIN order_item ON [order].order_number = [order_item].order_number
+                    )
+                    ON [table].table_id = [order].table_id AND bill.order_number IS NULL
+                    WHERE 1 = 1
+                    GROUP BY [table].table_id, [name], [order].order_number, [table].description
+                ";
             if (!string.IsNullOrEmpty(search))
             {
                 query += $" AND name LIKE '%{search}%'";
@@ -54,10 +64,9 @@ namespace CoffeeShop.Databases
         public bool update(int id, TableEntity table)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = $"UPDATE {tableName} SET name = @name, description = @description, is_busy = @is_busy WHERE table_id = {id}";
+            command.CommandText = $"UPDATE {tableName} SET name = @name, description = @description WHERE table_id = {id}";
             command.Parameters.AddWithValue("@name", table.name);
             command.Parameters.AddWithValue("@description", table.description);
-            command.Parameters.AddWithValue("@is_busy", table.is_busy);
             return this.executeCommand(command);
         }
     }

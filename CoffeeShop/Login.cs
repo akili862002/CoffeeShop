@@ -46,15 +46,18 @@ namespace CoffeeShop
             string phone = this.phoneTextBox.Text;
             string password = this.passwordTextBox.Text;
 
-            if (DB.login(phone, password))
+
+            if (!DB.login(phone, password))
             {
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("Username or password is not correct!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
-            else
-            {
-                MessageBox.Show("Username or password is not correct!", "Login error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            return;
+
+            this.Hide();
+            Program.Global.isAuth = true;
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
         }
 
         private void Login_Load(object sender, EventArgs e)

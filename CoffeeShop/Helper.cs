@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -99,5 +100,13 @@ namespace CoffeeShop
             }
         }
 
+    }
+    internal class Currency
+    {
+        public static string formatPrice(long price)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return price.ToString("#,###", cul.NumberFormat) + "₫";
+        }
     }
 }
