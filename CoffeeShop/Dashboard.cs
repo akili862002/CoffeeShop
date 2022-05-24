@@ -55,5 +55,10 @@ namespace CoffeeShop
                 statisticForm.ShowDialog();
             }
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
