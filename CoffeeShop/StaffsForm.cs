@@ -26,7 +26,7 @@ namespace CoffeeShop
         {
             this.LoadStaffTableData();
             birthdatePicker.Format = DateTimePickerFormat.Custom;
-            birthdatePicker.CustomFormat = "MM/dd/yyyy"; 
+            birthdatePicker.CustomFormat = "MM/dd/yyyy";
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
@@ -53,7 +53,16 @@ namespace CoffeeShop
             {
                 DataTable dt = new DataTable();
                 db.getAllAdapter(
-                        @"id as [ID], fullname as [Họ Và Tên],phone as [Điện Thoại],birthdate as [Ngày Sinh],CASE WHEN gender = 1  THEN N'Nam' ELSE N'Nữ' END as [Giới Tính],address as [Địa Chỉ],salary as [Lương]",
+                        @"
+                            id as [ID], 
+                            fullname as [Họ Và Tên],
+                            phone as [Điện Thoại],
+                            birthdate as [Ngày Sinh],
+                            CASE WHEN gender = 1  THEN N'Nam' ELSE N'Nữ' END as [Giới Tính],
+                            address as [Địa Chỉ],
+                            salary as [Lương],
+                            avatar
+                        ",
                         this.searchTextBox.Text
                     )
                 .Fill(dt);
@@ -104,6 +113,13 @@ namespace CoffeeShop
             }
             this.addressTextBox.Text = this.user.address.ToString();
             this.salaryTextBox.Text = this.user.salary.ToString();
+            if (!string.IsNullOrEmpty(this.user.avatar))
+            {
+                this.avatarPicture.Image = Helper.ConvertBase64ToImage(this.user.avatar);
+            } else
+            {
+                this.avatarPicture.Image = this.avatarPicture.InitialImage;
+            }
         }
         string phone = "";
         private void staffsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -117,14 +133,15 @@ namespace CoffeeShop
                 .setId(Int32.Parse(row.Cells["ID"].Value.ToString()))
                 .setFullName(row.Cells["Họ Và Tên"].Value.ToString())
                 .setPhone(row.Cells["Điện Thoại"].Value.ToString())
-                .setBirthdate( DateTime.Parse(row.Cells["Ngày Sinh"].Value.ToString()))
+                .setBirthdate(DateTime.Parse(row.Cells["Ngày Sinh"].Value.ToString()))
                 .setAddress(row.Cells["Địa Chỉ"].Value.ToString())
-                .setSalary(Int64.Parse(row.Cells["Lương"].Value.ToString()));
+                .setSalary(int.Parse(row.Cells["Lương"].Value.ToString()))
+                .setAvatar(row.Cells["avatar"].Value.ToString());
             if (row.Cells["Giới Tính"].Value.ToString() == "Nam")
             {
                 user.setGender(true);
             }
-            if(row.Cells["Giới Tính"].Value.ToString() == "Nữ")
+            if (row.Cells["Giới Tính"].Value.ToString() == "Nữ")
             {
                 user.setGender(false);
             }
@@ -140,40 +157,34 @@ namespace CoffeeShop
         private void editButton_Click(object sender, EventArgs e)
         {
 
-            UserEntity user= new UserEntity();
+            UserEntity newUser = new UserEntity();
             UserDB DB = new UserDB();
 
-
-
-
-
-            if (DB.checkPhone(phoneTextBox.Text) && phone!= phoneTextBox.Text)
+            if (DB.checkPhone(phoneTextBox.Text) && phone != phoneTextBox.Text)
             {
                 MessageBox.Show("Phone number already exits", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 phone = phoneTextBox.Text;
-                user
-                .setFullName(this.fullnameTextBox.Text)
-                .setPhone(this.phoneTextBox.Text)
-                .setBirthdate(this.birthdatePicker.Value)
-                .setAddress(this.addressTextBox.Text)
-                .setSalary(Int64.Parse(this.salaryTextBox.Text));
+                newUser
+                    .setFullName(this.fullnameTextBox.Text)
+                    .setPhone(this.phoneTextBox.Text)
+                    .setBirthdate(this.birthdatePicker.Value)
+                    .setAddress(this.addressTextBox.Text)
+                    .setSalary(Int64.Parse(this.salaryTextBox.Text));
+                newUser.setGender(maleRadio.Checked == true);
+                if (this.avatarPicture.Image != null)
+                {
+                    newUser.setAvatar(Helper.ConvertImageToBase64(this.avatarPicture.Image));
+                }
 
-                if (maleRadio.Checked == true)
-                {
-                    user.setGender(true);
-                }
-                if (famaleRadio.Checked == true)
-                {
-                    user.setGender(false);
-                }
-                DB.update(user);
+                if (DB.update(this.user.id, newUser)) {
+                    MessageBox.Show("Cập nhật nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }; 
                 this.LoadStaffTableData();
             }
         }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show($"Bạn có chắc muốn xóa [{this.user.fullname}]?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -187,7 +198,5 @@ namespace CoffeeShop
                 this.initCreateUser();
             }).Start();
         }
-
-        
     }
 }

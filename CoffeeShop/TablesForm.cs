@@ -93,12 +93,17 @@ namespace CoffeeShop
             {
                 if (addOrderItem.ShowDialog() == DialogResult.OK)
                 {
-                    this.loadTableDataOfCurrentTable();
-                    this.initTableListView();
-                    this.tableListView_SelectedIndexChanged(null, null);
-                    this.updatePrice();
+                    loadData();
                 };
             }
+        }
+
+        private void loadData()
+        {
+            this.loadTableDataOfCurrentTable();
+            this.initTableListView();
+            this.tableListView_SelectedIndexChanged(null, null);
+            this.updatePrice();
         }
 
         private void deleteOrderItemButton_Click(object sender, EventArgs e)
@@ -117,10 +122,7 @@ namespace CoffeeShop
             db.delete(Int32.Parse(row.Cells["Id đơn"].Value.ToString()));
             MessageBox.Show("Xóa thành công!");
 
-            this.loadTableDataOfCurrentTable();
-            this.initTableListView();
-            this.tableListView_SelectedIndexChanged(null, null);
-            this.updatePrice();
+            this.loadData();
         }
 
         private void tableListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,7 +157,9 @@ namespace CoffeeShop
                         .setIsBusy(row.Field<int>(2) == 1)
                         .setDescription(row.Field<string>(3));
                     if (this.tableSelected.is_busy)
+                    {
                         this.tableSelected.setOrderNumber(row.Field<int>(4));
+                    }
                     break;
                 }
             }
@@ -208,11 +212,18 @@ namespace CoffeeShop
             using (AddOrderItem addOrderItem = new AddOrderItem(order_number, this.tableSelected.name, true, Int32.Parse(row.Cells["Id đơn"].Value.ToString())))
             {
                 addOrderItem.ShowDialog();
+                this.loadData();
+            }
+        }
 
-                this.loadTableDataOfCurrentTable();
-                this.initTableListView();
-                this.tableListView_SelectedIndexChanged(null, null);
-                this.updatePrice();
+        private void checkoutButton_Click(object sender, EventArgs e)
+        {
+            using (Checkout checkout = new Checkout(this.tableSelected.table_id, this.tableSelected.name, this.tableSelected.order_number))
+            {
+                if (checkout.ShowDialog() == DialogResult.OK)
+                {
+                    this.loadData();
+                }
             }
         }
     }

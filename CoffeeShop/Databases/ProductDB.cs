@@ -42,7 +42,6 @@ namespace CoffeeShop.Databases
         {
             return this.executeCountQuery($"SELECT COUNT(*) FROM {table}");
         }
-
         public bool delete(int id)
         {
             return this.executeQuery($"DELETE FROM {table} WHERE id = {id}");

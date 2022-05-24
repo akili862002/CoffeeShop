@@ -80,12 +80,19 @@
     <Compile Include="AddOrderItem.Designer.cs">
       <DependentUpon>AddOrderItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Databases\BillDB.cs" />
     <Compile Include="Databases\ConnectDB.cs" />
     <Compile Include="Databases\OrderDB.cs" />
     <Compile Include="Databases\ProductDB.cs" />
@@ -93,6 +100,7 @@
     <Compile Include="Databases\OrderItem.cs" />
     <Compile Include="Databases\UserDB.cs" />
     <Compile Include="Databases\TableDB.cs" />
+    <Compile Include="Entities\BillEntity.cs" />
     <Compile Include="Entities\MenuEntity.cs" />
     <Compile Include="Entities\OrderEntity.cs" />
     <Compile Include="Entities\OrderItemEntity.cs" />
@@ -141,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="AddOrderItem.resx">
       <DependentUpon>AddOrderItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

@@ -21,6 +21,9 @@ namespace CoffeeShop
         bool isEdit = false;
         OrderItemEntity orderItem;
 
+        bool isInitedMenuCombobox = false;
+        bool isInitedProductCombobox = false;
+
         public AddOrderItem(int order_number, string table_name, bool isEdit = false, int orderItemId = -1)
         {
             InitializeComponent();
@@ -28,19 +31,21 @@ namespace CoffeeShop
             this.table_name = table_name;
             this.isEdit = isEdit;
 
-            this.LoadMenuTableData();
-
             if (isEdit)
             {
                 this.titleLabel.Text = $"Chỉnh sửa món {table_name}";
                 OrderItemDB db = new OrderItemDB();
                 this.orderItem = db.getById(orderItemId);
-                // MessageBox.Show(orderItem.id.);
+                this.quantityNumberic.Value = this.orderItem.quantity;
+                this.submitButton.Text = "Cập nhật";
             }
             else
             {
                 this.titleLabel.Text = $"Thêm món {table_name}";
+                this.submitButton.Text = "Thêm món";
             }
+
+            this.LoadMenuTableData();
         }
 
         public void LoadMenuTableData()
@@ -48,20 +53,22 @@ namespace CoffeeShop
             MenuDB db = new MenuDB();
             DataTable dt = new DataTable();
             db.getAllMenuAdapter(
-                    "menu.id as [ID], menu_name"
+                    "menu.id as [id], menu_name"
                 )
             .Fill(dt);
 
             this.menuComboBox.DataSource = dt;
             this.menuComboBox.DisplayMember = "menu_name";
 
-            if (this.isEdit)
+            if (this.isEdit && !this.isInitedMenuCombobox)
             {
-                DataRow[] rows = dt.Select($"id = {this.orderItem.menu_id}");
-                this.productComboBox.SelectedIndex = dt.Rows.IndexOf(rows[0]);
+                DataRow row = dt.AsEnumerable().SingleOrDefault(r =>
+                {
+                    return r.Field<int>("id") == this.orderItem.menu_id;
+                });
+                this.menuComboBox.SelectedIndex = dt.Rows.IndexOf(row);
+                this.isInitedMenuCombobox = true;
             }
-
-            this.LoadProductTableData();
         }
 
         public void LoadProductTableData()
@@ -69,16 +76,17 @@ namespace CoffeeShop
             DataRowView row = (DataRowView)this.menuComboBox.SelectedItem;
             ProductDB db = new ProductDB();
             DataTable dt = new DataTable();
-            db.getAllAdapter("product.id as id, name, price", "", $" AND menu_id = {row["ID"].ToString()}")
-            .Fill(dt);
+            db.getAllAdapter("product.id as id, name, price", "", $" AND menu_id = {row["id"].ToString()}")
+            ?.Fill(dt);
 
             this.productComboBox.DataSource = dt;
             this.productComboBox.DisplayMember = "name";
 
-            if (this.isEdit)
+            if (this.isEdit && !this.isInitedProductCombobox && this.isInitedMenuCombobox)
             {
-                DataRow[] rows = dt.Select($"id = {this.orderItem.product_id}");
-                this.productComboBox.SelectedIndex = dt.Rows.IndexOf(rows[0]);
+                DataRow _row = dt.AsEnumerable().SingleOrDefault(r => r.Field<int>("id") == this.orderItem.product_id);
+                this.productComboBox.SelectedIndex = dt.Rows.IndexOf(_row);
+                this.isInitedProductCombobox = true;
             }
         }
 
@@ -91,18 +99,23 @@ namespace CoffeeShop
         {
             DataRowView row = (DataRowView)this.productComboBox.SelectedItem;
             int product_id = Int32.Parse(row["id"].ToString());
-            OrderItemEntity orderItem = new OrderItemEntity();
-            orderItem
+            OrderItemEntity newOrderItem = new OrderItemEntity();
+            newOrderItem
                 .setOrderNumber(this.order_number)
                 .setProductId(product_id)
                 .setQuantity((int)this.quantityNumberic.Value);
             OrderItemDB db = new OrderItemDB();
-            if (db.create(orderItem))
-                DialogResult = DialogResult.OK;
-        }
 
-        private void AddOrderItem_Load(object sender, EventArgs e)
-        {
+            if (isEdit)
+            {
+                if (db.update(this.orderItem.id, newOrderItem))
+                    DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                if (db.create(newOrderItem))
+                    DialogResult = DialogResult.OK;
+            }
 
         }
 
@@ -118,6 +131,8 @@ namespace CoffeeShop
         public void calcTotalPrice()
         {
             DataRowView row = (DataRowView)this.productComboBox.SelectedItem;
+            if (row == null) return;
+
             long price = Int32.Parse(row["price"].ToString());
             int quantity = (int)this.quantityNumberic.Value;
 

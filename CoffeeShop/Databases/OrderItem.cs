@@ -16,15 +16,52 @@ namespace CoffeeShop.Databases
 
         public bool create(OrderItemEntity orderItem)
         {
+            bool isOk = false;
+            Cursor.Current = Cursors.WaitCursor;
+            SqlTransaction trans = null;
+            try
+            {
+                SqlConnection connection = new SqlConnection(sqlConnectionString);
+                connection.Open();
 
-            SqlCommand command = new SqlCommand();
-            command.CommandText = $"insert into {table} (order_number, product_id, quantity) " +
-                        "values (@order_number, @product_id, @quantity)";
-            command.Parameters.AddWithValue("@order_number", orderItem.order_number);
-            command.Parameters.AddWithValue("@product_id", orderItem.product_id);
-            command.Parameters.AddWithValue("@quantity", orderItem.quantity);
+                trans = connection.BeginTransaction();
 
-            return this.executeCommand(command);
+                // Check login
+                if (Program.Global.isAuth == false)
+                {
+                    trans.Rollback();
+                }
+
+                // Insert new order number
+                using (SqlCommand createOrderItemCommand = new SqlCommand("", connection, trans))
+                {
+                    createOrderItemCommand.CommandText = $@"
+                    INSERT INTO {table} (order_number, product_id, quantity)
+                        VALUES (@order_number, @product_id, @quantity)";
+                    createOrderItemCommand.Parameters.AddWithValue("@order_number", orderItem.order_number);
+                    createOrderItemCommand.Parameters.AddWithValue("@product_id", orderItem.product_id);
+                    createOrderItemCommand.Parameters.AddWithValue("@quantity", orderItem.quantity);
+                    createOrderItemCommand.ExecuteNonQuery();
+                }
+
+                // Update stock of product
+                using (SqlCommand updateProductCmd = new SqlCommand("", connection, trans))
+                {
+                    updateProductCmd.CommandText = $"UPDATE product SET stock = stock - {orderItem.quantity} WHERE id = {orderItem.product_id}";
+                    updateProductCmd.ExecuteNonQuery();
+                };
+
+                trans.Commit();
+                connection.Close();
+                isOk = true;
+            }
+            catch (SqlException ex)
+            {
+                trans?.Rollback();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+            return isOk;
         }
         public SqlDataAdapter getAllAdapterByTable(int table_id, string select = "*", string search = "")
         {
@@ -52,27 +89,74 @@ namespace CoffeeShop.Databases
 
         public bool update(int id, OrderItemEntity orderItem)
         {
-            SqlCommand command = new SqlCommand();
-            command.CommandText = $"UPDATE {table} SET order_number = @order_number, product_id = @product_id, quantity = @quantity WHERE id = {id}";
-            command.Parameters.AddWithValue("@order_number", orderItem.order_number);
-            command.Parameters.AddWithValue("@product_id", orderItem.product_id);
-            command.Parameters.AddWithValue("@quantity", orderItem.quantity);
+            bool isOk = false;
+            Cursor.Current = Cursors.WaitCursor;
+            SqlTransaction trans = null;
+            try
+            {
+                SqlConnection connection = new SqlConnection(sqlConnectionString);
+                connection.Open();
 
-            return this.executeCommand(command);
+                trans = connection.BeginTransaction();
+
+                // Check login
+                if (Program.Global.isAuth == false)
+                {
+                    trans.Rollback();
+                }
+
+                // Insert new order number
+                using (SqlCommand updateOrderItemCommand = new SqlCommand("", connection, trans))
+                {
+                    updateOrderItemCommand.CommandText = $"UPDATE {table} SET order_number = @order_number, product_id = @product_id, quantity = @quantity WHERE id = {id}";
+                    updateOrderItemCommand.Parameters.AddWithValue("@order_number", orderItem.order_number);
+                    updateOrderItemCommand.Parameters.AddWithValue("@product_id", orderItem.product_id);
+                    updateOrderItemCommand.Parameters.AddWithValue("@quantity", orderItem.quantity);
+                    updateOrderItemCommand.ExecuteNonQuery();
+                }
+
+                // Update stock of product
+                using (SqlCommand updateProduct = new SqlCommand("", connection, trans))
+                {
+                    updateProduct.CommandText = $"UPDATE product SET stock = stock - {orderItem.quantity} WHERE id = {orderItem.product_id}";
+                    updateProduct.ExecuteNonQuery();
+                };
+
+                trans.Commit();
+                connection.Close();
+                isOk = true;
+            }
+            catch (SqlException ex)
+            {
+                trans?.Rollback();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+            return isOk;
         }
 
         public OrderItemEntity getById(int orderItemId)
         {
             DataTable dt = new DataTable();
-            this.executeAdapterQuery($"SELECT id, order_number, product_id, quantity FROM order_item WHERE id = {orderItemId}").Fill(dt);
+            this.executeAdapterQuery($@"
+                SELECT order_item.id, order_number, product_id, quantity, product.menu_id 
+                FROM order_item JOIN product ON order_item.product_id = product.id
+                WHERE order_item.id = {orderItemId}
+            ").Fill(dt);
             DataRow row = dt.Rows[0];
             if (row == null) return null;
 
             OrderItemEntity orderItem = new OrderItemEntity();
+
             orderItem
+                .setId(row.Field<int>(0))
                 .setOrderNumber(row.Field<int>(1))
                 .setProductId(row.Field<int>(2))
-                .setQuantity(row.Field<int>(3));
+                .setQuantity(Int32.Parse(row.Field<object>(3).ToString()))
+                .setMenuId(row.Field<int>(4));
+
+            // MessageBox.Show($"Found orderItem: id = {orderItem.id}, orderNumber={orderItem.order_number}, productId={orderItem.product_id}, quantity={orderItem.quantity}");
+
             return orderItem;
         }
     }

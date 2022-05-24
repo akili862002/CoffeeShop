@@ -164,13 +164,13 @@ namespace CoffeeShop
             {
                 if (isEditProduct)
                 {
-                    db.update(this.product.id, newProduct);
-                    MessageBox.Show("Cập nhật thực đơn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (db.update(this.product.id, newProduct))
+                        MessageBox.Show("Cập nhật thực đơn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    db.createProduct(newProduct);
-                    MessageBox.Show("Tạo thực đơn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (db.createProduct(newProduct))
+                        MessageBox.Show("Tạo thực đơn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.initCreateProduct();
                 }
                 this.LoadProductTableData();
@@ -237,13 +237,13 @@ namespace CoffeeShop
             {
                 if (isEditMenu)
                 {
-                    db.updateMenu(menu.id, newMenu);
-                    MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (db.updateMenu(menu.id, newMenu))
+                        MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    db.createMenu(newMenu);
-                    MessageBox.Show("Tạo thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (db.createMenu(newMenu))
+                        MessageBox.Show("Tạo thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.LoadMenuTableData();
             }).Start();
@@ -309,7 +309,7 @@ namespace CoffeeShop
 
             this.tableNameTextBox.Text = "";
             this.tableDescTextBox.Text = "";
-           
+
             this.tableNameTextBox.Text = "";
             this.deleteMenuButton.Hide();
         }
@@ -354,13 +354,13 @@ namespace CoffeeShop
             {
                 if (isEditTable)
                 {
-                    db.update(table.table_id, newTable);
-                    MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (db.update(table.table_id, newTable))
+                        MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    db.create(newTable);
-                    MessageBox.Show("Tạo thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (db.create(newTable))
+                        MessageBox.Show("Tạo thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.LoadTableTableData();
             }).Start();

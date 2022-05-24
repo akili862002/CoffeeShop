@@ -64,7 +64,7 @@ CREATE TABLE product(
 	picture VARCHAR(MAX),
 	profit BIGINT,CHECK (profit >=0),
 	price BIGINT NOT NULL,CHECK (price >= 0),
-	stock INT NOT NULL,CHECK (stock >= 0),
+	stock INT NOT NULL,
 	unit NVARCHAR(30) NOT NULL,
 	menu_id INT FOREIGN KEY REFERENCES menu(id) NOT NULL,
 	created_by INT FOREIGN KEY REFERENCES [user](id) NOT NULL,
@@ -176,6 +176,25 @@ BEGIN
 END
 GO
 
+CREATE OR ALTER TRIGGER check_stock_product
+ON [product]
+FOR INSERT, UPDATE
+AS
+BEGIN
+     DECLARE @error_counts INT;
+	 SET @error_counts = 0;
+	 SELECT @error_counts = COUNT(*)
+	 FROM inserted
+	 WHERE inserted.stock < 0
+
+	 IF (@error_counts > 0)
+	 BEGIN
+		RAISERROR(N'Hàng tồn bắt buộc phát lớn hơn hoặc bằng 0!', 16, 1)
+		ROLLBACK;
+	 END
+END
+GO
+
 CREATE OR ALTER TRIGGER update_modified_menu
 ON [menu]
 FOR UPDATE
@@ -209,6 +228,18 @@ BEGIN
 	 SET updated_at = SYSDATETIME()
 	 FROM Inserted as ins
 	 WHERE order_item.id = ins.id
+END
+GO
+
+CREATE OR ALTER TRIGGER create_order_item
+ON [order_item]
+FOR INSERT, UPDATE
+AS
+BEGIN
+	DECLARE @quantity INT;
+	SELECT * FROM inserted JOIN product ON inserted.product_id = product.id AND quantity;
+
+	RAISERROR('Error!!!', 10, 1)
 END
 GO
 
@@ -246,4 +277,3 @@ BEGIN
 	RETURN @total
 END
 GO
-

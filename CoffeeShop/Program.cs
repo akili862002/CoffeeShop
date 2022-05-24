@@ -30,13 +30,7 @@ namespace CoffeeShop
             string text = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/INFO.txt");
             Global.serverName = text;
 
-            using (Login login = new Login())
-            {
-                if (login.ShowDialog() == DialogResult.OK)
-                {
-                    Application.Run(new Dashboard());
-                }
-            }
+            Application.Run(new Login());
         }
     }
 }

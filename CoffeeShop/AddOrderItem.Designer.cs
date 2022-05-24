@@ -241,7 +241,6 @@ namespace CoffeeShop
             this.Name = "AddOrderItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddOrderItem";
-            this.Load += new System.EventHandler(this.AddOrderItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -84,16 +84,17 @@ namespace CoffeeShop.Databases
             return this.executeCountQuery($"SELECT COUNT(*) FROM {table}");
         }
 
-        public bool update(UserEntity user)
+        public bool update(int userId, UserEntity user)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = $"UPDATE {table} SET fullname = @fullname, phone = @phone, birthdate = @birthdate, gender = @gender, address = @address, salary = @salary WHERE id = {user.id}";
+            command.CommandText = $"UPDATE {table} SET fullname = @fullname, phone = @phone, birthdate = @birthdate, gender = @gender, address = @address, salary = @salary, avatar = @avatar WHERE id = {userId}";
             command.Parameters.AddWithValue("@fullname", user.fullname);
             command.Parameters.AddWithValue("@phone", user.phone);
             command.Parameters.AddWithValue("@birthdate", user.birthdate);
             command.Parameters.AddWithValue("@gender", user.gender);
             command.Parameters.AddWithValue("@address", user.address);
             command.Parameters.AddWithValue("@salary", user.salary);
+            command.Parameters.AddWithValue("@avatar", user.avatar);
 
             return this.executeCommand(command);
         }
