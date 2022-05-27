@@ -18,17 +18,18 @@ CREATE TABLE [user](
 	fullname NVARCHAR(255) NOT NULL,
 	phone VARCHAR(12) NOT NULL  CHECK( LEN(phone) >= 10 ),
 	avatar VARCHAR(MAX),
-	[password] VARCHAR(255) NOT NULL, CHECK( LEN(password) >= 6 ),
+	[password] VARCHAR(255) NOT NULL,
 	birthdate DATETIME NOT NULL,
 	gender  BIT DEFAULT 1, -- 1 is Male, 0 is Famale
 	[address] NVARCHAR(1000),
-	salary BIGINT, CHECK (salary > 0 ),
+	salary BIGINT,
 	is_admin  BIT DEFAULT 0,
 	[enabled]  BIT DEFAULT 1,
 	created_at DATETIME DEFAULT SYSDATETIME(),
 	updated_at DATETIME DEFAULT SYSDATETIME(),
 )
 GO
+
 
 CREATE TABLE [table](
 	table_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -192,6 +193,68 @@ GO
 --------------------------- TRIGGERS ----------------------------------
             --------------------------------------
 
+----- VALIDATIONS
+
+CREATE OR ALTER TRIGGER checkUserPassword
+ON [user]
+FOR INSERT, UPDATE
+AS
+BEGIN
+     DECLARE @error_counts INT;
+	 SET @error_counts = 0;
+
+	 SELECT @error_counts = COUNT(*)
+	 FROM inserted
+	 WHERE LEN(password) < 6
+
+	 IF (@error_counts > 0)
+	 BEGIN
+		RAISERROR(N'Mật khẩu phải nhiều hơn 5 kí tự!', 16, 1)
+		ROLLBACK;
+	 END
+END
+GO
+
+CREATE OR ALTER TRIGGER checkUserSalary
+ON [user]
+FOR INSERT, UPDATE
+AS
+BEGIN
+     DECLARE @error_counts INT;
+	 SET @error_counts = 0;
+
+	 SELECT @error_counts = COUNT(*)
+	 FROM inserted
+	 WHERE LEN(salary) < 0
+
+	 IF (@error_counts > 0)
+	 BEGIN
+		RAISERROR(N'Lương phải lớn hơn 0!', 16, 1)
+		ROLLBACK;
+	 END
+END
+GO
+
+CREATE OR ALTER TRIGGER checkUserSalary
+ON [user]
+FOR INSERT, UPDATE
+AS
+BEGIN
+     DECLARE @error_counts INT;
+	 SET @error_counts = 0;
+
+	 SELECT @error_counts = COUNT(*)
+	 FROM inserted
+	 WHERE LEN(salary) < 0
+
+	 IF (@error_counts > 0)
+	 BEGIN
+		RAISERROR(N'Lương phải lớn hơn 0!', 16, 1)
+		ROLLBACK;
+	 END
+END
+GO
+
 ------------ USER TRIGGERS
 CREATE OR ALTER TRIGGER update_modified_user
 ON [user]
@@ -264,7 +327,6 @@ GO
             --------------------------------------
 
 -- Select toàn bộ table
--- 
 CREATE OR ALTER PROCEDURE get_all_table 
 AS
 	SELECT 
