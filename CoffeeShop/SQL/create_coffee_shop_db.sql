@@ -13,7 +13,6 @@ DROP TABLE [table]
 DROP TABLE [user]
 GO
 
-
 CREATE TABLE [user](
 	id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	fullname NVARCHAR(255) NOT NULL,
@@ -101,10 +100,10 @@ INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salar
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Ha Van Nhan', '0285683286', '123123', '1/12/2002', 1, 'Dong Thap', 15000000,0);
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Nguyen Tuan Kiet', '0973944762', '987654', '1/2/2001', 1, 'Ca Mau', 17000000,0);
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Ho Kim Tien', '0987462814', '230403', '3/4/2003', 1, 'Dong Nai', 18500000,0);
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Truong Pham Ly Huong', '0391742917', '130702', '1/7/2002', 0, 'Dong Thap', 15000000,0);
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Dang Mai Huong', '0973644853', '040501', '4/5/2001', 0, 'Cao Bang', 13000000,0);
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Truong Pham Ly Huong', '0391742917', '130702', '1/7/2002', 1, 'Dong Thap', 15000000,0);
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Dang Mai Huong', '0973644853', '040501', '4/5/2001', 1, 'Cao Bang', 13000000,0);
 INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Ha Nhat Venh', '0321456346', '111204', '1/12/2004', 1, 'Dong Thap', 13500000,0);
-INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Do Thi Bich Ngoc', '0965755843', '250302', '2/3/2002', 0, 'Thai Nguyen', 18000000,0);
+INSERT INTO [user] (fullname, phone, password, birthdate, gender, address, salary, is_admin ) VALUES ('Do Thi Bich Ngoc', '0965755843', '250302', '2/3/2002', 1, 'Thai Nguyen', 18000000,0);
 GO
 -- Fake data MENU
 INSERT INTO [menu] (menu_name, created_by) VALUES (N'Cà phê pha phin', 1);
@@ -163,6 +162,8 @@ INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 14, 2 )
 INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 15,1 )
 INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 18,6 )
 INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 18,5 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 17,6 )
+INSERT INTO [order] (description, table_id, buyer_id) VALUES ('', 10,6 )
 
 -- FAKE data ORDER ITEM
 INSERT INTO [order_item] (order_number, product_id, quantity) VALUES (1, 1,6)
@@ -297,6 +298,8 @@ BEGIN
 END
 GO
 
+-- Data for statistic chart
+
 CREATE OR ALTER PROCEDURE statistic_by_product
 AS
 	SELECT TOP 10 product.id, product.name, SUM(total_price) as [Total price]
@@ -311,7 +314,7 @@ GO
 
 CREATE OR ALTER PROCEDURE statistic_by_staff
 AS
-	SELECT [user].id, [user].fullname, COUNT([user].id) as [Amount]
+	SELECT [user].id, [user].fullname as fullname, COUNT([user].id) as amount
 	FROM [order]
 		JOIN [bill] ON bill.order_number = [order].order_number
 		JOIN [user] ON [user].id = [order].buyer_id
@@ -319,3 +322,48 @@ AS
 	ORDER BY Amount
 GO
 
+--- Count & Sum of common (Dashboard)
+
+CREATE OR ALTER FUNCTION count_order_today()
+RETURNS INT
+AS 
+BEGIN
+	DECLARE @count INT
+	SELECT @count = COUNT(*) FROM [order] WHERE created_at >= CONVERT(varchar(10),GETDATE(),101)
+	RETURN @count
+END
+GO
+
+CREATE OR ALTER FUNCTION sum_revenue_today()
+RETURNS INT
+AS
+BEGIN
+	DECLARE @count INT
+	SELECT @count = SUM([order_item].quantity * product.price) FROM [product]
+    INNER JOIN [order_item] ON [product].id = [order_item].product_id INNER JOIN [order] ON [order_item].order_number=[order].order_number
+	WHERE [order].created_at >= CONVERT(varchar(10),GETDATE(),101)
+	RETURN @count
+END
+GO
+
+CREATE OR ALTER FUNCTION sum_cost_today()
+RETURNS INT
+AS
+BEGIN
+	DECLARE @count INT
+	SELECT @count = SUM([order_item].quantity*(product.price - product.profit)) FROM [product]
+	INNER JOIN [order_item] ON [product].id = [order_item].product_id INNER JOIN [order] ON [order_item].order_number=[order].order_number 
+	WHERE [order].created_at >= CONVERT(varchar(10),GETDATE(),101)
+	RETURN @count
+END
+GO
+
+CREATE OR ALTER FUNCTION count_cost_today()
+RETURNS INT
+AS
+BEGIN
+	DECLARE @count INT
+	SELECT @count = COUNT(*) FROM [user]
+	RETURN @count
+END
+GO

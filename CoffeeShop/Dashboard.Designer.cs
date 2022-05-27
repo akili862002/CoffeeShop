@@ -36,6 +36,7 @@ namespace CoffeeShop
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.logoutButton = new Guna.UI.WinForms.GunaButton();
+            this.registerButton = new Guna.UI.WinForms.GunaLinkLabel();
             this.welcomeUserLabel = new Guna.UI.WinForms.GunaLabel();
             this.avatarPicture = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -86,6 +87,7 @@ namespace CoffeeShop
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.logoutButton);
+            this.panel1.Controls.Add(this.registerButton);
             this.panel1.Controls.Add(this.welcomeUserLabel);
             this.panel1.Controls.Add(this.avatarPicture);
             this.panel1.Location = new System.Drawing.Point(-3, -5);
@@ -122,13 +124,25 @@ namespace CoffeeShop
             this.logoutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
+            // registerButton
+            // 
+            this.registerButton.AutoSize = true;
+            this.registerButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerButton.LinkColor = System.Drawing.Color.Black;
+            this.registerButton.Location = new System.Drawing.Point(86, 46);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(92, 19);
+            this.registerButton.TabIndex = 17;
+            this.registerButton.TabStop = true;
+            this.registerButton.Text = "Sửa thông tin";
+            // 
             // welcomeUserLabel
             // 
             this.welcomeUserLabel.AutoSize = true;
             this.welcomeUserLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeUserLabel.Location = new System.Drawing.Point(92, 34);
+            this.welcomeUserLabel.Location = new System.Drawing.Point(86, 17);
             this.welcomeUserLabel.Name = "welcomeUserLabel";
-            this.welcomeUserLabel.Size = new System.Drawing.Size(199, 28);
+            this.welcomeUserLabel.Size = new System.Drawing.Size(138, 19);
             this.welcomeUserLabel.TabIndex = 16;
             this.welcomeUserLabel.Text = "Xin chào, Quan burh";
             // 
@@ -149,7 +163,7 @@ namespace CoffeeShop
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.Location = new System.Drawing.Point(12, 103);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(423, 70);
+            this.gunaLabel1.Size = new System.Drawing.Size(287, 47);
             this.gunaLabel1.TabIndex = 20;
             this.gunaLabel1.Text = "Bảng điều khiển";
             // 
@@ -161,7 +175,7 @@ namespace CoffeeShop
             this.orderTodayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.orderTodayLabel.Location = new System.Drawing.Point(16, 17);
             this.orderTodayLabel.Name = "orderTodayLabel";
-            this.orderTodayLabel.Size = new System.Drawing.Size(75, 60);
+            this.orderTodayLabel.Size = new System.Drawing.Size(52, 41);
             this.orderTodayLabel.TabIndex = 23;
             this.orderTodayLabel.Text = "48";
             // 
@@ -172,7 +186,7 @@ namespace CoffeeShop
             this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaLabel4.Location = new System.Drawing.Point(22, 88);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(186, 38);
+            this.gunaLabel4.Size = new System.Drawing.Size(125, 25);
             this.gunaLabel4.TabIndex = 23;
             this.gunaLabel4.Text = "Đơn hôm nay";
             // 
@@ -233,7 +247,7 @@ namespace CoffeeShop
             this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaLabel5.Location = new System.Drawing.Point(22, 88);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(216, 38);
+            this.gunaLabel5.Size = new System.Drawing.Size(147, 25);
             this.gunaLabel5.TabIndex = 23;
             this.gunaLabel5.Text = "Doanh thu ngày";
             // 
@@ -245,7 +259,7 @@ namespace CoffeeShop
             this.revenueTodayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.revenueTodayLabel.Location = new System.Drawing.Point(16, 17);
             this.revenueTodayLabel.Name = "revenueTodayLabel";
-            this.revenueTodayLabel.Size = new System.Drawing.Size(252, 60);
+            this.revenueTodayLabel.Size = new System.Drawing.Size(172, 41);
             this.revenueTodayLabel.TabIndex = 23;
             this.revenueTodayLabel.Text = "1.000.000đ";
             // 
@@ -281,7 +295,7 @@ namespace CoffeeShop
             this.gunaLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaLabel7.Location = new System.Drawing.Point(22, 88);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(172, 38);
+            this.gunaLabel7.Size = new System.Drawing.Size(118, 25);
             this.gunaLabel7.TabIndex = 23;
             this.gunaLabel7.Text = "Chi phí ngày";
             // 
@@ -293,7 +307,7 @@ namespace CoffeeShop
             this.costTodayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.costTodayLabel.Location = new System.Drawing.Point(16, 17);
             this.costTodayLabel.Name = "costTodayLabel";
-            this.costTodayLabel.Size = new System.Drawing.Size(215, 60);
+            this.costTodayLabel.Size = new System.Drawing.Size(147, 41);
             this.costTodayLabel.TabIndex = 23;
             this.costTodayLabel.Text = "400.000đ";
             // 
@@ -329,7 +343,7 @@ namespace CoffeeShop
             this.gunaLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaLabel9.Location = new System.Drawing.Point(22, 88);
             this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(143, 38);
+            this.gunaLabel9.Size = new System.Drawing.Size(98, 25);
             this.gunaLabel9.TabIndex = 23;
             this.gunaLabel9.Text = "Nhân viên";
             // 
@@ -341,13 +355,15 @@ namespace CoffeeShop
             this.totalStaffLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.totalStaffLabel.Location = new System.Drawing.Point(16, 17);
             this.totalStaffLabel.Name = "totalStaffLabel";
-            this.totalStaffLabel.Size = new System.Drawing.Size(50, 60);
+            this.totalStaffLabel.Size = new System.Drawing.Size(35, 41);
             this.totalStaffLabel.TabIndex = 23;
             this.totalStaffLabel.Text = "6";
             // 
             // recentOrdersDataGridView
             // 
             this.recentOrdersDataGridView.AllowUserToAddRows = false;
+            this.recentOrdersDataGridView.AllowUserToDeleteRows = false;
+            this.recentOrdersDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.recentOrdersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.recentOrdersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -376,11 +392,12 @@ namespace CoffeeShop
             this.recentOrdersDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.recentOrdersDataGridView.Location = new System.Drawing.Point(22, 471);
             this.recentOrdersDataGridView.Name = "recentOrdersDataGridView";
+            this.recentOrdersDataGridView.ReadOnly = true;
             this.recentOrdersDataGridView.RowHeadersVisible = false;
             this.recentOrdersDataGridView.RowHeadersWidth = 62;
             this.recentOrdersDataGridView.RowTemplate.Height = 28;
             this.recentOrdersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.recentOrdersDataGridView.Size = new System.Drawing.Size(1641, 582);
+            this.recentOrdersDataGridView.Size = new System.Drawing.Size(1641, 525);
             this.recentOrdersDataGridView.TabIndex = 29;
             this.recentOrdersDataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.recentOrdersDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -396,7 +413,7 @@ namespace CoffeeShop
             this.recentOrdersDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.recentOrdersDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.recentOrdersDataGridView.ThemeStyle.HeaderStyle.Height = 32;
-            this.recentOrdersDataGridView.ThemeStyle.ReadOnly = false;
+            this.recentOrdersDataGridView.ThemeStyle.ReadOnly = true;
             this.recentOrdersDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.recentOrdersDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.recentOrdersDataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -411,7 +428,7 @@ namespace CoffeeShop
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel11.Location = new System.Drawing.Point(14, 406);
             this.gunaLabel11.Name = "gunaLabel11";
-            this.gunaLabel11.Size = new System.Drawing.Size(289, 45);
+            this.gunaLabel11.Size = new System.Drawing.Size(199, 30);
             this.gunaLabel11.TabIndex = 30;
             this.gunaLabel11.Text = "Giao dịch gần đây";
             // 
@@ -429,7 +446,7 @@ namespace CoffeeShop
             this.statisticButton.ForeColor = System.Drawing.Color.White;
             this.statisticButton.Image = global::CoffeeShop.Properties.Resources.statistic;
             this.statisticButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.statisticButton.Location = new System.Drawing.Point(846, 1077);
+            this.statisticButton.Location = new System.Drawing.Point(846, 1018);
             this.statisticButton.Name = "statisticButton";
             this.statisticButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.statisticButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -456,7 +473,7 @@ namespace CoffeeShop
             this.staffManagerButton.ForeColor = System.Drawing.Color.White;
             this.staffManagerButton.Image = global::CoffeeShop.Properties.Resources.staffs;
             this.staffManagerButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.staffManagerButton.Location = new System.Drawing.Point(1266, 1077);
+            this.staffManagerButton.Location = new System.Drawing.Point(1266, 1018);
             this.staffManagerButton.Name = "staffManagerButton";
             this.staffManagerButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.staffManagerButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -483,7 +500,7 @@ namespace CoffeeShop
             this.menusButton.ForeColor = System.Drawing.Color.White;
             this.menusButton.Image = global::CoffeeShop.Properties.Resources.Menu;
             this.menusButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.menusButton.Location = new System.Drawing.Point(423, 1077);
+            this.menusButton.Location = new System.Drawing.Point(423, 1018);
             this.menusButton.Name = "menusButton";
             this.menusButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.menusButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -510,7 +527,7 @@ namespace CoffeeShop
             this.tablesButton.ForeColor = System.Drawing.Color.White;
             this.tablesButton.Image = global::CoffeeShop.Properties.Resources.table;
             this.tablesButton.ImageSize = new System.Drawing.Size(52, 52);
-            this.tablesButton.Location = new System.Drawing.Point(22, 1077);
+            this.tablesButton.Location = new System.Drawing.Point(22, 1018);
             this.tablesButton.Name = "tablesButton";
             this.tablesButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.tablesButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -528,7 +545,7 @@ namespace CoffeeShop
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1684, 1257);
+            this.ClientSize = new System.Drawing.Size(1684, 1061);
             this.Controls.Add(this.gunaLabel11);
             this.Controls.Add(this.recentOrdersDataGridView);
             this.Controls.Add(this.gunaGradient2Panel4);
@@ -596,5 +613,6 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox4;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox5;
         private Guna.UI.WinForms.GunaTileButton statisticButton;
+        private Guna.UI.WinForms.GunaLinkLabel registerButton;
     }
 }

@@ -122,18 +122,29 @@ namespace CoffeeShop.Databases
         public UserEntity loginUser(string phone, string password)
         {
             DataTable dt = new DataTable();
-            this.executeAdapterQuery($"SELECT id, fullname, phone, avatar, is_admin FROM [user] WHERE phone = '{phone}' AND password = '{password}'").Fill(dt);
+            SqlCommand cmd = new SqlCommand("SELECT id, fullname, phone, avatar, is_admin FROM [user] WHERE phone = @phone AND password = @password");
+            cmd.Parameters.AddWithValue("@phone", phone);
+            cmd.Parameters.AddWithValue("@password", password);
+
+            this.executeAdapterCommand(cmd).Fill(dt);
             DataRow row = dt.Rows[0];
             if (row == null) return null;
 
             UserEntity user = new UserEntity();
 
-            user
-                .setId(row.Field<int>(0))
-                .setFullName(row.Field<string>(1))
-                .setPhone(row.Field<string>(2))
-                .setAvatar(row.Field<string>(3))
-                .setIs_admin(row.Field<bool>(4));
+            try
+            {
+                user
+                    .setId(row.Field<int>(0))
+                    .setFullName(row.Field<string>(1))
+                    .setPhone(row.Field<string>(2))
+                    .setAvatar(row.Field<string>(3))
+                    .setIs_admin(row.Field<bool>(4));
+            }
+            catch
+            {
+
+            }
 
             return user;
         }

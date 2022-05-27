@@ -68,7 +68,7 @@ namespace CoffeeShop.Databases
                 SqlConnection connection = new SqlConnection(sqlConnectionString);
                 connection.Open();
                 command.Connection = connection;
-                 id = (int)command.ExecuteScalar();
+                id = (int)command.ExecuteScalar();
                 connection.Close();
             }
             catch (Exception ex)
@@ -103,7 +103,27 @@ namespace CoffeeShop.Databases
             Cursor.Current = Cursors.Default;
             return totalCount;
         }
+        protected int executeCountCommand(SqlCommand command)
+        {
+            int totalCount = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                SqlConnection connection = new SqlConnection(sqlConnectionString);
+                connection.Open();
+                command.Connection = connection;
+                var reader = command.ExecuteScalar();
+                totalCount = Int32.Parse(reader.ToString());
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+            Cursor.Current = Cursors.Default;
+            return totalCount;
+        }
 
         protected SqlDataAdapter executeAdapterQuery(string query)
         {

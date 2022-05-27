@@ -48,6 +48,7 @@ namespace CoffeeShop
             this.editOrderItemButton = new Guna.UI.WinForms.GunaButton();
             this.deleteOrderItemButton = new Guna.UI.WinForms.GunaButton();
             this.actionTablePanel = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.orderItemsTable)).BeginInit();
             this.actionTablePanel.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +59,7 @@ namespace CoffeeShop
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.Location = new System.Drawing.Point(12, 9);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(633, 70);
+            this.gunaLabel1.Size = new System.Drawing.Size(432, 47);
             this.gunaLabel1.TabIndex = 21;
             this.gunaLabel1.Text = "Sơ đồ bàn và Thanh toán";
             // 
@@ -75,7 +76,7 @@ namespace CoffeeShop
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.Location = new System.Drawing.Point(20, 118);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(93, 32);
+            this.gunaLabel2.Size = new System.Drawing.Size(62, 21);
             this.gunaLabel2.TabIndex = 37;
             this.gunaLabel2.Text = "Bàn ăn";
             // 
@@ -99,7 +100,7 @@ namespace CoffeeShop
             this.currTableLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currTableLabel.Location = new System.Drawing.Point(732, 85);
             this.currTableLabel.Name = "currTableLabel";
-            this.currTableLabel.Size = new System.Drawing.Size(371, 48);
+            this.currTableLabel.Size = new System.Drawing.Size(253, 32);
             this.currTableLabel.TabIndex = 40;
             this.currTableLabel.Text = "Chọn bàn để tiếp tục";
             // 
@@ -177,7 +178,7 @@ namespace CoffeeShop
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.Location = new System.Drawing.Point(573, 686);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(202, 48);
+            this.gunaLabel3.Size = new System.Drawing.Size(139, 32);
             this.gunaLabel3.TabIndex = 42;
             this.gunaLabel3.Text = "Tổng tiền: ";
             // 
@@ -189,7 +190,7 @@ namespace CoffeeShop
             this.totalPriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.totalPriceLabel.Location = new System.Drawing.Point(782, 686);
             this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(64, 48);
+            this.totalPriceLabel.Size = new System.Drawing.Size(44, 32);
             this.totalPriceLabel.TabIndex = 43;
             this.totalPriceLabel.Text = "0đ";
             this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -229,7 +230,7 @@ namespace CoffeeShop
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.Location = new System.Drawing.Point(3, 46);
             this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(242, 32);
+            this.gunaLabel6.Size = new System.Drawing.Size(162, 21);
             this.gunaLabel6.TabIndex = 45;
             this.gunaLabel6.Text = "Danh sách thực đơn";
             // 
@@ -339,12 +340,20 @@ namespace CoffeeShop
             this.actionTablePanel.Size = new System.Drawing.Size(1174, 765);
             this.actionTablePanel.TabIndex = 56;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1240, 44);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 57;
+            // 
             // TablesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1912, 915);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.actionTablePanel);
             this.Controls.Add(this.currTableLabel);
             this.Controls.Add(this.tableListView);
@@ -378,5 +387,6 @@ namespace CoffeeShop
         private Guna.UI.WinForms.GunaButton editOrderItemButton;
         private Guna.UI.WinForms.GunaButton deleteOrderItemButton;
         private System.Windows.Forms.Panel actionTablePanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

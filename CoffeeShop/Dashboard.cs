@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +30,7 @@ namespace CoffeeShop
             using (TablesForm tf = new TablesForm())
             {
                 tf.ShowDialog();
+                this.loadData();
             }
         }
 
@@ -44,6 +46,7 @@ namespace CoffeeShop
             using (MenusForm menuForm = new MenusForm())
             {
                 menuForm.ShowDialog();
+                this.loadData();
             }
         }
 
@@ -52,6 +55,7 @@ namespace CoffeeShop
             using (StaffsForm staffForm = new StaffsForm())
             {
                 staffForm.ShowDialog();
+                this.loadData();
             }
         }
 
@@ -60,12 +64,18 @@ namespace CoffeeShop
             using (StatisticForm statisticForm = new StatisticForm())
             {
                 statisticForm.ShowDialog();
+                this.loadData();
             }
         }
         OrderDB order = new OrderDB();
         UserDB user = new UserDB();
 
         private void Dashboard_Load(object sender, EventArgs e)
+        {
+            this.loadData();
+        }
+
+        private void loadData()
         {
             loadOrderTable();
             orderTodayLabel.Text = order.getCountOder().ToString();

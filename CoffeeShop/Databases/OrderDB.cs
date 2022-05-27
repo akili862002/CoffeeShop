@@ -1,6 +1,7 @@
 ﻿using CoffeeShop.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -41,22 +42,15 @@ namespace CoffeeShop.Databases
         }
         public int getCountOder()
         {
-            string query = $"SELECT COUNT(*) FROM {table} WHERE created_at >= CONVERT(varchar(10),GETDATE(),101)";
-            return executeCountQuery(query);
+            return executeCountQuery("SELECT dbo.count_order_today()");
         }
         public int getCountRevenue()
         {
-            string query = $"SELECT SUM([order_item].quantity*product.price) FROM [product] " +
-                $"INNER JOIN [order_item] ON [product].id = [order_item].product_id INNER JOIN [order] ON [order_item].order_number=[order].order_number " +
-                $"WHERE [order].created_at >= CONVERT(varchar(10),GETDATE(),101)";
-            return executeCountQuery(query);
+            return executeCountQuery("SELECT dbo.sum_revenue_today()");
         }
         public int getCountCost()
         {
-            string query = $"SELECT SUM([order_item].quantity*(product.price - product.profit)) FROM [product] " +
-                $"INNER JOIN [order_item] ON [product].id = [order_item].product_id INNER JOIN [order] ON [order_item].order_number=[order].order_number " +
-                $"WHERE [order].created_at >= CONVERT(varchar(10),GETDATE(),101)";
-            return executeCountQuery(query);
+            return executeCountQuery("SELECT dbo.sum_cost_today()");
         }
 
         public SqlDataAdapter getAllOrdersAdapter(string selectString = "*")
@@ -67,6 +61,7 @@ namespace CoffeeShop.Databases
                 FROM [order]
                 LEFT JOIN bill ON [order].order_number = bill.order_number
                 JOIN [user] ON [user].id = [order].buyer_id
+                ORDER BY [bill].created_at DESC
             ");
             return this.executeAdapterCommand(command);
         }
